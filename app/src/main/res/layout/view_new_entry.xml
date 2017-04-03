@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~  * MIT License
+  ~  *
+  ~  * Copyright (c) [2017] [velli20]
+  ~  *
+  ~  * Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~  * of this software and associated documentation files (the "Software"), to deal
+  ~  * in the Software without restriction, including without limitation the rights
+  ~  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~  * copies of the Software, and to permit persons to whom the Software is
+  ~  * furnished to do so, subject to the following conditions:
+  ~  *
+  ~  * The above copyright notice and this permission notice shall be included in all
+  ~  * copies or substantial portions of the Software.
+  ~  *
+  ~  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~  * SOFTWARE.
+  ~  */
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:robototext="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/new_entry_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical" xmlns:tools="http://schemas.android.com/tools">
+
+    
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/new_entry_description_input_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textCapSentences"
+        android:singleLine="true"
+        android:hint="@string/new_entry_description"
+        app:met_maxCharacters="20"
+        style="@style/NewEntryInputField.Description" >
+        <requestFocus />
+    </com.rengwuxian.materialedittext.MaterialEditText>
+    
+    <com.velli.passwordmanager.roboto.RobotoTextView
+        android:id="@+id/new_entry_app_title"
+        style="@style/NewEntryHint"
+        android:layout_marginTop="16dp"
+        robototext:style="regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/new_entry_app"
+        android:visibility="gone" />
+
+    <Spinner
+        android:id="@+id/new_entry_app_spinner"
+        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp"
+        android:visibility="gone" />
+
+     <com.velli.passwordmanager.roboto.RobotoTextView
+        android:id="@+id/new_entry_label"
+        robototext:style="regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/new_entry_label"
+        style="@style/NewEntryHint" />
+
+    <Spinner
+        android:id="@+id/new_entry_login_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/NewEntrySpinnerField"/>
+    
+    <com.velli.passwordmanager.roboto.RobotoTextView
+        android:id="@+id/new_entry_wifi_security_hint"
+        robototext:style="regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/new_entry_wifi_security"
+        android:visibility="gone"
+        style="@style/NewEntryHint" />
+
+    <Spinner
+        android:id="@+id/new_entry_wifi_security"
+        style="@style/NewEntrySpinnerField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+    
+      <LinearLayout
+        android:id="@+id/entry_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+          
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/new_entry_ssid_input_field"
+            style="@style/NewEntryInputField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/new_entry_wifi_ssid"
+            android:inputType="textNoSuggestions"
+            android:visibility="gone">
+        </com.rengwuxian.materialedittext.MaterialEditText>
+        
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/new_entry_url_input_field"
+            style="@style/NewEntryInputField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/new_entry_url"
+            android:inputType="textUri" >
+        </com.rengwuxian.materialedittext.MaterialEditText>
+
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/new_entry_username_input_field"
+            style="@style/NewEntryInputField"
+            robototext:style="regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/new_entry_username"
+            android:inputType="textEmailAddress">
+        </com.rengwuxian.materialedittext.MaterialEditText>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+    
+            android:clipChildren="false" >
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/new_entry_password_input_field"
+                style="@style/NewEntryInputField"
+                robototext:style="regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/new_entry_password_generate"
+                android:layout_toStartOf="@+id/new_entry_password_generate"
+                android:ems="10"
+                android:hint="@string/new_entry_password"
+                android:inputType="textPassword" >
+            </com.rengwuxian.materialedittext.MaterialEditText>
+
+            <com.velli.passwordmanager.roboto.RobotoButton
+                android:id="@+id/new_entry_password_generate"
+                robototext:style="medium"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_alignBottom="@+id/new_entry_password_input_field"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/new_entry_generate_password"
+                android:textColor="@color/color_accent_a100"
+                android:textSize="14sp" 
+                style="?android:attr/borderlessButtonStyle"/>
+        </RelativeLayout>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/new_entry_note_input_field"
+            style="@style/NewEntryInputField"
+            robototext:style="regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:ems="10"
+            android:hint="@string/new_entry_notes"
+            android:inputType="textCapSentences"
+            android:singleLine="true"
+            app:met_maxCharacters="50">
+        </com.rengwuxian.materialedittext.MaterialEditText>
+
+        <com.velli.passwordmanager.roboto.RobotoTextView
+            android:id="@+id/new_entry_group"
+            style="@style/NewEntryHint"
+            robototext:style="regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_entry_group" />
+
+        <Spinner
+            android:id="@+id/new_entry_group_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/NewEntrySpinnerField"
+            android:layout_marginBottom="16dp"/>
+        
+        <com.velli.passwordmanager.roboto.RobotoButton
+            android:id="@+id/new_entry_button_new_group"
+            robototext:style="regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:alpha="0.87"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableLeft="@drawable/ic_action_new_group"
+            android:drawablePadding="16dp"
+            android:drawableStart="@drawable/ic_action_new_group"
+            android:gravity="left|start|center_vertical"
+            android:text="@string/action_create_new_group"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            tools:ignore="RtlHardcoded" />
+
+    </LinearLayout>
+     
+</LinearLayout>

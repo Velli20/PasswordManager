@@ -1,0 +1,357 @@
+<!--
+  ~ /*
+  ~  * MIT License
+  ~  *
+  ~  * Copyright (c) [2017] [velli20]
+  ~  *
+  ~  * Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~  * of this software and associated documentation files (the "Software"), to deal
+  ~  * in the Software without restriction, including without limitation the rights
+  ~  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~  * copies of the Software, and to permit persons to whom the Software is
+  ~  * furnished to do so, subject to the following conditions:
+  ~  *
+  ~  * The above copyright notice and this permission notice shall be included in all
+  ~  * copies or substantial portions of the Software.
+  ~  *
+  ~  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~  * SOFTWARE.
+  ~  */
+  -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <style name="BaseThemeLight" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/color_primary_500</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark_700</item>
+
+        <item name="android:textColorPrimary">@color/l_black</item>
+        <item name="android:textColorSecondary">@color/l_black</item>
+        <item name="android:windowBackground">@color/window_background</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="actionModeStyle">@style/ContextualStyle</item>
+    </style>
+
+    <style name="BaseThemeDark" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/color_primary_500</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark_700</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="actionModeStyle">@style/ContextualStyle</item>
+    </style>
+
+    <style name="MainActivityStyle" parent="BaseThemeLight">
+        <item name="colorAccent">@color/color_accent_a100</item>
+        <item name="colorControlNormal">@color/color_accent_a100</item>
+
+        <item name="searchViewStyle">@style/BaseThemeLight.SearchViewStyle</item>
+        
+    </style>
+    
+    <style name="LockScreenActivityStyle" parent="BaseThemeLight">
+        <item name="colorAccent">@color/color_accent_a100</item>
+        <item name="colorControlNormal">@color/color_accent_a100</item>
+
+    </style>
+    
+    <style name="GeneratePasswordActivityStyle" parent="BaseThemeLight">
+        <item name="android:windowBackground">@color/white</item>
+
+        <item name="colorAccent">@color/color_accent_a200</item>
+        <item name="colorControlNormal">@color/color_accent_a200</item>
+        <item name="colorControlHighlight">@color/color_accent_a500</item>
+
+    </style>
+    
+    <style name="ManageGroupsActivityStyle" parent="BaseThemeDark">
+
+        <item name="colorAccent">@color/color_accent_a100_dark</item>
+        <item name="colorControlNormal">@color/color_accent_a100_dark</item>
+        <item name="colorControlHighlight">@color/color_accent_a400_dark</item>
+    </style>
+
+    <style name="FilePickerTheme" parent="FilePickerTheme.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/color_primary_500</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark_700</item>
+        <item name="colorAccent">@color/color_accent_a200</item>
+    </style>
+
+    <style name="FilePickerTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionModeOverlay">true</item>
+    </style>
+
+    <style name="FilePickerTheme.PopupOverlay" parent="Theme.AppCompat.Light" />
+    
+    <style name="SettingsActivityStyle" parent="@style/ManageGroupsActivityStyle"/>
+
+    <style name="LicencesActivityStyle" parent="@style/SettingsActivityStyle"/>
+
+    <style name="AddPasswordActivityStyle" parent="BaseThemeLight">
+        <item name="colorAccent">@color/color_primary_500</item>
+        <item name="colorControlNormal">@color/color_primary_500</item>
+    </style> 
+   
+    <style name="ToolbarStyle" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item> 
+        
+        <item name="popupTheme">@style/Theme.AppCompat.Light</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item> 
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="actionModeStyle">@style/ContextualStyle</item>
+        
+    </style>
+    
+
+
+    <style name="AcitivityWebLogin" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/color_primary_500</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark_700</item> 
+        
+        <item name="colorAccent">@color/color_primary_500</item>
+        <item name="colorControlNormal">@color/color_primary_500</item>
+        
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+
+     </style>
+    
+    <style name="ContextualStyle" parent="@style/Widget.AppCompat.ActionMode">
+        <item name="background">@color/color_primary_500</item>
+    </style>
+    
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+    
+
+    <style name="BaseThemeLight.SearchViewStyle" parent="Widget.AppCompat.SearchView">
+
+        <!-- Background for the search query section (e.g. EditText) -->
+        <!-- <item name="queryBackground">@color/white</item> -->
+        <!-- Background for the actions section (e.g. voice, submit) -->
+        <item name="submitBackground">@color/white</item>
+        <!-- Close button icon -->
+        <item name="closeIcon">@null</item>
+        <!-- Search button icon -->
+        <item name="searchIcon">@drawable/ic_action_search</item>
+        <!-- Go/commit button icon -->
+        <item name="goIcon">@null</item>
+        <!-- Voice search button icon -->
+        <!-- <item name="voiceIcon">...</item> -->
+        <!-- Commit icon shown in the query suggestion row -->
+        <!-- <item name="commitIcon">...</item> -->
+        <!-- Layout for query suggestion rows -->
+        <!-- <item name="suggestionRowLayout">...</item> -->
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:alpha">0.12</item>
+        <item name="android:background">#000000</item>
+    </style>
+    
+    <style name="Subtitle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:alpha">0.54</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="LockScreenTitle">
+        <item name="style">light</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:alpha">0.54</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="LockScreenTextInputLayoutHint" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">16sp</item>
+    </style>
+    
+    <style name="FabTitle">
+        <item name="android:textColor">#91000000</item>
+        <item name="android:layout_gravity">bottom|right|end</item>
+        <item name="android:layout_marginRight">88dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@drawable/fab_label_background</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:alpha">0</item>
+    </style>
+    
+    <style name="PrimaryText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:alpha">0.87</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    
+    <style name="SecondaryText" parent="@style/PrimaryText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:alpha">0.54</item>
+    </style>
+    
+    <style name="ActionButton"  >
+        <item name="android:background">@drawable/selectable_background_apptheme</item>
+    </style>
+
+    <style name="RippleButton" >
+        <item name="android:background">@drawable/selectable_background_apptheme</item>
+    </style>
+    
+    <style name="NewEntryHint">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:alpha">1</item>
+        <item name="android:textColor">#61000000</item>
+    </style>
+
+    <style name="NewEntrySpinnerText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:alpha">0.87</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+    </style>
+    
+    <style name="NewEntrySpinnerTextApplication" >
+        <item name="android:textSize">@dimen/new_entry_description_text_size</item>
+        <item name="android:alpha">0.87</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+  
+
+    <style name="NewEntryInputField" >
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="met_floatingLabel">highlight</item>
+        <item name="met_errorColor">@color/new_entry_error</item>
+        <item name="met_baseColor">@color/l_black</item>
+    </style>
+    
+    <style name="NewEntrySpinnerField" >
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="NewEntryInputField.Description" >
+        <item name="android:textSize">@dimen/new_entry_description_text_size</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="met_floatingLabel">highlight</item>
+    </style>
+
+
+
+    <style name="DetailsViewDetail" >
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:alpha">0.87</item>
+        <item name="android:textIsSelectable">true</item>
+    </style>
+
+    <style name="DetailsViewSubHeader" parent="DetailsViewDetail">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#8A000000</item>
+        <item name="android:alpha">1</item>
+        <item name="android:textIsSelectable">false</item>
+    </style>
+
+    <style name="DetailsViewDetail.Large">
+        <item name="android:layout_marginLeft">24dp</item>
+        <item name="android:layout_marginRight">24dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:alpha">0.87</item>
+        <item name="android:textIsSelectable">true</item>
+    </style>
+
+    <style name="DetailsViewSubHeader.Large" parent="DetailsViewDetail.Large">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/color_primary_500</item>
+        <item name="android:textIsSelectable">false</item>
+    </style>
+
+    <style name="password_card_title">
+        <item name="android:textSize">@dimen/password_card_title_size</item>
+        <item name="android:textColor">@color/color_primary_500</item>
+        <item name="android:layout_marginLeft">@dimen/password_card_title_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/password_card_title_margin_right</item>
+    </style>
+    
+    <style name="password_card_title_large">
+        <item name="android:textSize">@dimen/password_card_title_size</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:alpha">0.57</item>
+        <item name="android:layout_marginLeft">@dimen/password_card_title_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/password_card_title_margin_right</item>
+        <item name="android:layout_marginTop">@dimen/password_card_title_margin_top</item>
+    </style>
+
+    <style name="password_card_title_divider" parent="Divider">
+        <item name="android:layout_marginLeft">@dimen/password_card_title_divider_margin</item>
+        <item name="android:layout_marginRight">@dimen/password_card_title_divider_margin</item>
+    </style>
+
+    <style name="medium_text_blue">
+        <item name="android:textSize">@dimen/medium_text_size</item>
+        <item name="android:textColor">@color/color_primary_500</item>
+        <item name="android:layout_marginLeft">@dimen/medium_text_margin</item>
+        <item name="android:layout_marginRight">@dimen/medium_text_margin</item>
+    </style>
+    
+
+
+    <style name="medium_text_black">
+        <item name="android:textSize">@dimen/medium_text_size</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:alpha">0.54</item>
+        <item name="android:layout_marginLeft">@dimen/medium_text_margin</item>
+        <item name="android:layout_marginRight">@dimen/medium_text_margin</item>
+    </style>
+
+
+
+</resources>

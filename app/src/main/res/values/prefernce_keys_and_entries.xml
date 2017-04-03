@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~  * MIT License
+  ~  *
+  ~  * Copyright (c) [2017] [velli20]
+  ~  *
+  ~  * Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~  * of this software and associated documentation files (the "Software"), to deal
+  ~  * in the Software without restriction, including without limitation the rights
+  ~  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~  * copies of the Software, and to permit persons to whom the Software is
+  ~  * furnished to do so, subject to the following conditions:
+  ~  *
+  ~  * The above copyright notice and this permission notice shall be included in all
+  ~  * copies or substantial portions of the Software.
+  ~  *
+  ~  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~  * SOFTWARE.
+  ~  */
+  -->
+
+<resources>
+    <string-array name="preference_retry_entries">
+        <item >5</item>
+        <item >10</item>
+        <item >15</item>
+        <item >20</item>
+    </string-array>
+
+    <string name="preference_key_max_retry_count">pref_key_lock_max_retry_count</string>
+    <string name="preference_key_log_out_automatically">pref_key_log_out_automatically</string>
+    <string name="preference_key_last_login">pref_key_last_login</string>
+    <string name="preference_key_change_password">pref_key_change_password</string>
+    <string name="preference_key_licenses">pref_key_licenses</string>
+    <string name="preference_key_manage_groups">pref_key_manage_groups</string>
+    <string name="preference_key_send_feedback">pref_key_send_feedback</string>
+    <string name="preference_key_erase_data">pref_key_erase_data</string>
+    <string name="preference_key_export_passwords">pref_key_export_passwords</string>
+    <string name="preference_key_import_passwords">pref_key_import_passwords</string>
+    <string name="preference_key_screen_start_up_lock">preference_key_screen_start_up_lock</string>
+    <string name="preference_key_screenshots_enabled">preference_key_screenshots_enabled</string>
+    <string name="preference_key_swipe_gestures">preference_key_swipe_gestures</string>
+    <string name="preference_key_backup">preference_key_backup</string>
+    <string name="preference_key_restore">preference_key_restore</string>
+    <string name="preference_key_show_animations">preference_show_animations</string>
+    <string name="preference_key_show_as">preference_show_as</string>
+</resources>

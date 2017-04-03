@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~  * MIT License
+  ~  *
+  ~  * Copyright (c) [2017] [velli20]
+  ~  *
+  ~  * Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~  * of this software and associated documentation files (the "Software"), to deal
+  ~  * in the Software without restriction, including without limitation the rights
+  ~  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~  * copies of the Software, and to permit persons to whom the Software is
+  ~  * furnished to do so, subject to the following conditions:
+  ~  *
+  ~  * The above copyright notice and this permission notice shall be included in all
+  ~  * copies or substantial portions of the Software.
+  ~  *
+  ~  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~  * SOFTWARE.
+  ~  */
+  -->
+
+<resources>
+
+    <string name="app_name">Password Keeper</string>
+    
+    <string name="accessibility_drawer_open">Avaa navigointipalkki</string>
+    <string name="accessibility_drawer_close">Sulje navigointipalkki</string>
+
+    <string-array name="credit_card_types">
+        <item >Visa</item>
+        <item >MasterCard</item>
+        <item >American Express</item>
+        <item >Discover</item>
+    </string-array>
+    
+    <string-array name="wifi_security_types">
+        <item >WEP</item>
+        <item >WPA/WPA2/FT PSK</item>
+        <item >802.1x EAP</item>
+    </string-array>
+    
+    <string name="password_card_url">URL</string>
+    <string name="password_card_username">Käyttäjätunnus</string>
+    
+    <string name="label_none"> </string>
+    <string name="label_all">Kaikki</string>
+    <string name="label_starred">Tähdelliset</string>
+    <string name="label_social">Sosiaalinen</string>
+    <string name="label_email">Sähköposti</string>
+    <string name="label_cloud">Pilvisäilö</string>
+    <string name="label_e_commercial">Verkkokauppa</string>
+    <string name="label_web">Verkkosivusto</string>
+    <string name="label_work">Työ</string>
+    <string name="label_bank">Pankkitili</string>
+    <string name="label_app">Sovellus</string>
+    <string name="label_credit_card">Luottokortti</string>
+    <string name="label_gaming">Pelaaminen</string>
+    <string name="label_messaging">Viestintä</string>
+    <string name="label_wifi">Wifi</string>
+
+    <string name="navigation_drawer_open">Avaa</string>
+    <string name="navigation_drawer_close">Sulje</string>
+    <string name="navigation_label_all">Kaikki</string>
+    <string name="navigation_label_starres">Tähdelliset</string>
+    
+    <string name="group_personal">Henkilökohtainen</string>
+    
+    <string name="new_entry_wifi_ssid">Verkon SSID</string>
+    <string name="new_entry_wifi_security">Suojaus</string>
+    <string name="new_entry_description">Kuvaus</string>
+    <string name="new_entry_label">Tunniste</string>
+    <string name="new_entry_url">Url</string>
+    <string name="new_entry_username">Käyttäjätunnus</string>
+    <string name="new_entry_password">Salasana</string>
+    <string name="new_entry_notes">Muistiinpano</string>
+    <string name="new_entry_group">Ryhmä</string>
+    <string name="new_entry_app">Sovellus</string>
+    <string name="new_entry_generate_password">LUO</string>
+    <string name="new_credit_card_card_type">Kortti</string>
+    <string name="new_credit_card_card_number">Kortin numero</string>
+    <string name="new_credit_card_card_number_helper_text">16-numeroinen luku</string>
+    <string name="new_credit_card_expiration_date">Voimassaolo päivä</string>
+    <string name="new_credit_card_expiration_date_helper_text">KK/VVVV</string>
+    <string name="new_credit_card_security_code">Turvakoodi</string>
+    <string name="new_credit_card_csv">CSV/CVV</string>
+    <string name="new_credit_card_security_code_helper_text">3-numeroinen numero</string>
+    <string name="imageview_accesibility_des_login_icon">Login Icon</string>
+    <string name="imageview_accesibility_des_refresh_password">Luo salasana</string>
+    <string name="imageview_accesibility_des_save">Tallenna</string>
+    <string name="imageview_accesibility_des_cancel">Peruuta</string>
+    <string name="menu_action_discard">Peruuta</string>
+    <string name="menu_action_save">Tallenna</string>
+    <string name="menu_action_done">Valmis</string>
+    <string name="menu_action_cancel">Peruuta</string>
+    <string name="menu_action_edit">Muokkaa</string>
+    <string name="menu_action_delete">Poista</string>
+    <string name="menu_action_open">Avaa</string>
+    <string name="menu_action_logout">Kirjaudu ulos</string>
+    <string name="menu_action_search">Etsi</string>
+    <string name="menu_action_settings">Asetukset</string>
+    <string name="menu_action_manage_groups">Hallitse ryhmiä</string>
+    <string name="menu_action_password_generator">Luo salasana</string>
+    <string name="menu_action_show_floating_pass">Näytä sivupalkissa</string>
+    <string name="menu_action_open_web">Sirry sivustolle</string>
+    <string name="menu_action_share_password">Jaa salasana</string>
+    <string name="menu_action_view_password">Näytä salasana</string>
+    <string name="menu_action_hide_password">Piilota salasana</string>
+    <string name="menu_action_share_email">Sähköposti</string>
+    <string name="menu_action_share_notification">Näytä ilmoituspalkissa</string>
+    <string name="menu_action_share_screenshot">Ota ruudunkaappaus</string>
+    <string name="menu_action_choose">Valitse</string>
+    <string name="menu_action_import">Tuo salasanat</string>
+    <string name="menu_action_view_as_grid">Näytä ruudukkona</string>
+    <string name="menu_action_view_as_list">View as list</string>
+
+    <string name="action_undo">Kumoa</string>
+    <string name="action_deleted">poistettu</string>
+    <string name="action_open_web_page">Avaa</string>
+    <string name="action_view_password">Näytä</string>
+    <string name="action_hide_password">Piilota</string>
+    <string name="action_accept">Hyväksy</string>
+    <string name="action_cancel">Peruuta</string>
+    <string name="action_ok">OK</string>
+    <string name="action_search_for">Etsi: </string>
+    <string name="mainscreen_search_view_query_hint">Kirjoita hakusana</string>
+    <string name="action_add_to_favorites">Lisää suosikkeihin</string>
+    <string name="action_configure_lock_pattern">Määritä lukituskuvio</string>
+    <string name="action_enter_your_password">Syötä salasanasi</string>
+    <string name="action_choose_a_password">Valitse uusi salasana</string>
+    <string name="action_verify_password">Vahvista uusi salasana</string>
+    <string name="action_create_new_group">Luo uusi ryhmä</string>
+    <string name="action_retrys_exceeded">Yritä uudelleen</string>
+    <string name="action_retrys_exceeded_part2"> minuutin päästä</string>
+    <string name="action_saved_as_draft">Salasana tallennettu luonnoksena</string>
+    <string name="action_copied_on_clip_board">Kopioitu leikepöydälle.</string>
+    <string name="action_discard_draft">Hylkää luonnos?</string>
+    <string name="action_discard">Hylkää</string>
+    <string name="action_file_saved">Tallennettu!</string>
+    <string name="action_password_saved">Salasana tallennettu</string>
+    <string name="action_continue">Jatka</string>
+    <string name="action_restore">Palauta</string>
+    <string name="action_screenshot_saved">Kuvakaappaus tallennettu</string>
+    <string name="action_restart_to_enable_screenshots">Käynnistä sovellus uudelleen ottaaksesi ruudunkaappaukset käyttöön</string>
+    <string name="action_restart_to_disable_screenshots">Käynnistä sovellus uudelleen poistaaksesi ruudunkaappaukset käytöstä</string>
+    <string name="action_restart">Käynnistä uudelleen</string>
+    <string name="action_backup_complete">Varmuuskopioitu!</string>
+    <string name="action_restore_complete">Palautettu!</string>
+    <string name="action_please_wait">Odota&#8230;</string>
+    <string name="action_login_to_web_site">Kirjaudu sisään Password Keeper:iin saadaksesi salasanan sivustolle</string>
+    <string name="action_show_all_passwords">Näytä kaikki salasanat</string>
+    
+    <string name="error_new_entry_no_description">Kuvaus on vaadittu</string>
+    <string name="error_new_entry_too_long_description">Kuvaus on liian pitkä</string>
+    <string name="error_new_entry_no_url">Osoite on vaadittu</string>
+    <string name="error_new_entry_no_username">Käyttäjänimi on vaadittu</string>
+    <string name="error_new_entry_no_network_ssid">Verkon SSID on vaadittu</string>
+    <string name="error_group_name">Tämän niminen ryhmä on jo olemassa</string>
+    <string name="error_wrong_password">Väärä salasana, yritä uudelleen</string>
+    <string name="error_passwords_dont_match">Salasanat eivät täsmää</string>
+    <string name="error_password_weak">Heikko</string>
+    <string name="error_password_medium_strong">Keskivahva</string>
+    <string name="error_password_strong">Vahva</string>
+    <string name="error_invalid_filename">Virheellinen tiedostonnimi!</string>
+    <string name="error_password_field_empty">Salasana kenttä on tyhjä!</string>
+    <string name="error_wrong_password_retrys_left">Väärä salasana. Uudelleenyrityksiä jäljellä: </string>
+    <string name="error_group_name_is_too_long">Ryhmännimi on liian pitkä!</string>
+    <string name="error_group_name_field_is_empty">Nimikenttä on tyhjä!</string>
+    <string name="error_group_name_invalid_charachter">Ryhmännimi sisältää virheellisiä merkkejä!</string>
+    <string name="error_something_went_wrong">Jokin meni vikaan</string>
+    
+    <string name="intent_share_label">Lisää uusi salasana</string>
+    <string name="input_field_new_group">Ryhmän nimi</string>
+    <string name="input_field_new_login_type">Kategorian nimi</string>
+    
+    <string name="title_details">Tiedot</string>
+    <string name="title_add_new_group">Lisää uusi ryhmä</string>
+    <string name="title_add_new_login_type">Lisää uusi kategoria</string>
+    <string name="title_add_new_password">Salasana</string>
+    <string name="title_add_new_credit_card">Luottokortti</string>
+    <string name="title_generate_password">Luo salasana</string>
+    <string name="title_settings">Asetukset</string>
+    <string name="title_licenses">Avoimen lähdek. käyttöl.</string>
+    <string name="title_delete_password">Poista salasana</string>
+    <string name="title_groups">Ryhmät</string>
+    <string name="title_all_labels">Kaikki tunnisteet</string>
+    <string name="title_filename">Tiedostonnimi</string>
+    <string name="title_tools">Työkalut</string>
+    <string name="title_enter_your_password">Syötä salasanasi</string>
+    <string name="title_change_password">Vaihda salasana</string>
+    <string name="title_remove_group">Poista ryhmä?</string>
+    <string name="title_remove_groups">Poista ryhmät?</string>
+    <string name="title_remove_group_with_passwords">Poista ryhmä sekä kaikki siihen kuuluvat salasanat? Seuraavat salasanat poistetaan: </string>
+    <string name="title_remove_groups_with_passwords">Poista ryhmät sekä kaikki valittuihin ryhmiin kuuluvat salasanat? Seuraavat salasanat poistetaan: </string>
+    <string name="title_set_password_lenght">Aseta salasanan pituus</string>
+    <string name="title_discard_password">Hylkää salasana?</string>
+    <string name="title_leave_without_saving">Hylkää tekemäsi muutokset?</string>
+    <string name="title_restart_app">Käynnistä sovellus uudelleen</string>
+    <string name="title_login_with_fingerprints">Kirjaudu sisään sormenjälillä</string>
+    <string name="title_searching_backups">Etsitään varmuuskopioita&#8230;</string>
+    <string name="title_choose_backup_file">Valitse tiedosto</string>
+    <string name="title_confirm_restore">Vahvista palauttaminen</string>
+    <string name="title_no_items_found_1">Ei hakua \"</string>
+    <string name="title_no_items_found_2">\" vastaavia tuloksia.</string>
+    <string name="title_no_items_in_category">Ei salasanoja kategoriassa</string>
+    <string name="title_no_items_in_group">Ei salasanoja ryhmässä</string>
+    <string name="title_no_passwords">Ei salasanoja. Lisää uusi salasana klikkaamalla +</string>
+    <string name="title_no_password_for_the_site">Ei salasanaa sivustolle</string>
+    <string name="title_new_credit_card">Luottokortti</string>
+    <string name="title_edit_credit_card">Muokkaa luottokorttia</string>
+    <string name="title_new_password">Salasana</string>
+    <string name="title_edit_password">Muokkaa salasanaa</string>
+    <string name="title_new_note">Muistiinpano</string>
+    <string name="title_edit_note">Muokkaa muistiinpanoa</string>
+    <string name="title_last_time_logged_in">Viimeksi kirjautuneena</string>
+    <string name="title_password_changed_successfully">Salasana vaihdettu onnistuneesti</string>
+    <string name="title_log_in">Kirjaudu sisään</string>
+    <string name="title_logging_in">Kirjaudutaan sisään</string>
+    <string name="title_password_for_the_site">Salasana sivustolle</string>
+    <string name="title_error">Virhe</string>
+    <string name="title_add">Uusi</string>
+    <string name="title_selected">valittu</string>
+
+    <string name="hint_password">Salasana</string>
+
+    
+    <string name="notification_log_out_title">Password Keeper sisään kirjautuneena</string>
+    <string name="notification_log_out_content">Klikkaa kirjautuaksesi ulos</string>
+    
+    <string name="welcome_view_hello">Tervetuloa!</string>
+    <string name="welcome_view_tap_to_add">Klikkaa lisätäksesi uuden salasanan.</string>
+    <string name="welcome_view_info">Sen jälkeen näet kaikki salasanakortit täällä.</string>
+    
+    <string name="dialog_message_delete_password">Haluatko varmasti poistaa tämän salasanan?</string>
+    <string name="dialog_confirm_restore">Tämä palautustiedosto tulee korvaamaan kaikki nykyiset salasanat. Palautuksen jälkeen toimintoa ei voi kumota. Haluatko varmasti jatkaa?</string>
+    
+    <string name="export_passwords_sheet_passwords">Salasanat</string>
+    <string name="export_passwords_sheet_credit_cards">Luottokortit</string>
+    <string name="export_passwords_sheet_wifi_passwords">Wifi salasanat</string>
+    
+    <string name="preference_summary_erase_data">Poista kaikki salasanat, kun uudelleenyritysten enimmäismäärä on ylittynyt</string>
+    <string name="preference_summary_send_feedback">Kerro mitä mieltä olet tai ilmoita ongelmasta</string>
+    <string name="preference_summary_export_passwords">Tallenna salasanat muistikortille .xls muodossa ja avaa haluamassasi taulukko-ohjelmassa.</string>
+    <string name="preference_summary_import_passwords">Tuo salasanat .xls muodossa</string>
+    <string name="preference_summary_screenshots_enbled">Anna Android-järjestelmän ottaa ruudunkaappauksia tästä sovelluksesta</string>
+    <string name="preference_summary_log_out_automatically">Kirjaudu ulos automaattisesti, kun käyttäjä poistuu tästä sovelluksesta</string>
+    <string name="preference_summary_manage_groups">Poista tai luo uusia salasanaryhmiä</string>
+    <string name="preference_summary_max_retry">Aseta salasanalukituksen uudelleenyritysten enimmäismäärä, jonka jälkeen salasanat poistetaan</string>
+    <string name="preference_summary_swipe_gestures">Poista salasana pyyhkäisemällä kortti vasemmalle tai oikealle</string>
+    <string name="preference_summary_backup">Varmuuskopioi salasanasi muistikortille</string>
+    <string name="preference_summary_restore">Palauta salasanasi aiemmin luodusta varmuuskopiosta</string>
+    <string name="preference_summary_show_animations">Näytä siirtymäanimaatiot salasananäkymässä</string>
+
+    <string name="preference_screen_title_startup_lock">Sovelluksen käynnistyslukko</string>
+    <string name="preference_screen_title_general">Yleiset asetukset</string>
+    <string name="preference_screen_title_about">Tietoja</string>
+    <string name="preference_screen_title_passwords">Salasanat</string>
+    
+    <string name="preference_title_last_login">Edellisen kerran kirjautuneena</string>
+    <string name="preference_title_max_retry">Uudelleenyritysten määrä</string>
+    <string name="preference_title_log_out_automatically">Kirjaudu ulos automaattisesti</string>
+    <string name="preference_title_change_password">Vaihda salasana</string>
+    <string name="preference_title_licenses">Avoimen lähdekoodin käyttöluvat</string>
+    <string name="preference_title_manage_groups">Hallinnoi salasanaryhmiä</string>
+    <string name="preference_title_send_feedback">Lähetä palautetta</string>
+    <string name="preference_title_erase_data">Poista salasanat</string>
+    <string name="preference_title_export_passwords">Vie kaikki salasanat</string>
+    <string name="preference_title_import_passwords">Tuo salasanat</string>
+    <string name="preference_title_screenshots_enbled">Salli ruudunkappaukset</string>
+    <string name="preference_title_swipe_gestures">Pyyhkäisytoiminnot salasanaluettelossa</string>
+    <string name="preference_title_backup">Varmuuskopioi</string>
+    <string name="preference_title_restore">Palauta</string>
+    <string name="preference_title_show_animations">Näytä animaatiot</string>
+
+
+
+    <string-array name="password_generation_options">
+        <item >Password options</item>
+        <item >Pienet kirjaimet (a&#8211;z)</item>
+        <item >Isot kirjaimet (A&#8211;Z)</item>
+        <item >Numerot (0&#8211;9)</item>
+        <item >Erikoismerkit (!@#$%/)</item>
+        <item >Salasanan pituus</item>
+    </string-array>
+    
+    <plurals name="password">
+        <item quantity="one">%d salasana</item>
+        <item quantity="other">%d salasanaa</item>
+    </plurals>
+    
+
+</resources>

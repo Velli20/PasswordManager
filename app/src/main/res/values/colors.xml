@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~  * MIT License
+  ~  *
+  ~  * Copyright (c) [2017] [velli20]
+  ~  *
+  ~  * Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~  * of this software and associated documentation files (the "Software"), to deal
+  ~  * in the Software without restriction, including without limitation the rights
+  ~  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~  * copies of the Software, and to permit persons to whom the Software is
+  ~  * furnished to do so, subject to the following conditions:
+  ~  *
+  ~  * The above copyright notice and this permission notice shall be included in all
+  ~  * copies or substantial portions of the Software.
+  ~  *
+  ~  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~  * SOFTWARE.
+  ~  */
+  -->
+
+<resources>
+    
+    <color name="color_primary_500">#03a9f4</color>
+    <color name="color_primary_dark_700">#0288d1</color>
+    
+    <color name="color_accent_a200">#FF4081</color>
+    <color name="color_accent_a100">#FF80AB</color>
+    <color name="color_accent_a500">#F50057</color>
+    
+    <color name="color_accent_a200_dark">#40c4ff</color>
+    <color name="color_accent_a100_dark">#80d8ff</color>
+    <color name="color_accent_a400_dark">#00e5ff</color>
+    
+    <color name="fab_menu_background">#00FFFFFF</color>
+    <color name="fab_menu_background_open">#B3FFFFFF</color>
+
+    <color name="orange">#ff9800</color>
+    <color name="green">#4caf50</color>
+    <color name="gray">#9e9e9e</color>
+    <color name="dark_grey">#424242</color>
+    <color name="l_black">#CC000000</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="window_background">#eeeeee</color>
+    <color name="licences_window_background">#424242</color>
+    <color name="new_entry_error">#f44336</color>
+    
+    <color name="password_error">#f44336</color>
+    <color name="password_weak">#f44336</color>
+    <color name="password_fair">#fbc02d</color>
+    <color name="password_strong">#8bc34a</color>
+    
+</resources>

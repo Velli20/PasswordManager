@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~  * MIT License
+  ~  *
+  ~  * Copyright (c) [2017] [velli20]
+  ~  *
+  ~  * Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~  * of this software and associated documentation files (the "Software"), to deal
+  ~  * in the Software without restriction, including without limitation the rights
+  ~  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~  * copies of the Software, and to permit persons to whom the Software is
+  ~  * furnished to do so, subject to the following conditions:
+  ~  *
+  ~  * The above copyright notice and this permission notice shall be included in all
+  ~  * copies or substantial portions of the Software.
+  ~  *
+  ~  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~  * SOFTWARE.
+  ~  */
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/navigation_group_top"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_item_all"
+            android:icon="@drawable/ic_type_group"
+            android:title="@string/label_all" />
+
+        <item
+            android:id="@+id/navigation_item_starred"
+            android:icon="@drawable/ic_type_starred"
+            android:title="@string/label_starred" />
+
+    </group>
+    <group
+        android:id="@+id/navigation_group_labels"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_item_labels"
+            android:title="@string/title_all_labels">
+            <menu>
+
+                <item
+                    android:id="@+id/navigation_item_social"
+                    android:icon="@drawable/ic_type_social"
+                    android:title="@string/label_social" />
+
+                <item
+                    android:id="@+id/navigation_item_email"
+                    android:icon="@drawable/ic_type_email"
+                    android:title="@string/label_email" />
+                <item
+                    android:id="@+id/navigation_item_cloud"
+                    android:icon="@drawable/ic_type_cloud"
+                    android:title="@string/label_cloud" />
+                <item
+                    android:id="@+id/navigation_item_e_commerce"
+                    android:icon="@drawable/ic_type_shop"
+                    android:title="@string/label_e_commercial" />
+                <item
+                    android:id="@+id/navigation_item_web"
+                    android:icon="@drawable/ic_type_web"
+                    android:title="@string/label_web" />
+                <item
+                    android:id="@+id/navigation_item_work"
+                    android:icon="@drawable/ic_type_work"
+                    android:title="@string/label_work" />
+
+                <item
+                    android:id="@+id/navigation_item_bank"
+                    android:icon="@drawable/ic_type_bank"
+                    android:title="@string/label_bank" />
+                <item
+                    android:id="@+id/navigation_item_app"
+                    android:icon="@drawable/ic_type_app"
+                    android:title="@string/label_app" />
+                <item
+                    android:id="@+id/navigation_item_credit_card"
+                    android:icon="@drawable/ic_type_credit_card"
+                    android:title="@string/label_credit_card" />
+
+                <item
+                    android:id="@+id/navigation_item_gaming"
+                    android:icon="@drawable/ic_type_gaming"
+                    android:title="@string/label_gaming" />
+                <item
+                    android:id="@+id/navigation_item_messaging"
+                    android:icon="@drawable/ic_type_messaging"
+                    android:title="@string/label_messaging" />
+                <item
+                    android:id="@+id/navigation_item_wifi"
+                    android:icon="@drawable/ic_type_wifi"
+                    android:title="@string/label_wifi" />
+            </menu>
+        </item>
+    </group>
+    <group
+        android:id="@+id/navigation_group_groups"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_item_custom_group"
+            android:title="@string/title_groups">
+            <menu>
+                <item
+                    android:id="@+id/navigation_item_manage_groups"
+                    android:icon="@drawable/ic_action_new_group"
+                    android:title="@string/menu_action_manage_groups" />
+            </menu>
+        </item>
+    </group>
+
+    <group
+        android:id="@+id/navigation_item_other"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/navigation_item_settings"
+            android:icon="@drawable/ic_action_settings"
+            android:title="@string/menu_action_settings" />
+        <item
+            android:id="@+id/navigation_item_log_out"
+            android:icon="@drawable/ic_action_log_out"
+            android:title="@string/menu_action_logout" />
+    </group>
+
+</menu>

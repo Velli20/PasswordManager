@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~  * MIT License
+  ~  *
+  ~  * Copyright (c) [2017] [velli20]
+  ~  *
+  ~  * Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~  * of this software and associated documentation files (the "Software"), to deal
+  ~  * in the Software without restriction, including without limitation the rights
+  ~  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~  * copies of the Software, and to permit persons to whom the Software is
+  ~  * furnished to do so, subject to the following conditions:
+  ~  *
+  ~  * The above copyright notice and this permission notice shall be included in all
+  ~  * copies or substantial portions of the Software.
+  ~  *
+  ~  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~  * SOFTWARE.
+  ~  */
+  -->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <com.velli.passwordmanager.preferences.CustomPreferenceCategory android:title="@string/preference_screen_title_general" >
+        <com.velli.passwordmanager.preferences.CustomCheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/preference_key_log_out_automatically"
+            android:summary="@string/preference_summary_log_out_automatically"
+            android:title="@string/preference_title_log_out_automatically" />
+        
+        <com.velli.passwordmanager.preferences.CustomCheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/preference_key_swipe_gestures"
+            android:summary="@string/preference_summary_swipe_gestures"
+            android:title="@string/preference_title_swipe_gestures" />
+        
+        <com.velli.passwordmanager.preferences.CustomCheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/preference_key_show_animations"
+            android:summary="@string/preference_summary_show_animations"
+            android:title="@string/preference_title_show_animations" />
+
+        <com.velli.passwordmanager.preferences.CustomSwitchPreference
+            android:defaultValue="false"
+            android:key="@string/preference_key_screenshots_enabled"
+            android:summary="@string/preference_summary_screenshots_enbled"
+            android:title="@string/preference_title_screenshots_enbled" />
+
+        <com.velli.passwordmanager.preferences.CustomPreference
+            android:key="@string/preference_key_manage_groups"
+            android:summary="@string/preference_summary_manage_groups"
+            android:title="@string/preference_title_manage_groups" />
+     </com.velli.passwordmanager.preferences.CustomPreferenceCategory>
+     <com.velli.passwordmanager.preferences.CustomPreferenceCategory android:title="@string/preference_screen_title_passwords" >
+        <com.velli.passwordmanager.preferences.CustomPreference
+            android:key="@string/preference_key_backup"
+            android:summary="@string/preference_summary_backup"
+            android:title="@string/preference_title_backup" />
+        <com.velli.passwordmanager.preferences.CustomPreference
+            android:key="@string/preference_key_restore"
+            android:summary="@string/preference_summary_restore"
+            android:title="@string/preference_title_restore" />
+        <com.velli.passwordmanager.preferences.CustomPreference
+            android:key="@string/preference_key_export_passwords"
+            android:summary="@string/preference_summary_export_passwords"
+            android:title="@string/preference_title_export_passwords" />
+         <com.velli.passwordmanager.preferences.CustomPreference
+             android:key="@string/preference_key_import_passwords"
+             android:summary="@string/preference_summary_import_passwords"
+             android:title="@string/preference_title_import_passwords" />
+    </com.velli.passwordmanager.preferences.CustomPreferenceCategory>
+    
+    <com.velli.passwordmanager.preferences.CustomPreferenceCategory
+        android:key="@string/preference_key_screen_start_up_lock"
+        android:title="@string/preference_screen_title_startup_lock" >
+        
+
+        <com.velli.passwordmanager.preferences.CustomCheckBoxPreference
+            android:defaultValue="false"
+            android:enabled="true"
+            android:key="@string/preference_key_erase_data"
+            android:summary="@string/preference_summary_erase_data"
+            android:title="@string/preference_title_erase_data" />
+
+        <com.velli.passwordmanager.preferences.CustomCounterPreference
+            android:key="@string/preference_key_max_retry_count"
+            android:defaultValue="15"
+            android:enabled="true"
+            android:summary="@string/preference_summary_max_retry"
+            android:title="@string/preference_title_max_retry" />
+
+        <com.velli.passwordmanager.preferences.CustomPreference
+            android:key="@string/preference_key_change_password"
+            android:title="@string/preference_title_change_password" />
+    </com.velli.passwordmanager.preferences.CustomPreferenceCategory>
+    <com.velli.passwordmanager.preferences.CustomPreferenceCategory android:title="@string/preference_screen_title_about" >
+        <com.velli.passwordmanager.preferences.CustomPreference
+            android:enabled="false"
+            android:key="@string/preference_key_last_login"
+            android:title="@string/preference_title_last_login" />
+        <com.velli.passwordmanager.preferences.CustomPreference
+            android:key="@string/preference_key_send_feedback"
+            android:summary="@string/preference_summary_send_feedback"
+            android:title="@string/preference_title_send_feedback" />
+        <com.velli.passwordmanager.preferences.CustomPreference
+            android:key="@string/preference_key_licenses"
+            android:title="@string/preference_title_licenses" />
+    </com.velli.passwordmanager.preferences.CustomPreferenceCategory>
+
+</PreferenceScreen>

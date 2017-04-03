@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~  * MIT License
+  ~  *
+  ~  * Copyright (c) [2017] [velli20]
+  ~  *
+  ~  * Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~  * of this software and associated documentation files (the "Software"), to deal
+  ~  * in the Software without restriction, including without limitation the rights
+  ~  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~  * copies of the Software, and to permit persons to whom the Software is
+  ~  * furnished to do so, subject to the following conditions:
+  ~  *
+  ~  * The above copyright notice and this permission notice shall be included in all
+  ~  * copies or substantial portions of the Software.
+  ~  *
+  ~  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~  * SOFTWARE.
+  ~  */
+  -->
+
+<resources>
+    <string name="app_name">Password Keeper</string>
+    
+    <string name="accessibility_drawer_open">Open navigation drawer</string>
+    <string name="accessibility_drawer_close">Close navigation drawer</string>
+
+    
+    <string-array name="credit_card_types">
+        <item >Visa</item>
+        <item >MasterCard</item>
+        <item >American Express</item>
+        <item >Discover</item>
+    </string-array>
+    
+    <string-array name="wifi_security_types">
+        <item >WEP</item>
+        <item >WPA/WPA2/FT PSK</item>
+        <item >802.1x EAP</item>
+    </string-array>
+    
+    <string name="password_card_url">URL</string>
+    <string name="password_card_username">Username</string>
+    
+    <string name="label_all">All</string>
+    <string name="label_starred">Starred</string>
+    <string name="label_social">Social</string>
+    <string name="label_email">Email</string>
+    <string name="label_cloud">Cloud storage</string>
+    <string name="label_e_commercial">E-shop</string>
+    <string name="label_web">Web login</string>
+    <string name="label_work">Work</string>
+    <string name="label_bank">Bank account</string>
+    <string name="label_app">Application</string>
+    <string name="label_credit_card">Credit card</string>
+    <string name="label_gaming">Gaming</string>
+    <string name="label_messaging">Messaging</string>
+    <string name="label_wifi">Wifi</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_label_all">All</string>
+    <string name="navigation_label_starres">Starred</string>
+    <string name="navigation_label_drafts">Drafts</string>
+    
+    <string name="group_personal">Personal</string>
+    
+    <string name="new_entry_wifi_ssid">Network SSID</string>
+    <string name="new_entry_wifi_security">Security</string>
+    <string name="new_entry_description">Description</string>
+    <string name="new_entry_label">Label</string>
+    <string name="new_entry_url">Url</string>
+    <string name="new_entry_username">Username</string>
+    <string name="new_entry_password">Password</string>
+    <string name="new_entry_notes">Notes</string>
+    <string name="new_entry_group">Group</string>
+    <string name="new_entry_app">Application</string>
+    <string name="new_entry_generate_password">GENERATE</string>
+    <string name="new_credit_card_card_type">Card type</string>
+    <string name="new_credit_card_card_number">Card number</string>
+    <string name="new_credit_card_card_number_helper_text">16-digit number</string>
+    <string name="new_credit_card_expiration_date">Expiration date</string>
+    <string name="new_credit_card_expiration_date_helper_text">MM/YYYY</string>
+    <string name="new_credit_card_security_code">Security code</string>
+    <string name="new_credit_card_csv">CSV/CVV</string>
+    <string name="new_credit_card_security_code_helper_text">3-digit number</string>
+    <string name="imageview_accesibility_des_login_icon">Login Icon</string>
+    <string name="imageview_accesibility_des_refresh_password">Generate Password</string>
+    <string name="imageview_accesibility_des_save">Save</string>
+    <string name="imageview_accesibility_des_cancel">Cancel</string>
+    <string name="menu_action_discard">Discard</string>
+    <string name="menu_action_save">Save</string>
+    <string name="menu_action_done">Done</string>
+    <string name="menu_action_cancel">Cancel</string>
+    <string name="action_ok">OK</string>
+    <string name="action_create_new_group">Create new group</string>
+    <string name="menu_action_edit">Edit</string>
+    <string name="menu_action_delete">Delete</string>
+    <string name="menu_action_open">Open</string>
+    <string name="menu_action_logout">Log Out</string>
+    <string name="menu_action_search">Search</string>
+    <string name="menu_action_settings">Settings</string>
+    <string name="menu_action_manage_groups">Manage groups</string>
+    <string name="menu_action_password_generator">Generate password</string>
+    <string name="menu_action_show_floating_pass">Show floating password card</string>
+    <string name="menu_action_open_web">Open</string>
+    <string name="menu_action_share_password">Share password</string>
+    <string name="menu_action_view_password">View password</string>
+    <string name="menu_action_hide_password">Hide password</string>
+    <string name="menu_action_share_email">Email</string>
+    <string name="menu_action_share_notification">Show notification</string>
+    <string name="menu_action_share_screenshot">Take screenshot</string>
+    <string name="menu_action_choose">Choose</string>
+    <string name="menu_action_import">Import</string>
+    <string name="menu_action_view_as_grid">View as grid</string>
+    <string name="menu_action_view_as_list">View as list</string>
+
+    <string name="action_undo">Undo</string>
+    <string name="action_deleted"> deleted</string>
+    <string name="action_open_web_page">Open</string>
+    <string name="action_view_password">View</string>
+    <string name="action_hide_password">Hide</string>
+    <string name="action_accept">Accept</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_search_for">Search for: </string>
+    <string name="mainscreen_search_view_query_hint">Enter Keyword</string>
+    <string name="action_add_to_favorites">Add to favorites</string>
+    <string name="action_configure_lock_pattern">Configure lock pattern</string>
+    <string name="action_enter_your_password">Enter your password</string>
+    <string name="action_choose_a_password">Enter a new password</string>
+    <string name="action_verify_password">Verify new password</string>
+    <string name="action_retrys_exceeded">Try again in</string>
+    <string name="action_retrys_exceeded_part2"> minutes</string>
+    <string name="action_saved_as_draft">Password saved as draft</string>
+    <string name="action_copied_on_clip_board">Copied to clipboard.</string>
+    <string name="action_discard_draft">Discard draft?</string>
+    <string name="action_discard">Discard</string>
+    <string name="action_file_saved">File saved!</string>
+    <string name="action_password_saved">Password saved</string>
+    <string name="action_continue">Continue</string>
+    <string name="action_restore">Restore</string>
+    <string name="action_screenshot_saved">Screenshot saved</string>
+    <string name="action_restart_to_enable_screenshots">Restart this app to enable screenshots</string>
+    <string name="action_restart_to_disable_screenshots">Restart this app to disable screenshots</string>
+    <string name="action_restart">restart</string>
+    <string name="action_backup_complete">Backup complete!</string>
+    <string name="action_restore_complete">Restore complete!</string>
+    <string name="action_please_wait">Please wait&#8230;</string>
+    <string name="action_login_to_web_site">Login to Password Keeper to get password for the site</string>
+    <string name="action_show_all_passwords">Show all passwords</string>
+    
+    <string name="error_new_entry_no_description">Description is required</string>
+    <string name="error_new_entry_too_long_description">Description is too long</string>
+    <string name="error_new_entry_no_url">URL is required</string>
+    <string name="error_new_entry_no_username">Username is required</string>
+    <string name="error_new_entry_no_network_ssid">Network SSID is required</string>
+    <string name="error_group_name">Group with this name already exists</string>
+    <string name="error_wrong_password">Wrong password, try again.</string>
+    <string name="error_passwords_dont_match">Passwords does not match</string>
+    <string name="error_password_weak">Weak</string>
+    <string name="error_password_medium_strong">Fair</string>
+    <string name="error_password_strong">Strong</string>
+    <string name="error_invalid_filename">Invalid filename!</string>
+    <string name="error_password_field_empty">Password field is empty!</string>
+    <string name="error_wrong_password_retrys_left">Wrong password, retrys left: </string>
+    <string name="error_group_name_is_too_long">Group name is too long!</string>
+    <string name="error_group_name_field_is_empty">Group name field is empty!</string>
+    <string name="error_group_name_invalid_charachter">Group name contains invalid characters!</string>
+    <string name="error_something_went_wrong">Something went wrong</string>
+
+    <string name="intent_share_label">Add new password</string>
+    <string name="input_field_new_group">Group name</string>
+    <string name="input_field_new_login_type">Name</string>
+    
+    <string name="warning_screen_capture_disabled">Screen capture is disabled for security reason.</string>
+
+    <string name="title_add">New</string>
+    <string name="title_details">Details</string>
+    <string name="title_add_new_group">Add new group</string>
+    <string name="title_add_new_login_type">Add new login type</string>
+    <string name="title_add_new_password">Password</string>
+    <string name="title_add_new_credit_card">Credit card</string>
+    <string name="title_generate_password">New password</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_licenses">Open source licenses</string>
+    <string name="title_delete_password">Delete password</string>
+    <string name="title_groups">Groups</string>
+    <string name="title_all_labels">All labels</string>
+    <string name="title_filename">Filename</string>
+    <string name="title_tools">Tools</string>
+    <string name="title_enter_your_password">Enter your password</string>
+    <string name="title_change_password">Enter new password</string>
+    <string name="title_remove_group">Delete group?</string>
+    <string name="title_remove_groups">Delete groups?</string>
+    <string name="title_remove_group_with_passwords">Delete group and all it\'s passwords? The following passwords will be removed: </string>
+    <string name="title_remove_groups_with_passwords">Delete groups and all passwords in these groups? The following passwords will be removed: </string>
+    <string name="title_restart_app">Restart this app</string>
+    <string name="title_login_with_fingerprints">Login with fingerprints</string>
+    <string name="title_searching_backups">Searching for backup files&#8230;</string>
+    <string name="title_choose_backup_file">Choose backup file</string>
+    <string name="title_confirm_restore">Confirm restore</string>
+    <string name="title_no_items_found_1">No passwords found with keyword \"</string>
+    <string name="title_no_items_found_2">\".</string>
+    <string name="title_no_items_in_category">No passwords in category</string>
+    <string name="title_no_items_in_group">No passwords in group</string>
+    <string name="title_no_passwords">No passwords. Tap + to add a new password.</string>
+    <string name="title_no_password_for_the_site">No password for the site</string>
+    <string name="title_new_credit_card">Credit card</string>
+    <string name="title_edit_credit_card">Edit credit card</string>
+    <string name="title_new_password">Password</string>
+    <string name="title_edit_password">Edit password</string>
+    <string name="title_new_note">Note</string>
+    <string name="title_edit_note">Edit note</string>
+    <string name="title_last_time_logged_in">Last time logged in</string>
+    <string name="title_password_changed_successfully">Password changed successfully</string>
+    <string name="title_set_password_lenght">Set password length</string>
+    <string name="title_discard_password">Discard password?</string>
+    <string name="title_leave_without_saving">Exit without saving your edits?</string>
+    <string name="title_log_in">Log in</string>
+    <string name="title_logging_in">Logging in</string>
+    <string name="title_password_for_the_site">Password for the site</string>
+    <string name="title_error">Error</string>
+    <string name="title_selected">selected</string>
+
+    <string name="notification_log_out_title">Password Keeper logged in</string>
+    <string name="notification_log_out_content">Tap to log out</string>
+    
+    <string name="welcome_view_hello">Hello!</string>
+    <string name="welcome_view_tap_to_add">Tap to add a password.</string>
+    <string name="welcome_view_info">Afterwards, you will see all your passwords here.</string>
+    
+    <string name="hint_password">Password</string>
+       
+    <string name="dialog_message_delete_password">Are you sure that you want to delete this password?</string>
+    <string name="dialog_confirm_restore">This backup file will override all local data and can not be undone. Are you sure you want to continue?</string>
+
+    <string name="export_passwords_sheet_passwords">Paswords</string>
+    <string name="export_passwords_sheet_credit_cards">Credit cards</string>
+    <string name="export_passwords_sheet_wifi_passwords">Wifi passwords</string>
+    
+    <string name="preference_summary_erase_data">Erase all passwords after the maximum number of retries has been exceeded</string>
+    <string name="preference_summary_send_feedback">Tell what you think or report a problem</string>
+    <string name="preference_summary_export_passwords">Export your passwords to a spreadsheet.</string>
+    <string name="preference_summary_import_passwords">Import your passwords in a spreadsheet</string>
+    <string name="preference_summary_screenshots_enbled">Let the Android system to capture screenshots of this application</string>
+    <string name="preference_summary_log_out_automatically">Log out automatically when user exits from this app</string>
+    <string name="preference_summary_manage_groups">Delete or create new password groups</string>
+    <string name="preference_summary_max_retry">Set maximum retry count which after all passwords will be deleted</string>
+    <string name="preference_summary_swipe_gestures">Delete password by swiping password card to the left or right</string>
+    <string name="preference_summary_backup">Backup your passwords locallly</string>
+    <string name="preference_summary_restore">Restore your passwords from a previously created backup</string>
+    <string name="preference_summary_show_animations">Show transition animations in password details</string>
+    <string name="preference_summary_login_with_fingerprint">Login using your registered fingerprints</string>
+    
+    <string name="preference_screen_title_startup_lock">Startup Lock</string>
+    <string name="preference_screen_title_general">General settings</string>
+    <string name="preference_screen_title_about">About</string>
+    <string name="preference_screen_title_passwords">Passwords</string>
+    
+    <string name="preference_title_last_login">Last time logged in</string>
+    <string name="preference_title_max_retry">Max retry count</string>
+    <string name="preference_title_log_out_automatically">Log out automatically</string>
+    <string name="preference_title_change_password">Change password</string>
+    <string name="preference_title_licenses">Open source licenses</string>
+    <string name="preference_title_manage_groups">Manage groups</string>
+    <string name="preference_title_send_feedback">Send feedback</string>
+    <string name="preference_title_erase_data">Erase data</string>
+    <string name="preference_title_export_passwords">Export passwords</string>
+    <string name="preference_title_import_passwords">Import passwords</string>
+    <string name="preference_title_screenshots_enbled">Enable screenshots</string>
+    <string name="preference_title_swipe_gestures">Swipe actions in password list</string>
+    <string name="preference_title_backup">Backup</string>
+    <string name="preference_title_restore">Restore</string>
+    <string name="preference_title_show_animations">Show animations</string>
+
+    <string-array name="password_generation_options">
+        <item >Password options</item>
+        <item >Lower Case (a&#8211;z)</item>
+        <item >Upper Case (A&#8211;Z)</item>
+        <item >Numbers (0&#8211;9)</item>
+        <item >Special characters (!@#$%/)</item>
+        <item >Number of Characters</item>
+    </string-array>
+    
+    <plurals name="password">
+        <item quantity="one">%d password</item>
+        <item quantity="other">%d passwords</item>
+    </plurals>
+
+</resources>
