@@ -40,32 +40,32 @@ public class GetGroupsTask extends AsyncTask<Void, Void, ArrayList<String>> {
     private SQLiteDatabase mDb;
     private OnGetGroupsListener mListener;
 
-    public GetGroupsTask(SQLiteDatabase db, OnGetGroupsListener listener){
+    public GetGroupsTask(SQLiteDatabase db, OnGetGroupsListener listener) {
         mDb = db;
         mListener = listener;
     }
 
     @Override
     protected ArrayList<String> doInBackground(Void... params) {
-        if(mDb == null || !mDb.isOpen()){
+        if (mDb == null || !mDb.isOpen()) {
             return null;
         }
         final Cursor cursor = mDb.rawQuery(Constants.SELECT_QUERY_GROUPS, null);
         final ArrayList<String> list = new ArrayList<>();
 
-        if(cursor != null && cursor.moveToFirst()){
-            do{
+        if (cursor != null && cursor.moveToFirst()) {
+            do {
                 list.add(cursor.getString(0));
-            } while(cursor.moveToNext());
+            } while (cursor.moveToNext());
         }
-        if(cursor != null){
+        if (cursor != null) {
             cursor.close();
         }
         return list;
     }
 
     @Override
-    protected void onPostExecute(ArrayList<String> list){
+    protected void onPostExecute(ArrayList<String> list) {
         if (mListener != null) {
             mListener.onGetValues(list);
             mListener = null;

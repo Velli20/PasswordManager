@@ -26,20 +26,6 @@
 
 package com.velli.passwordmanager;
 
-import java.util.ArrayList;
-
-import com.afollestad.materialdialogs.DialogAction;
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.afollestad.materialdialogs.Theme;
-import com.velli.passwordmanager.collections.ListItemGroup;
-import com.velli.passwordmanager.adapter.ManageGroupsFragmentListAdapter;
-import com.velli.passwordmanager.adapter.ManageGroupsFragmentListAdapter.ManageGroupsFragmentAdapterCallback;
-import com.velli.passwordmanager.database.Constants;
-import com.velli.passwordmanager.database.OnGetGroupsListTaskListener;
-import com.velli.passwordmanager.database.PasswordDatabaseHandler;
-import com.velli.passwordmanager.widget.DialogTheme;
-import com.velli.passwordmanager.widget.NewGroupView;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -67,99 +53,119 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.CheckBox;
 import android.widget.ListView;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.afollestad.materialdialogs.Theme;
+import com.velli.passwordmanager.adapter.ManageGroupsFragmentListAdapter;
+import com.velli.passwordmanager.adapter.ManageGroupsFragmentListAdapter.ManageGroupsFragmentAdapterCallback;
+import com.velli.passwordmanager.collections.ListItemGroup;
+import com.velli.passwordmanager.database.Constants;
+import com.velli.passwordmanager.database.OnGetGroupsListTaskListener;
+import com.velli.passwordmanager.database.PasswordDatabaseHandler;
+import com.velli.passwordmanager.widget.DialogTheme;
+import com.velli.passwordmanager.widget.NewGroupView;
+
+import java.util.ArrayList;
+
 public class ActivityManageGroups extends ActivityBase implements OnClickListener, OnGetGroupsListTaskListener, ManageGroupsFragmentAdapterCallback, OnItemClickListener {
 
-	private static final String Tag = "ManageGroupsFragment ";
-	private static final boolean DEBUG = false;
-	
-	private ListView mList;
-	private ManageGroupsFragmentListAdapter mAdapter;
-	private ContextualToolbarCallback mContextualCallback;
-	private ActionMode mActionMode;
-	private MaterialDialog mDialog;
-	private Toolbar mToolbar;
-	private boolean mLogOutAutomatically = true;
+    private static final String Tag = "ManageGroupsFragment ";
+    private static final boolean DEBUG = false;
 
-	@Override
-	public int getActivityId() { return ApplicationBase.ACTIVITY_MANAGE_GROUPS; }
-
-	@Override
-	public String getTag() { return getClass().getSimpleName(); }
+    private ListView mList;
+    private ManageGroupsFragmentListAdapter mAdapter;
+    private ContextualToolbarCallback mContextualCallback;
+    private ActionMode mActionMode;
+    private MaterialDialog mDialog;
+    private Toolbar mToolbar;
+    private boolean mLogOutAutomatically = true;
 
     @Override
-    public boolean implementsOnDatabaseEditedListener() { return true; }
+    public int getActivityId() {
+        return ApplicationBase.ACTIVITY_MANAGE_GROUPS;
+    }
 
-	@Override
-	public void onCreate(Bundle savedInstanceState){
-		super.onCreate(savedInstanceState);
+    @Override
+    public String getTag() {
+        return getClass().getSimpleName();
+    }
 
-		final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+    @Override
+    public boolean implementsOnDatabaseEditedListener() {
+        return true;
+    }
 
-		setContentView(R.layout.activity_manage_groups);
-		mList = (ListView) findViewById(R.id.manage_groups_fragment_list);
-		mList.setOnItemClickListener(this);
-		
-		mToolbar = (Toolbar)findViewById(R.id.toolbar);
-		setSupportActionBar(mToolbar);	
-		
-		final ActionBar bar = getSupportActionBar();
-		
-		mLogOutAutomatically = prefs.getBoolean(getString(R.string.preference_key_log_out_automatically), true);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+
+        setContentView(R.layout.activity_manage_groups);
+        mList = (ListView) findViewById(R.id.manage_groups_fragment_list);
+        mList.setOnItemClickListener(this);
+
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+
+        final ActionBar bar = getSupportActionBar();
+
+        mLogOutAutomatically = prefs.getBoolean(getString(R.string.preference_key_log_out_automatically), true);
 
 
-        FloatingActionButton add = (FloatingActionButton)findViewById(R.id.manage_groups_add);
+        FloatingActionButton add = (FloatingActionButton) findViewById(R.id.manage_groups_add);
         add.setOnClickListener(this);
 
-		if(bar != null) {
-			bar.setDisplayShowHomeEnabled(true);
-			bar.setDisplayHomeAsUpEnabled(true);
-			bar.setDisplayShowTitleEnabled(true);
-			bar.setTitle(getString(R.string.title_groups));
-		}
-		mToolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_action_back));
-		mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				finish();
-				
-			}
-		});
-		
-		
-		if(mAdapter != null){
-			mList.setAdapter(mAdapter);
-		}
-	}
+        if (bar != null) {
+            bar.setDisplayShowHomeEnabled(true);
+            bar.setDisplayHomeAsUpEnabled(true);
+            bar.setDisplayShowTitleEnabled(true);
+            bar.setTitle(getString(R.string.title_groups));
+        }
+        mToolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_action_back));
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
 
-	
-	@Override
-	public void onResume(){
-		super.onResume();
-		final PasswordDatabaseHandler db = PasswordDatabaseHandler.getInstance();
+            }
+        });
 
-		if(db.isDatabaseOpen()){
-			getItems();
-		}
-	}
-	
-	@Override
-	public void onPause(){
-		super.onPause();
 
-		if(mLogOutAutomatically && mDialog != null){
-			mDialog.dismiss();
-			mDialog = null;
-		}
-	}
+        if (mAdapter != null) {
+            mList.setAdapter(mAdapter);
+        }
+    }
 
-	
-	@Override
-	public void onClick(View v) {
-		if(v.getId() == R.id.manage_groups_add){
-			createNewGroup();
-		} 
-		
-	}
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        final PasswordDatabaseHandler db = PasswordDatabaseHandler.getInstance();
+
+        if (db.isDatabaseOpen()) {
+            getItems();
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        if (mLogOutAutomatically && mDialog != null) {
+            mDialog.dismiss();
+            mDialog = null;
+        }
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.manage_groups_add) {
+            createNewGroup();
+        }
+
+    }
 
     @SuppressLint("InflateParams")
     public void createNewGroup() {
@@ -189,9 +195,9 @@ public class ActivityManageGroups extends ActivityBase implements OnClickListene
                 .show();
 
     }
-	
-	private void deleteGroups(){
-		if (mAdapter != null) {
+
+    private void deleteGroups() {
+        if (mAdapter != null) {
             final ArrayList<ListItemGroup> list = mAdapter.getItems();
 
             mDialog = new MaterialDialog.Builder(this)
@@ -226,180 +232,180 @@ public class ActivityManageGroups extends ActivityBase implements OnClickListene
                     .show();
 
         }
-		setDeleteVisible(false);
-	}
-	
-	private SpannableString composeRemoveDialogMessage(ArrayList<ListItemGroup> list){
-		final int size = list.size() - 1;
-		final SpannableStringBuilder builder = new SpannableStringBuilder();
-		final Resources r = getResources();
-		int checkedCount = 0;
-		
-		for(int i = size; i > 0; i--){
-			final ListItemGroup group = list.get(i);
-			if(group.checked){ 
-				checkedCount++;
-				final ArrayList<String> selectedPasswords = group.passwordsTitles;
-				final int selectedPasswordCount = selectedPasswords.size();
-				
-				for(int y = 0; y < selectedPasswordCount; y++){
-					final StyleSpan italicSpan = new StyleSpan(Typeface.BOLD);
-					String title = selectedPasswords.get(y);
-					if(builder.toString().length() == 0){
-						builder.append("\n");
-					}
-					builder.append("\n- ").append(title);
-					builder.setSpan(italicSpan, builder.length() - title.length(), builder.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-				}
-			}
-		}
-		
-		boolean passwordsSelected = builder.toString().isEmpty();
-		
-		builder.insert(0, checkedCount > 1? r.getString(!passwordsSelected ? R.string.title_remove_group_with_passwords : R.string.title_remove_groups) 
-				: r.getString(!passwordsSelected ? R.string.title_remove_group_with_passwords : R.string.title_remove_group));
-		
-		return new SpannableString(builder);
-	}
+        setDeleteVisible(false);
+    }
 
-	@Override
-	public void onDatabaseHasBeenEdited(String tablename, long rowid) {
-		if(Constants.TABLE_GROUPS.equals(tablename)){
-			uncheckAllItems();
-			getItems();
-		}
-		
-	}
-	
-	private void getItems(){
-		if(DEBUG){
-			Log.i(Tag, Tag + "getItems()");
-		}
+    private SpannableString composeRemoveDialogMessage(ArrayList<ListItemGroup> list) {
+        final int size = list.size() - 1;
+        final SpannableStringBuilder builder = new SpannableStringBuilder();
+        final Resources r = getResources();
+        int checkedCount = 0;
+
+        for (int i = size; i > 0; i--) {
+            final ListItemGroup group = list.get(i);
+            if (group.checked) {
+                checkedCount++;
+                final ArrayList<String> selectedPasswords = group.passwordsTitles;
+                final int selectedPasswordCount = selectedPasswords.size();
+
+                for (int y = 0; y < selectedPasswordCount; y++) {
+                    final StyleSpan italicSpan = new StyleSpan(Typeface.BOLD);
+                    String title = selectedPasswords.get(y);
+                    if (builder.toString().length() == 0) {
+                        builder.append("\n");
+                    }
+                    builder.append("\n- ").append(title);
+                    builder.setSpan(italicSpan, builder.length() - title.length(), builder.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                }
+            }
+        }
+
+        boolean passwordsSelected = builder.toString().isEmpty();
+
+        builder.insert(0, checkedCount > 1 ? r.getString(!passwordsSelected ? R.string.title_remove_group_with_passwords : R.string.title_remove_groups)
+                : r.getString(!passwordsSelected ? R.string.title_remove_group_with_passwords : R.string.title_remove_group));
+
+        return new SpannableString(builder);
+    }
+
+    @Override
+    public void onDatabaseHasBeenEdited(String tablename, long rowid) {
+        if (Constants.TABLE_GROUPS.equals(tablename)) {
+            uncheckAllItems();
+            getItems();
+        }
+
+    }
+
+    private void getItems() {
+        if (DEBUG) {
+            Log.i(Tag, Tag + "getItems()");
+        }
         PasswordDatabaseHandler.getInstance().getGroupsList(this);
-	}
+    }
 
-	@Override
-	public void onGetValuesCount(@NonNull ArrayList<ListItemGroup> listgroup) {
-		if(DEBUG){
-			Log.i(Tag, Tag + "onGetValuesCount()");
-		}
-		final Resources res = getResources();
-		final ListItemGroup title = new ListItemGroup();
-		final ArrayList<ListItemGroup> list = new ArrayList<>();
-		
-		title.primary = res.getString(R.string.title_groups);
-		title.viewType = ManageGroupsFragmentListAdapter.VIEW_TYPE_TITLE;
-		list.add(title);
-		list.addAll(listgroup);
-		
-		if(mAdapter == null){
-			mAdapter = new ManageGroupsFragmentListAdapter(this, list);
-			mAdapter.setManageGroupsFragmentAdapterCallback(this);
-			mList.setAdapter(mAdapter);
-		} else {
-			mAdapter.setListItems(list);
-			mAdapter.notifyDataSetChanged();
-		}
-		
-	}
+    @Override
+    public void onGetValuesCount(@NonNull ArrayList<ListItemGroup> listgroup) {
+        if (DEBUG) {
+            Log.i(Tag, Tag + "onGetValuesCount()");
+        }
+        final Resources res = getResources();
+        final ListItemGroup title = new ListItemGroup();
+        final ArrayList<ListItemGroup> list = new ArrayList<>();
+
+        title.primary = res.getString(R.string.title_groups);
+        title.viewType = ManageGroupsFragmentListAdapter.VIEW_TYPE_TITLE;
+        list.add(title);
+        list.addAll(listgroup);
+
+        if (mAdapter == null) {
+            mAdapter = new ManageGroupsFragmentListAdapter(this, list);
+            mAdapter.setManageGroupsFragmentAdapterCallback(this);
+            mList.setAdapter(mAdapter);
+        } else {
+            mAdapter.setListItems(list);
+            mAdapter.notifyDataSetChanged();
+        }
+
+    }
 
 
-	@Override
-	public void onCheckboxChecked() {
-		checkIfItemsAreChecked();
-		
-	}
-	
-	private void checkIfItemsAreChecked(){
-		if(mAdapter != null){
-			final ArrayList<ListItemGroup> list = mAdapter.getItems();
-			if(getCheckedItemsCount(list) > 0){
-				setDeleteVisible(true);
-			} else {
-				setDeleteVisible(false);
-			}
-		}
-	}
-	
-	private int getCheckedItemsCount(@NonNull ArrayList<ListItemGroup> list){
-		final int size = list.size() - 1;
-		int count = 0;
-		
-		for(int i = size; i > 0; i--){
-			final ListItemGroup group = list.get(i);
-			if(group.checked){
-				count++;
-			}
-		}
-		return count;
-	}
-	
-	private void setDeleteVisible(boolean visible){
-		if(visible){
-			if (mContextualCallback == null || mActionMode == null) {
-				mContextualCallback = new ContextualToolbarCallback();
-				mActionMode = mToolbar.startActionMode(mContextualCallback);
-			} else {
-				mActionMode.invalidate();
-			}
-		} else {
-			mActionMode.finish();
-		}
-	}
+    @Override
+    public void onCheckboxChecked() {
+        checkIfItemsAreChecked();
 
-	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		final CheckBox c = (CheckBox) view.findViewById(R.id.list_item_group_checkbox);
-		if(c != null){
-			c.performClick();
-		}
-		
-	}
-	
-	private void uncheckAllItems(){
-		ArrayList<ListItemGroup> list = mAdapter.getItems();
-		for(ListItemGroup l : list){
-			l.checked = false;
-		}
-		mAdapter.notifyDataSetChanged();
-	}
-	
-	private class ContextualToolbarCallback implements ActionMode.Callback {
-		private boolean mDelete = false;
-		
-		@Override
-		public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-			mDelete = false;
-			mode.getMenuInflater().inflate(R.menu.manage_groups_menu, menu);
-			return true;
-		}
+    }
 
-		@Override
-		public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-			final ArrayList<ListItemGroup> list = mAdapter.getItems();
-			mode.setTitle(String.valueOf(getCheckedItemsCount(list)));
-			return false;
-		}
+    private void checkIfItemsAreChecked() {
+        if (mAdapter != null) {
+            final ArrayList<ListItemGroup> list = mAdapter.getItems();
+            if (getCheckedItemsCount(list) > 0) {
+                setDeleteVisible(true);
+            } else {
+                setDeleteVisible(false);
+            }
+        }
+    }
 
-		@Override
-		public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-			if(item.getItemId() == R.id.menu_remove_group){
-				mDelete = true;
-				deleteGroups();
-				return true;
-			}
-			return false;
-		}
+    private int getCheckedItemsCount(@NonNull ArrayList<ListItemGroup> list) {
+        final int size = list.size() - 1;
+        int count = 0;
 
-		@Override
-		public void onDestroyActionMode(ActionMode mode) {
-			mContextualCallback = null;
-			mActionMode = null;
-			if(!mDelete){
-				uncheckAllItems();
-			}
-		}
-		
-	}
+        for (int i = size; i > 0; i--) {
+            final ListItemGroup group = list.get(i);
+            if (group.checked) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private void setDeleteVisible(boolean visible) {
+        if (visible) {
+            if (mContextualCallback == null || mActionMode == null) {
+                mContextualCallback = new ContextualToolbarCallback();
+                mActionMode = mToolbar.startActionMode(mContextualCallback);
+            } else {
+                mActionMode.invalidate();
+            }
+        } else {
+            mActionMode.finish();
+        }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        final CheckBox c = (CheckBox) view.findViewById(R.id.list_item_group_checkbox);
+        if (c != null) {
+            c.performClick();
+        }
+
+    }
+
+    private void uncheckAllItems() {
+        ArrayList<ListItemGroup> list = mAdapter.getItems();
+        for (ListItemGroup l : list) {
+            l.checked = false;
+        }
+        mAdapter.notifyDataSetChanged();
+    }
+
+    private class ContextualToolbarCallback implements ActionMode.Callback {
+        private boolean mDelete = false;
+
+        @Override
+        public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+            mDelete = false;
+            mode.getMenuInflater().inflate(R.menu.manage_groups_menu, menu);
+            return true;
+        }
+
+        @Override
+        public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+            final ArrayList<ListItemGroup> list = mAdapter.getItems();
+            mode.setTitle(String.valueOf(getCheckedItemsCount(list)));
+            return false;
+        }
+
+        @Override
+        public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+            if (item.getItemId() == R.id.menu_remove_group) {
+                mDelete = true;
+                deleteGroups();
+                return true;
+            }
+            return false;
+        }
+
+        @Override
+        public void onDestroyActionMode(ActionMode mode) {
+            mContextualCallback = null;
+            mActionMode = null;
+            if (!mDelete) {
+                uncheckAllItems();
+            }
+        }
+
+    }
 
 }

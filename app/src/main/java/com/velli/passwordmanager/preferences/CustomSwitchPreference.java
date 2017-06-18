@@ -26,10 +26,6 @@
 
 package com.velli.passwordmanager.preferences;
 
-import static android.os.Build.VERSION_CODES.LOLLIPOP;
-
-import com.velli.passwordmanager.R;
-
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -38,54 +34,58 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.velli.passwordmanager.R;
+
+import static android.os.Build.VERSION_CODES.LOLLIPOP;
+
 public class CustomSwitchPreference extends CustomPreferenceState {
-	
-	public CustomSwitchPreference(Context context) {
-		super(context);
-		init(context, null, 0, 0);
-	}
-	
-	public CustomSwitchPreference(Context context, AttributeSet attrs) {
-		super(context, attrs);
-		init(context, attrs, 0, 0);
-	}
-	
-	public CustomSwitchPreference(Context context, AttributeSet attrs, int defStyleAttr) {
-		super(context, attrs, defStyleAttr);
-		init(context, attrs, defStyleAttr, 0);
-	}
-	
-	@TargetApi(LOLLIPOP)
-	public CustomSwitchPreference(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-		super(context, attrs, defStyleAttr, defStyleRes);
-		init(context, attrs, defStyleAttr, defStyleRes);
-	}
-	
-	private void init(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes){
-		TypedArray typedArray = context.obtainStyledAttributes(attrs,
-				new int[] { android.R.attr.summaryOn,
-						android.R.attr.summaryOff,
-						android.R.attr.disableDependentsState }, defStyleAttr, defStyleRes);
-		setSummaryOn(typedArray.getString(0));
-		setSummaryOff(typedArray.getString(1));
-		setDisableDependentsState(typedArray.getBoolean(3, false));
-		typedArray.recycle();
-	}
-	
-	@Override
-	protected View onCreateView(ViewGroup parent) {
-		super.onCreateView(parent);
-		setWidgetLayoutResource(R.layout.view_preference_widget_switch);
-		return super.onCreateView(parent);
-	}
 
-	@Override
-	protected void onBindView(View view) {
-		super.onBindView(view);
-		SwitchCompat mSwitch = (SwitchCompat) view.findViewById(R.id.switchWidget);
-		mSwitch.setChecked(isChecked());
+    public CustomSwitchPreference(Context context) {
+        super(context);
+        init(context, null, 0, 0);
+    }
 
-		syncSummaryView(view);
-	}
+    public CustomSwitchPreference(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init(context, attrs, 0, 0);
+    }
+
+    public CustomSwitchPreference(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init(context, attrs, defStyleAttr, 0);
+    }
+
+    @TargetApi(LOLLIPOP)
+    public CustomSwitchPreference(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+        init(context, attrs, defStyleAttr, defStyleRes);
+    }
+
+    private void init(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        TypedArray typedArray = context.obtainStyledAttributes(attrs,
+                new int[]{android.R.attr.summaryOn,
+                        android.R.attr.summaryOff,
+                        android.R.attr.disableDependentsState}, defStyleAttr, defStyleRes);
+        setSummaryOn(typedArray.getString(0));
+        setSummaryOff(typedArray.getString(1));
+        setDisableDependentsState(typedArray.getBoolean(3, false));
+        typedArray.recycle();
+    }
+
+    @Override
+    protected View onCreateView(ViewGroup parent) {
+        super.onCreateView(parent);
+        setWidgetLayoutResource(R.layout.view_preference_widget_switch);
+        return super.onCreateView(parent);
+    }
+
+    @Override
+    protected void onBindView(View view) {
+        super.onBindView(view);
+        SwitchCompat mSwitch = (SwitchCompat) view.findViewById(R.id.switchWidget);
+        mSwitch.setChecked(isChecked());
+
+        syncSummaryView(view);
+    }
 
 }

@@ -26,22 +26,15 @@
 
 package com.velli.passwordmanager.widget;
 
-import com.velli.passwordmanager.collections.CustomLinearLayoutManager;
-
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
+import com.velli.passwordmanager.collections.CustomLinearLayoutManager;
+
 public class SnappyRecyclerView extends RecyclerView {
-	public interface ISnappyLayoutManager {        
-
-	    int getPositionForVelocity(int velocityX, int velocityY);        
-	    int getFixScrollPos();        
-
-	}
-	
-	public SnappyRecyclerView(Context context) {
+    public SnappyRecyclerView(Context context) {
         super(context);
     }
 
@@ -55,40 +48,48 @@ public class SnappyRecyclerView extends RecyclerView {
 
     @Override
     public boolean fling(int velocityX, int velocityY) {
-        final LayoutManager lm = getLayoutManager();        
+        final LayoutManager lm = getLayoutManager();
 
-      if (lm instanceof CustomLinearLayoutManager) {
+        if (lm instanceof CustomLinearLayoutManager) {
             super.smoothScrollToPosition(((CustomLinearLayoutManager) getLayoutManager())
                     .getPositionForVelocity(velocityX, velocityY));
             return true;
         }
         return super.fling(velocityX, velocityY);
-    }        
+    }
 
     @Override
     public boolean onTouchEvent(MotionEvent e) {
-        // We want the parent to handle all touch events--there's a lot going on there, 
+        // We want the parent to handle all touch events--there's a lot going on there,
         // and there is no reason to overwrite that functionality--bad things will happen.
         final boolean ret = super.onTouchEvent(e);
-        final LayoutManager lm = getLayoutManager();        
+        final LayoutManager lm = getLayoutManager();
 
-      if (lm instanceof CustomLinearLayoutManager
-                && (e.getAction() == MotionEvent.ACTION_UP || 
-                    e.getAction() == MotionEvent.ACTION_CANCEL)
+        if (lm instanceof CustomLinearLayoutManager
+                && (e.getAction() == MotionEvent.ACTION_UP ||
+                e.getAction() == MotionEvent.ACTION_CANCEL)
                 && getScrollState() == SCROLL_STATE_IDLE) {
-            // The layout manager is a SnappyLayoutManager, which means that the 
-            // children should be snapped to a grid at the end of a drag or 
-            // fling. The motion event is either a user lifting their finger or 
-            // the cancellation of a motion events, so this is the time to take 
+            // The layout manager is a SnappyLayoutManager, which means that the
+            // children should be snapped to a grid at the end of a drag or
+            // fling. The motion event is either a user lifting their finger or
+            // the cancellation of a motion events, so this is the time to take
             // over the scrolling to perform our own functionality.
-            // Finally, the scroll state is idle--meaning that the resultant 
-            // velocity after the user's gesture was below the threshold, and 
-            // no fling was performed, so the view may be in an unaligned state 
+            // Finally, the scroll state is idle--meaning that the resultant
+            // velocity after the user's gesture was below the threshold, and
+            // no fling was performed, so the view may be in an unaligned state
             // and will not be flung to a proper state.
             smoothScrollToPosition(((CustomLinearLayoutManager) lm).getFixScrollPos());
-        }        
+        }
 
-      return ret;
+        return ret;
+    }
+
+    public interface ISnappyLayoutManager {
+
+        int getPositionForVelocity(int velocityX, int velocityY);
+
+        int getFixScrollPos();
+
     }
 }
 

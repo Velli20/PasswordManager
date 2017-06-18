@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ /*
   ~  * MIT License
   ~  *
@@ -26,6 +25,6 @@
   -->
 
 <resources>
-    <item type="id" name="bottom_sheet_new_password" />
-    <item type="id" name="bottom_sheet_new_credit_card" />
+    <item name="bottom_sheet_new_password" type="id" />
+    <item name="bottom_sheet_new_credit_card" type="id" />
 </resources>

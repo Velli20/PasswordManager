@@ -33,117 +33,115 @@
     <style name="MainActivityStyle" parent="Theme.AppCompat.Light.DarkActionBar">
 
         <!-- API 14 theme customizations can go here. -->
-   
+
         <item name="colorPrimary">@color/color_primary_500</item>
-        <item name="colorPrimaryDark">@color/color_primary_dark_700</item> 
-        
+        <item name="colorPrimaryDark">@color/color_primary_dark_700</item>
+
         <item name="colorAccent">@color/color_accent_a100</item>
         <item name="colorControlNormal">@color/color_accent_a100</item>
-        
-        <item name="android:textColorPrimary">@color/l_black</item> 
-        <item name="android:textColorSecondary">@color/l_black</item>  
-               
+
+        <item name="android:textColorPrimary">@color/l_black</item>
+        <item name="android:textColorSecondary">@color/l_black</item>
+
         <item name="android:windowBackground">@color/window_background</item>
-        
+
         <item name="searchViewStyle">@style/BaseThemeLight.SearchViewStyle</item>
         <item name="actionModeStyle">@style/ContextualStyle</item>
-        <item name="windowActionBar">false</item> 
+        <item name="windowActionBar">false</item>
         <item name="windowActionModeOverlay">true</item>
         <item name="windowNoTitle">true</item>
-        
+
     </style>
-    
+
     <style name="LockScreenActivityStyle" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/color_primary_500</item>
-        <item name="colorPrimaryDark">@color/color_primary_dark_700</item> 
-        
+        <item name="colorPrimaryDark">@color/color_primary_dark_700</item>
+
         <item name="colorAccent">@color/color_accent_a100</item>
         <item name="colorControlNormal">@color/color_accent_a100</item>
-        
-        <item name="android:textColorPrimary">@color/l_black</item> 
-        <item name="android:textColorSecondary">@color/l_black</item>  
-               
+
+        <item name="android:textColorPrimary">@color/l_black</item>
+        <item name="android:textColorSecondary">@color/l_black</item>
+
         <item name="android:windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowBackground">@color/color_primary_500</item>
     </style>
-    
+
     <style name="GeneratePasswordActivityStyle" parent="Theme.AppCompat">
         <item name="android:windowBackground">@color/white</item>
         <item name="colorPrimary">@color/color_primary_500</item>
-        <item name="colorPrimaryDark">@color/color_primary_dark_700</item> 
-        
+        <item name="colorPrimaryDark">@color/color_primary_dark_700</item>
+
         <item name="colorAccent">@color/color_accent_a200</item>
         <item name="colorControlNormal">@color/color_accent_a200</item>
         <item name="colorControlHighlight">@color/color_accent_a500</item>
-        
-        <item name="windowActionBar">false</item> 
+
+        <item name="windowActionBar">false</item>
         <item name="windowActionModeOverlay">true</item>
         <item name="windowNoTitle">true</item>
-        
+
         <item name="actionModeStyle">@style/ContextualStyle</item>
     </style>
-    
+
     <style name="ManageGroupsActivityStyle" parent="Theme.AppCompat">
         <item name="colorPrimary">@color/color_primary_500</item>
-        <item name="colorPrimaryDark">@color/color_primary_dark_700</item> 
-        
+        <item name="colorPrimaryDark">@color/color_primary_dark_700</item>
+
         <item name="colorAccent">@color/color_accent_a100_dark</item>
         <item name="colorControlNormal">@color/color_accent_a100_dark</item>
         <item name="colorControlHighlight">@color/color_accent_a400_dark</item>
-        
-        <item name="windowActionBar">false</item> 
+
+        <item name="windowActionBar">false</item>
         <item name="windowActionModeOverlay">true</item>
         <item name="windowNoTitle">true</item>
-        
+
         <item name="actionModeStyle">@style/ContextualStyle</item>
     </style>
-    
-    <style name="SettingsActivityStyle" parent="@style/ManageGroupsActivityStyle">
-    </style>   
-    
-    <style name="LicencesActivityStyle" parent="@style/SettingsActivityStyle">
-    </style> 
-    
+
+    <style name="SettingsActivityStyle" parent="@style/ManageGroupsActivityStyle"></style>
+
+    <style name="LicencesActivityStyle" parent="@style/SettingsActivityStyle"></style>
+
     <style name="AddPasswordActivityStyle" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/color_primary_500</item>
-        <item name="colorPrimaryDark">@color/color_primary_dark_700</item> 
-        
+        <item name="colorPrimaryDark">@color/color_primary_dark_700</item>
+
         <item name="colorAccent">@color/color_accent_a100</item>
         <item name="colorControlNormal">@color/color_accent_a100</item>
         <item name="colorControlHighlight">@color/color_accent_a500</item>
-        
-        <item name="windowActionBar">false</item> 
+
+        <item name="windowActionBar">false</item>
         <item name="windowActionModeOverlay">true</item>
         <item name="windowNoTitle">true</item>
-        
+
         <item name="actionModeStyle">@style/ContextualStyle</item>
-    </style> 
-   
+    </style>
+
     <style name="ToolbarStyle" parent="@style/Widget.AppCompat.Light.ActionBar">
-          
-        
+
+
         <item name="android:textColorPrimary">@color/white</item>
-        <item name="android:textColorSecondary">@color/white</item> 
-        
+        <item name="android:textColorSecondary">@color/white</item>
+
         <item name="popupTheme">@style/Theme.AppCompat.Light</item>
         <item name="colorAccent">@color/white</item>
         <item name="colorControlNormal">@color/white</item>
         <item name="colorPrimary">@color/white</item>
-        <item name="colorPrimaryDark">@color/white</item> 
+        <item name="colorPrimaryDark">@color/white</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
         <item name="actionModeStyle">@style/ContextualStyle</item>
-        
+
     </style>
-    
+
     <style name="AcitivityWebLogin" parent="Theme.AppCompat.Light.Dialog">
         <item name="colorPrimary">@color/color_primary_500</item>
-        <item name="colorPrimaryDark">@color/color_primary_dark_700</item> 
-        
+        <item name="colorPrimaryDark">@color/color_primary_dark_700</item>
+
         <item name="colorAccent">@color/color_accent_a100</item>
         <item name="colorControlNormal">@color/color_accent_a100</item>
-        
+
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowContentOverlay">@null</item>
@@ -151,8 +149,7 @@
         <item name="android:windowIsFloating">true</item>
         <item name="android:backgroundDimEnabled">false</item>
 
-     </style>
-    
-  
+    </style>
+
 
 </resources>

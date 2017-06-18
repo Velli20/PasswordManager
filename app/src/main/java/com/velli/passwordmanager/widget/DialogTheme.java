@@ -27,5 +27,5 @@
 package com.velli.passwordmanager.widget;
 
 public enum DialogTheme {
-	Dark, Light
+    Dark, Light
 }

@@ -53,12 +53,12 @@ public class AddPasswordsTask extends AsyncTask<Void, Void, Integer> {
 
     @Override
     protected Integer doInBackground(Void... params) {
-        if(mPasswords == null || mPasswords.size() == 0) {
+        if (mPasswords == null || mPasswords.size() == 0) {
             return 0;
         }
         int succeedsCount = 0;
 
-        for(Password entry : mPasswords) {
+        for (Password entry : mPasswords) {
             if (entry == null) {
                 continue;
             }
@@ -71,10 +71,10 @@ public class AddPasswordsTask extends AsyncTask<Void, Void, Integer> {
             values.put(Constants.KEY_ICON, entry.getLoginIcon());
             values.put(Constants.KEY_LOGIN_TYPE, entry.getLoginType());
 
-            if(entry.getGroup() != null && !entry.getGroup().isEmpty()) {
+            if (entry.getGroup() != null && !entry.getGroup().isEmpty()) {
                 int result = PasswordDatabaseHandler.checkIfGroupExists(entry.getGroup(), mDb);
 
-                if(result == Constants.RESULT_OK){
+                if (result == Constants.RESULT_OK) {
                     new AddNewGroupTask(mDb, entry.getGroup()).doInBackground();
                 }
             }
@@ -101,7 +101,7 @@ public class AddPasswordsTask extends AsyncTask<Void, Void, Integer> {
             }
 
             int rowId = (int) mDb.insert(Constants.TABLE_ENTRIES, null, values);
-            if(rowId != -1) {
+            if (rowId != -1) {
                 succeedsCount++;
             }
         }
@@ -111,7 +111,7 @@ public class AddPasswordsTask extends AsyncTask<Void, Void, Integer> {
     @Override
     protected void onPostExecute(Integer result) {
         PasswordDatabaseHandler.getInstance().notifyCallbacks(Constants.TABLE_ENTRIES, -1);
-        if(mListener != null) {
+        if (mListener != null) {
             mListener.onPasswordsAdded(result, mPasswords != null ? mPasswords.size() : 0);
         }
     }

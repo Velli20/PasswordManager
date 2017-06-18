@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ /*
   ~  * MIT License
   ~  *
@@ -26,18 +25,18 @@
   -->
 
 <resources>
-    
+
     <color name="color_primary_500">#03a9f4</color>
     <color name="color_primary_dark_700">#0288d1</color>
-    
+
     <color name="color_accent_a200">#FF4081</color>
     <color name="color_accent_a100">#FF80AB</color>
     <color name="color_accent_a500">#F50057</color>
-    
+
     <color name="color_accent_a200_dark">#40c4ff</color>
     <color name="color_accent_a100_dark">#80d8ff</color>
     <color name="color_accent_a400_dark">#00e5ff</color>
-    
+
     <color name="fab_menu_background">#00FFFFFF</color>
     <color name="fab_menu_background_open">#B3FFFFFF</color>
 
@@ -51,10 +50,10 @@
     <color name="window_background">#eeeeee</color>
     <color name="licences_window_background">#424242</color>
     <color name="new_entry_error">#f44336</color>
-    
+
     <color name="password_error">#f44336</color>
     <color name="password_weak">#f44336</color>
     <color name="password_fair">#fbc02d</color>
     <color name="password_strong">#8bc34a</color>
-    
+
 </resources>

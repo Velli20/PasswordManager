@@ -39,7 +39,7 @@ public class PasswordParser {
     public static Password parsePassword(Cursor cursor) {
         final Password entry = new Password();
 
-        if(cursor.getInt(cursor.getColumnIndex(Constants.KEY_ENTRY_TYPE)) == Constants.ENTRY_TYPE_CREDIT_CARD){
+        if (cursor.getInt(cursor.getColumnIndex(Constants.KEY_ENTRY_TYPE)) == Constants.ENTRY_TYPE_CREDIT_CARD) {
             final CreditCardInfo card = parseCreditCard(cursor);
 
             entry.setDescription(cursor.getString(cursor.getColumnIndex(Constants.KEY_DESCRIPTION)));
@@ -53,7 +53,7 @@ public class PasswordParser {
                     cursor.getString(cursor.getColumnIndex(Constants.KEY_NOTES)));
             entry.setAppPackageName(cursor.getString(cursor.getColumnIndex(Constants.KEY_APP_PACKAGE_NAME)));
 
-            if(cursor.getInt(cursor.getColumnIndex(Constants.KEY_ENTRY_TYPE)) == Constants.ENTRY_TYPE_WIFI_PASSWORD){
+            if (cursor.getInt(cursor.getColumnIndex(Constants.KEY_ENTRY_TYPE)) == Constants.ENTRY_TYPE_WIFI_PASSWORD) {
                 entry.setWifiSecurity(cursor.getString(cursor.getColumnIndex(Constants.KEY_WIFI_SECURITY)));
                 entry.setNetworkSSID(cursor.getString(cursor.getColumnIndex(Constants.KEY_WIFI_SSID)));
                 entry.setIsWifiPassword(true);

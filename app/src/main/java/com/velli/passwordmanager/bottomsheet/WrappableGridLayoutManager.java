@@ -32,17 +32,17 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.velli.passwordmanager.roboto.RobotoButton;
 import com.velli.passwordmanager.R;
+import com.velli.passwordmanager.roboto.RobotoButton;
 
 public class WrappableGridLayoutManager extends GridLayoutManager {
 
 
+    private int[] mMeasuredDimension = new int[2];
+
     public WrappableGridLayoutManager(Context context, int spanCount) {
         super(context, spanCount);
     }
-
-    private int[] mMeasuredDimension = new int[2];
 
     @Override
     public void onMeasure(RecyclerView.Recycler recycler, RecyclerView.State state, int widthSpec, int heightSpec) {
@@ -119,7 +119,7 @@ public class WrappableGridLayoutManager extends GridLayoutManager {
 
             view.measure(childWidthSpec, childHeightSpec);
 
-            RobotoButton button = (RobotoButton)view.findViewById(R.id.list_item_bottom_sheet_button);
+            RobotoButton button = (RobotoButton) view.findViewById(R.id.list_item_bottom_sheet_button);
             measuredDimension[1] = view.getMeasuredHeight() + p.bottomMargin + p.topMargin + button.getCompoundDrawables()[1].getIntrinsicHeight();
 
             measuredDimension[0] = view.getMeasuredWidth() + p.leftMargin + p.rightMargin;

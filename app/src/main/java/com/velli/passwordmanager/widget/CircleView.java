@@ -42,8 +42,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.velli.passwordmanager.roboto.RobotoTextView;
 import com.velli.passwordmanager.R;
+import com.velli.passwordmanager.roboto.RobotoTextView;
 
 /**
  * Created by Hp on 8.1.2016.
@@ -65,10 +65,6 @@ public class CircleView extends View {
     private OnCircleSelectedListener mListener;
 
 
-    public interface OnCircleSelectedListener {
-        void onCircleSelected(CircleView v, boolean selected);
-    }
-
     public CircleView(Context context) {
         this(context, null, 0);
     }
@@ -85,17 +81,17 @@ public class CircleView extends View {
         int textColor = Color.WHITE;
         int textSize = 0;
 
-        if(attrs != null){
+        if (attrs != null) {
             TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.ListCircle, 0, 0);
             try {
                 String color = a.getString(R.styleable.ListCircle_background_color);
                 String colorSelected = a.getString(R.styleable.ListCircle_background_color_selected);
                 textSize = a.getDimensionPixelSize(R.styleable.ListCircle_letter_size, 0);
                 mDrawableNormal = a.getDrawable(R.styleable.ListCircle_drawable_normal);
-                if(color != null){
+                if (color != null) {
                     mBackgroundColor = Color.parseColor(color);
                 }
-                if(colorSelected != null){
+                if (colorSelected != null) {
                     mSelectedColor = Color.parseColor(colorSelected);
                 }
 
@@ -121,74 +117,76 @@ public class CircleView extends View {
         mLetterPaint.setTextAlign(Paint.Align.CENTER);
         mLetterPaint.setAntiAlias(true);
 
-        if(!isInEditMode()){
+        if (!isInEditMode()) {
             Typeface font = RobotoTextView.getTypeface(res, 1);
-            if(font != null){
+            if (font != null) {
                 mLetterPaint.setTypeface(font);
             }
         }
     }
 
-    private float convertFromPxToDip(float value){
+    private float convertFromPxToDip(float value) {
         return scale * value;
     }
 
-    public void setCircleBackgroundColor(int color){
+    public void setCircleBackgroundColor(int color) {
         mBackgroundColor = color;
         invalidate();
     }
 
-    public void setCircleBacgroundSelectedColor(int color){
+    public void setCircleBacgroundSelectedColor(int color) {
         mSelectedColor = color;
         invalidate();
     }
 
-    public void setOnCircleSelectedListener(OnCircleSelectedListener l){
+    public void setOnCircleSelectedListener(OnCircleSelectedListener l) {
         mListener = l;
     }
 
-    public void setCircleText(String text){
+    public void setCircleText(String text) {
         mText = text;
         invalidate();
     }
 
-    public void setCircleDrawable(Drawable d){
+    public void setCircleDrawable(Drawable d) {
         mDrawableNormal = d;
-        if(mDrawableNormal != null) {
+        if (mDrawableNormal != null) {
             mDrawableNormal.mutate();
             mDrawableNormal.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN);
         }
         invalidate();
     }
 
-    public void setCircleSelectedDrawable(Drawable d){
+    public void setCircleSelectedDrawable(Drawable d) {
         mDrawableSelected = d;
-        if(mDrawableSelected != null) {
+        if (mDrawableSelected != null) {
             mDrawableSelected.mutate();
             mDrawableSelected.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN);
         }
         invalidate();
     }
 
-    public void setSelected(final boolean selected){
+    @Override
+    public boolean performClick() {
+        performSelect();
+        return super.performClick();
+    }
+
+    public boolean isSelected() {
+        return mIsSelected;
+    }
+
+    public void setSelected(final boolean selected) {
         mBackgroundPaint.setColor(mIsSelected ? mSelectedColor : mBackgroundColor);
         mIsSelected = selected;
         invalidate();
     }
 
-    @Override
-    public boolean performClick(){
-        performSelect();
-        return super.performClick();
+    public boolean isSelectable() {
+        return mIsSelectable;
     }
 
-    public boolean isSelected(){
-        return mIsSelected;
-    }
-
-    public boolean isSelectable() {return mIsSelectable; }
-
-    public void setSelectable(boolean selectable){
+    public void setSelectable(boolean selectable) {
         mIsSelectable = selectable;
         invalidate();
     }
@@ -196,7 +194,7 @@ public class CircleView extends View {
     @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if(!mIsSelectable){
+        if (!mIsSelectable) {
             return false;
         }
         switch (event.getAction()) {
@@ -210,8 +208,8 @@ public class CircleView extends View {
         return false;
     }
 
-    private void performSelect(){
-        if(mListener != null){
+    private void performSelect() {
+        if (mListener != null) {
             mListener.onCircleSelected(this, !mIsSelected);
         }
         mAnimated = false;
@@ -232,7 +230,7 @@ public class CircleView extends View {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                if(!mAnimated) {
+                if (!mAnimated) {
                     mIsSelected = !mIsSelected;
                     mAnimated = true;
                     invalidate();
@@ -250,17 +248,17 @@ public class CircleView extends View {
     }
 
     @Override
-    public void onDraw(Canvas canvas){
+    public void onDraw(Canvas canvas) {
         final int width = getWidth();
         final int height = getHeight();
 
         final int textX = getWidth() / 2;
-        final int textY = (int) ((height / 2) - ((mLetterPaint.descent() + mLetterPaint.ascent()) / 2)) ;
+        final int textY = (int) ((height / 2) - ((mLetterPaint.descent() + mLetterPaint.ascent()) / 2));
         mBackgroundPaint.setColor(mIsSelected ? mSelectedColor : mBackgroundColor);
 
         canvas.drawCircle(width / 2, height / 2, width / 2, mBackgroundPaint);
 
-        if(mIsSelectable && mIsSelected && mDrawableSelected != null){
+        if (mIsSelectable && mIsSelected && mDrawableSelected != null) {
             int left = (width / 2) - (mDrawableSelected.getIntrinsicWidth() / 2);
             int right = (width / 2) + (mDrawableSelected.getIntrinsicWidth() / 2);
             int top = (height / 2) - (mDrawableSelected.getIntrinsicHeight() / 2);
@@ -268,7 +266,7 @@ public class CircleView extends View {
 
             mDrawableSelected.setBounds(+left, +top, +right, +bottom);
             mDrawableSelected.draw(canvas);
-        } else if(mDrawableNormal != null){
+        } else if (mDrawableNormal != null) {
             int left = (width / 2) - (mDrawableNormal.getIntrinsicWidth() / 2);
             int right = (width / 2) + (mDrawableNormal.getIntrinsicWidth() / 2);
             int top = (height / 2) - (mDrawableNormal.getIntrinsicHeight() / 2);
@@ -276,8 +274,12 @@ public class CircleView extends View {
 
             mDrawableNormal.setBounds(+left, +top, +right, +bottom);
             mDrawableNormal.draw(canvas);
-        } else if(!mText.isEmpty()){
+        } else if (!mText.isEmpty()) {
             canvas.drawText(mText, textX, textY, mLetterPaint);
         }
+    }
+
+    public interface OnCircleSelectedListener {
+        void onCircleSelected(CircleView v, boolean selected);
     }
 }

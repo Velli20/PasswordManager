@@ -56,14 +56,14 @@
         android:layout_marginRight="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="48dp"
-        app:passwordToggleEnabled="true"
-        app:hintTextAppearance="@style/LockScreenTextInputLayoutHint">
+        app:hintTextAppearance="@style/LockScreenTextInputLayoutHint"
+        app:passwordToggleEnabled="true">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/pin_lock_password_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -76,14 +76,14 @@
         android:layout_marginRight="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        app:passwordToggleEnabled="true"
-        app:hintTextAppearance="@style/LockScreenTextInputLayoutHint">
+        app:hintTextAppearance="@style/LockScreenTextInputLayoutHint"
+        app:passwordToggleEnabled="true">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/pin_lock_verify_password_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -91,13 +91,12 @@
         android:id="@+id/pin_lock_ok_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/title_log_in"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginStart="16dp" />
-
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/title_log_in" />
 
 
 </LinearLayout>

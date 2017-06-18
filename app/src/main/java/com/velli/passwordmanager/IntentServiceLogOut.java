@@ -31,19 +31,19 @@ import android.content.Intent;
 
 public class IntentServiceLogOut extends IntentService {
 
-	public IntentServiceLogOut() {
-		super(IntentServiceLogOut.class.getName());
-	}
-	
-	public IntentServiceLogOut(String name) {
-		super(name);
-		// TODO Auto-generated constructor stub
-	}
+    public IntentServiceLogOut() {
+        super(IntentServiceLogOut.class.getName());
+    }
 
-	@Override
-	protected void onHandleIntent(Intent intent) {
-		ApplicationBase.forceToLockApp();
-		
-	}
+    public IntentServiceLogOut(String name) {
+        super(name);
+        // TODO Auto-generated constructor stub
+    }
+
+    @Override
+    protected void onHandleIntent(Intent intent) {
+        ApplicationBase.forceToLockApp();
+
+    }
 
 }

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ /*
   ~  * MIT License
   ~  *
@@ -28,26 +27,26 @@
 <resources>
 
     <string name="app_name">Password Keeper</string>
-    
+
     <string name="accessibility_drawer_open">Avaa navigointipalkki</string>
     <string name="accessibility_drawer_close">Sulje navigointipalkki</string>
 
     <string-array name="credit_card_types">
-        <item >Visa</item>
-        <item >MasterCard</item>
-        <item >American Express</item>
-        <item >Discover</item>
+        <item>Visa</item>
+        <item>MasterCard</item>
+        <item>American Express</item>
+        <item>Discover</item>
     </string-array>
-    
+
     <string-array name="wifi_security_types">
-        <item >WEP</item>
-        <item >WPA/WPA2/FT PSK</item>
-        <item >802.1x EAP</item>
+        <item>WEP</item>
+        <item>WPA/WPA2/FT PSK</item>
+        <item>802.1x EAP</item>
     </string-array>
-    
+
     <string name="password_card_url">URL</string>
     <string name="password_card_username">Käyttäjätunnus</string>
-    
+
     <string name="label_none"> </string>
     <string name="label_all">Kaikki</string>
     <string name="label_starred">Tähdelliset</string>
@@ -68,9 +67,9 @@
     <string name="navigation_drawer_close">Sulje</string>
     <string name="navigation_label_all">Kaikki</string>
     <string name="navigation_label_starres">Tähdelliset</string>
-    
+
     <string name="group_personal">Henkilökohtainen</string>
-    
+
     <string name="new_entry_wifi_ssid">Verkon SSID</string>
     <string name="new_entry_wifi_security">Suojaus</string>
     <string name="new_entry_description">Kuvaus</string>
@@ -154,7 +153,7 @@
     <string name="action_please_wait">Odota&#8230;</string>
     <string name="action_login_to_web_site">Kirjaudu sisään Password Keeper:iin saadaksesi salasanan sivustolle</string>
     <string name="action_show_all_passwords">Näytä kaikki salasanat</string>
-    
+
     <string name="error_new_entry_no_description">Kuvaus on vaadittu</string>
     <string name="error_new_entry_too_long_description">Kuvaus on liian pitkä</string>
     <string name="error_new_entry_no_url">Osoite on vaadittu</string>
@@ -173,11 +172,11 @@
     <string name="error_group_name_field_is_empty">Nimikenttä on tyhjä!</string>
     <string name="error_group_name_invalid_charachter">Ryhmännimi sisältää virheellisiä merkkejä!</string>
     <string name="error_something_went_wrong">Jokin meni vikaan</string>
-    
+
     <string name="intent_share_label">Lisää uusi salasana</string>
     <string name="input_field_new_group">Ryhmän nimi</string>
     <string name="input_field_new_login_type">Kategorian nimi</string>
-    
+
     <string name="title_details">Tiedot</string>
     <string name="title_add_new_group">Lisää uusi ryhmä</string>
     <string name="title_add_new_login_type">Lisää uusi kategoria</string>
@@ -228,21 +227,21 @@
 
     <string name="hint_password">Salasana</string>
 
-    
+
     <string name="notification_log_out_title">Password Keeper sisään kirjautuneena</string>
     <string name="notification_log_out_content">Klikkaa kirjautuaksesi ulos</string>
-    
+
     <string name="welcome_view_hello">Tervetuloa!</string>
     <string name="welcome_view_tap_to_add">Klikkaa lisätäksesi uuden salasanan.</string>
     <string name="welcome_view_info">Sen jälkeen näet kaikki salasanakortit täällä.</string>
-    
+
     <string name="dialog_message_delete_password">Haluatko varmasti poistaa tämän salasanan?</string>
     <string name="dialog_confirm_restore">Tämä palautustiedosto tulee korvaamaan kaikki nykyiset salasanat. Palautuksen jälkeen toimintoa ei voi kumota. Haluatko varmasti jatkaa?</string>
-    
+
     <string name="export_passwords_sheet_passwords">Salasanat</string>
     <string name="export_passwords_sheet_credit_cards">Luottokortit</string>
     <string name="export_passwords_sheet_wifi_passwords">Wifi salasanat</string>
-    
+
     <string name="preference_summary_erase_data">Poista kaikki salasanat, kun uudelleenyritysten enimmäismäärä on ylittynyt</string>
     <string name="preference_summary_send_feedback">Kerro mitä mieltä olet tai ilmoita ongelmasta</string>
     <string name="preference_summary_export_passwords">Tallenna salasanat muistikortille .xls muodossa ja avaa haluamassasi taulukko-ohjelmassa.</string>
@@ -260,7 +259,7 @@
     <string name="preference_screen_title_general">Yleiset asetukset</string>
     <string name="preference_screen_title_about">Tietoja</string>
     <string name="preference_screen_title_passwords">Salasanat</string>
-    
+
     <string name="preference_title_last_login">Edellisen kerran kirjautuneena</string>
     <string name="preference_title_max_retry">Uudelleenyritysten määrä</string>
     <string name="preference_title_log_out_automatically">Kirjaudu ulos automaattisesti</string>
@@ -278,20 +277,19 @@
     <string name="preference_title_show_animations">Näytä animaatiot</string>
 
 
-
     <string-array name="password_generation_options">
-        <item >Password options</item>
-        <item >Pienet kirjaimet (a&#8211;z)</item>
-        <item >Isot kirjaimet (A&#8211;Z)</item>
-        <item >Numerot (0&#8211;9)</item>
-        <item >Erikoismerkit (!@#$%/)</item>
-        <item >Salasanan pituus</item>
+        <item>Password options</item>
+        <item>Pienet kirjaimet (a&#8211;z)</item>
+        <item>Isot kirjaimet (A&#8211;Z)</item>
+        <item>Numerot (0&#8211;9)</item>
+        <item>Erikoismerkit (!@#$%/)</item>
+        <item>Salasanan pituus</item>
     </string-array>
-    
+
     <plurals name="password">
         <item quantity="one">%d salasana</item>
         <item quantity="other">%d salasanaa</item>
     </plurals>
-    
+
 
 </resources>

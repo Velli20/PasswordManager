@@ -26,84 +26,83 @@
 
 package com.velli.passwordmanager.widget;
 
-import com.velli.passwordmanager.R;
-import com.velli.passwordmanager.roboto.RobotoTextView;
-
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
+import com.velli.passwordmanager.R;
+import com.velli.passwordmanager.roboto.RobotoTextView;
+
 public class setPasswordLengthView extends RelativeLayout implements OnSeekBarChangeListener {
-	private static final int MINIMUM_VALUE = 1;
-	private SeekBar mSeekbar;
-	private RobotoTextView mLabel;
-	private int mCurrentValue = 11;
-	
-	public setPasswordLengthView(Context context) {
-		super(context);
-	}
-	
-	public setPasswordLengthView(Context context, AttributeSet attrs) {
-		super(context, attrs);
-	}
-	
-	public setPasswordLengthView(Context context, AttributeSet attrs, int defStyleAttr) {
-		super(context, attrs, defStyleAttr);
-	}
-	
+    private static final int MINIMUM_VALUE = 1;
+    private SeekBar mSeekbar;
+    private RobotoTextView mLabel;
+    private int mCurrentValue = 11;
 
-	
-	@Override
-	public void onFinishInflate(){
-		super.onFinishInflate();
-		
-		mSeekbar = (SeekBar)findViewById(R.id.set_password_lenght_seekbar);
-		mSeekbar.setProgress(mCurrentValue);
-		mSeekbar.setOnSeekBarChangeListener(this);
-		
-		mLabel = (RobotoTextView)findViewById(R.id.set_password_lenght_label);
-		mLabel.setText(String.valueOf(mCurrentValue));
-	}
+    public setPasswordLengthView(Context context) {
+        super(context);
+    }
 
-	@Override
-	public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-		if(progress <= MINIMUM_VALUE){
-			seekBar.setProgress(MINIMUM_VALUE);
-			mLabel.setText(String.valueOf(MINIMUM_VALUE));
-		} else {
-			mLabel.setText(String.valueOf(progress));
-		}
-		
-	}
+    public setPasswordLengthView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
 
-	@Override
-	public void onStartTrackingTouch(SeekBar seekBar) {
-		// TODO Auto-generated method stub
-		
-	}
+    public setPasswordLengthView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+    }
 
-	@Override
-	public void onStopTrackingTouch(SeekBar seekBar) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	public void setValue(int value){
-		mCurrentValue = value;
-		if(value < MINIMUM_VALUE){
-			mCurrentValue = MINIMUM_VALUE;
-		} else {
-			mCurrentValue = value;
-		}
-		if(mSeekbar != null){
-			mSeekbar.setProgress(mCurrentValue);
-		}
-	}
-	
-	public int getValue(){
-		return mSeekbar.getProgress();
-	}
+
+    @Override
+    public void onFinishInflate() {
+        super.onFinishInflate();
+
+        mSeekbar = (SeekBar) findViewById(R.id.set_password_lenght_seekbar);
+        mSeekbar.setProgress(mCurrentValue);
+        mSeekbar.setOnSeekBarChangeListener(this);
+
+        mLabel = (RobotoTextView) findViewById(R.id.set_password_lenght_label);
+        mLabel.setText(String.valueOf(mCurrentValue));
+    }
+
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        if (progress <= MINIMUM_VALUE) {
+            seekBar.setProgress(MINIMUM_VALUE);
+            mLabel.setText(String.valueOf(MINIMUM_VALUE));
+        } else {
+            mLabel.setText(String.valueOf(progress));
+        }
+
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+        // TODO Auto-generated method stub
+
+    }
+
+    public int getValue() {
+        return mSeekbar.getProgress();
+    }
+
+    public void setValue(int value) {
+        mCurrentValue = value;
+        if (value < MINIMUM_VALUE) {
+            mCurrentValue = MINIMUM_VALUE;
+        } else {
+            mCurrentValue = value;
+        }
+        if (mSeekbar != null) {
+            mSeekbar.setProgress(mCurrentValue);
+        }
+    }
 
 }

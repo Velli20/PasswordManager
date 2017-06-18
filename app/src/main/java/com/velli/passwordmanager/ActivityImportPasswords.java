@@ -28,7 +28,6 @@ package com.velli.passwordmanager;
 
 
 import android.os.Bundle;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -40,7 +39,6 @@ import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.velli.passwordmanager.adapter.PasswordCardsListAdapter;
 import com.velli.passwordmanager.adapter.PasswordCardsSmallAdapter;
 import com.velli.passwordmanager.database.OnGetPasswordsListener;
 import com.velli.passwordmanager.database.OnPasswordsAddedListener;
@@ -58,10 +56,14 @@ public class ActivityImportPasswords extends ActivityBase implements PasswordCar
     private PasswordCardsSmallAdapter mAdapter;
 
     @Override
-    public int getActivityId() { return ApplicationBase.ACTIVITY_IMPORT_PASSWORDS; }
+    public int getActivityId() {
+        return ApplicationBase.ACTIVITY_IMPORT_PASSWORDS;
+    }
 
     @Override
-    public String getTag() { return getClass().getSimpleName(); }
+    public String getTag() {
+        return getClass().getSimpleName();
+    }
 
 
     @Override
@@ -80,7 +82,7 @@ public class ActivityImportPasswords extends ActivityBase implements PasswordCar
         });
 
         mSelectedAll = (CheckBox) mToolbar.findViewById(R.id.activity_import_passwords_checkbox_all);
-        if(mSelectedAll != null) {
+        if (mSelectedAll != null) {
             mSelectedAll.setText("0 " + getString(R.string.title_selected));
             mSelectedAll.setOnCheckedChangeListener(this);
         }
@@ -93,7 +95,7 @@ public class ActivityImportPasswords extends ActivityBase implements PasswordCar
 
         String uri = getIntent().getStringExtra(INTENT_EXTRA_FILE);
 
-        if(uri != null) {
+        if (uri != null) {
             final File file = new File(uri);
 
             new ExcelImportPasswordsTask(file, new OnGetPasswordsListener() {
@@ -112,7 +114,7 @@ public class ActivityImportPasswords extends ActivityBase implements PasswordCar
     public boolean onPrepareOptionsMenu(Menu menu) {
         super.onPrepareOptionsMenu(menu);
         MenuItem importButton = menu.findItem(R.id.menu_import_passwords);
-        if(importButton != null) {
+        if (importButton != null) {
             importButton.setVisible(mAdapter != null && mAdapter.getSelectionsCount() > 0);
         }
         return true;
@@ -128,7 +130,9 @@ public class ActivityImportPasswords extends ActivityBase implements PasswordCar
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_import_passwords:
-                if (mAdapter == null) { return true; }
+                if (mAdapter == null) {
+                    return true;
+                }
 
                 ArrayList<Password> selections = mAdapter.getSelectedItems();
 
@@ -143,7 +147,7 @@ public class ActivityImportPasswords extends ActivityBase implements PasswordCar
                     PasswordDatabaseHandler.getInstance().addNewPasswords(selections, new OnPasswordsAddedListener() {
                         @Override
                         public void onPasswordsAdded(int successfullyAddedCount, int totalCount) {
-                            if(d != null) {
+                            if (d != null) {
                                 d.dismiss();
                                 Toast.makeText(ActivityImportPasswords.this, successfullyAddedCount + " of " + totalCount + " was succesfully added", Toast.LENGTH_LONG).show();
                             }
@@ -161,7 +165,7 @@ public class ActivityImportPasswords extends ActivityBase implements PasswordCar
     public void onAvatarSelected(int position, boolean selected) {
         int count = mAdapter.getSelectionsCount();
 
-        if(mSelectedAll != null) {
+        if (mSelectedAll != null) {
             mSelectedAll.setText(count + " " + getString(R.string.title_selected));
             mSelectedAll.setOnCheckedChangeListener(null);
             mSelectedAll.setChecked(count == mAdapter.getItemCount() && mAdapter.getItemCount() > 0);
@@ -172,7 +176,7 @@ public class ActivityImportPasswords extends ActivityBase implements PasswordCar
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        switch(buttonView.getId()) {
+        switch (buttonView.getId()) {
             case R.id.activity_import_passwords_checkbox_all:
                 mAdapter.setAllSelected(isChecked);
                 mSelectedAll.setText((isChecked ? mAdapter.getItemCount() : 0) + " " + getString(R.string.title_selected));

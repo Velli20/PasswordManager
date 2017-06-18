@@ -31,7 +31,6 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.graphics.drawable.DrawableCompat;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
@@ -41,7 +40,6 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.velli.passwordmanager.R;
-import com.velli.passwordmanager.collections.SpacesItemDecoration;
 
 import java.util.ArrayList;
 
@@ -66,21 +64,14 @@ public class BottomSheet extends FrameLayout {
         super(context, attrs, defStyleAttr);
     }
 
-
-    public interface OnBottomSheetItemClickedListener {
-        void onBottomSheetItemClicked(int id);
-    }
-
-
-
     public void setOnBottomSheetItemClickedListener(OnBottomSheetItemClickedListener l) {
         mCallback = l;
     }
 
     public void addBottomSheetItem(BottomSheetItem item) {
         mBottomSheetItems.add(item);
-        if(mAdapter != null) {
-            mAdapter.notifyItemInserted(mBottomSheetItems.size()-1);
+        if (mAdapter != null) {
+            mAdapter.notifyItemInserted(mBottomSheetItems.size() - 1);
         }
     }
 
@@ -96,7 +87,6 @@ public class BottomSheet extends FrameLayout {
         recycler.setAdapter(mAdapter);
 
 
-
     }
 
     @Override
@@ -106,8 +96,11 @@ public class BottomSheet extends FrameLayout {
         mAdapter = null;
     }
 
+    public interface OnBottomSheetItemClickedListener {
+        void onBottomSheetItemClicked(int id);
+    }
 
-    public class BottomSheetIconAdapter extends  RecyclerView.Adapter<BottomSheetIconViewHolder> {
+    public class BottomSheetIconAdapter extends RecyclerView.Adapter<BottomSheetIconViewHolder> {
         private LayoutInflater mInflater;
         private Resources mRes;
 
@@ -127,7 +120,7 @@ public class BottomSheet extends FrameLayout {
             BottomSheetItem item = mBottomSheetItems.get(position);
 
             Drawable d = DrawableCompat.wrap(getContext().getResources().getDrawable(item.mDrawableRes));
-            if(d != null) {
+            if (d != null) {
                 DrawableCompat.setTint(d, mRes.getColor(item.mDrawableColor));
                 d.setBounds(0, 0, d.getIntrinsicWidth(), d.getIntrinsicHeight());
             }
@@ -151,7 +144,7 @@ public class BottomSheet extends FrameLayout {
 
         @Override
         public void onClick(View v) {
-            if(mCallback != null) {
+            if (mCallback != null) {
                 mCallback.onBottomSheetItemClicked(mId);
                 mCallback = null;
             }

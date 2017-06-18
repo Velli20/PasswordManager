@@ -40,25 +40,25 @@ public class GetPasswordTask extends AsyncTask<String, Void, Password> {
     private SQLiteDatabase mDb;
     private OnGetPasswordListener mCallback;
 
-    public GetPasswordTask(SQLiteDatabase db, OnGetPasswordListener callback){
+    public GetPasswordTask(SQLiteDatabase db, OnGetPasswordListener callback) {
         mDb = db;
         mCallback = callback;
     }
 
     @Override
     protected Password doInBackground(String... params) {
-        if(mDb == null || !mDb.isOpen()){
+        if (mDb == null || !mDb.isOpen()) {
             return null;
         }
         String selectQuery = params[0];
         Cursor cursor = mDb.rawQuery(selectQuery, null);
         Password password = null;
 
-        if (cursor != null && cursor.moveToFirst()){
+        if (cursor != null && cursor.moveToFirst()) {
             password = PasswordParser.parsePassword(cursor);
 
             cursor.close();
-        } else if(cursor != null){
+        } else if (cursor != null) {
             cursor.close();
         }
 
@@ -66,8 +66,8 @@ public class GetPasswordTask extends AsyncTask<String, Void, Password> {
     }
 
     @Override
-    protected void onPostExecute(Password entry){
-        if(mCallback != null){
+    protected void onPostExecute(Password entry) {
+        if (mCallback != null) {
             mCallback.onGetPassword(entry);
             mCallback = null;
         }

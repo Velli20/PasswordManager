@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ /*
   ~  * MIT License
   ~  *
@@ -32,11 +31,11 @@
     </declare-styleable>
 
     <declare-styleable name="ListCircle">
-        <attr name="background_color" format="string"/>
-        <attr name="background_color_selected" format="string"/>
-        <attr name="drawable_normal" format="reference"/>
-        <attr name="letter" format="string"/>
-        <attr name="letter_size" format="dimension"/>
+        <attr name="background_color" format="string" />
+        <attr name="background_color_selected" format="string" />
+        <attr name="drawable_normal" format="reference" />
+        <attr name="letter" format="string" />
+        <attr name="letter_size" format="dimension" />
     </declare-styleable>
     <declare-styleable name="RobotoText">
         <attr name="style" format="enum">
@@ -46,7 +45,7 @@
             <enum name="regular" value="3" />
             <enum name="thin" value="4" />
         </attr>
-        <attr name="scrollable" format="boolean"/>
+        <attr name="scrollable" format="boolean" />
     </declare-styleable>
 
 </resources>

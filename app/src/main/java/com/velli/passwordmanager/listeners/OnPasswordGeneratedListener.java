@@ -27,5 +27,5 @@
 package com.velli.passwordmanager.listeners;
 
 public interface OnPasswordGeneratedListener {
-	void passwordGenerated(String password);
+    void passwordGenerated(String password);
 }

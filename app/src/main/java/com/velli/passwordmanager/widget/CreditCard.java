@@ -26,12 +26,6 @@
 
 package com.velli.passwordmanager.widget;
 
-import com.velli.passwordmanager.roboto.RobotoTextView;
-import com.velli.passwordmanager.CreditCardInfo;
-import com.velli.passwordmanager.Password;
-import com.velli.passwordmanager.R;
-import com.velli.passwordmanager.collections.Utils;
-
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.CardView;
@@ -39,96 +33,102 @@ import android.util.AttributeSet;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.velli.passwordmanager.CreditCardInfo;
+import com.velli.passwordmanager.Password;
+import com.velli.passwordmanager.R;
+import com.velli.passwordmanager.collections.Utils;
+import com.velli.passwordmanager.roboto.RobotoTextView;
+
 public class CreditCard extends CardView {
-	private RobotoTextView mDescription;
-	private RobotoTextView mCardNumber;
-	private RobotoTextView mExpirationDate;
-	
-	private RobotoTextView mTitleCardNumber;
-	private RobotoTextView mTitleExpirationDate;
+    private RobotoTextView mDescription;
+    private RobotoTextView mCardNumber;
+    private RobotoTextView mExpirationDate;
 
-	private ImageButton mStar;
-	private ImageView mIcon;
-	private String mSearchPattern = "";
-	
-	public CreditCard(Context context) {
-		super(context);
-		// TODO Auto-generated constructor stub
-	}
-	
-	public CreditCard(Context context, AttributeSet attrs) {
-		super(context, attrs);
-		// TODO Auto-generated constructor stub
-	}
-	
-	
-	public CreditCard(Context context, AttributeSet attrs, int defStyleAttr) {
-		super(context, attrs, defStyleAttr);
-		
-	}
-		
-	@Override
-	protected void onFinishInflate(){
-		super.onFinishInflate();
-		mDescription = (RobotoTextView)findViewById(R.id.credit_card_title);
-		mCardNumber = (RobotoTextView)findViewById(R.id.credit_card_number);
-		mExpirationDate = (RobotoTextView)findViewById(R.id.credit_card_expiration_date);
-	    mStar = (ImageButton)findViewById(R.id.credit_card_starred_button);
-	    
-	    mTitleCardNumber = (RobotoTextView)findViewById(R.id.credit_card_number_title);
-		mTitleExpirationDate = (RobotoTextView)findViewById(R.id.credit_card_expiration_date_title);
-		
-		mIcon = (ImageView) findViewById(R.id.credit_card_icon);
-	}
-	
-	public void setCardData(Password pass){
-		if(pass == null || pass.getCreditCard() == null){
-			return;
-		}
-		
-		final CreditCardInfo card = pass.getCreditCard();
-		
-		if(mSearchPattern != null && !mSearchPattern.isEmpty() && !pass.getDescription().isEmpty()){
-			mDescription.setText(Utils.boldString(pass.getDescription(), mSearchPattern));
-		} else {
-			mDescription.setText(pass.getDescription());
-		}
-		if(mSearchPattern != null && !mSearchPattern.isEmpty() && !card.getCardNumber().isEmpty()){
-			mCardNumber.setText(Utils.boldString(formatCreditCardNumber(card.getCardNumber()), mSearchPattern));
-		} else {
-			mCardNumber.setText(formatCreditCardNumber(card.getCardNumber()));
-		}
-		
-		mExpirationDate.setText(card.getCardExpirationDate());
-	}
-	
-	public void setStarbuttonOnClickListener(OnClickListener l){
-		mStar.setOnClickListener(l);
-	}
-	
-	public void setStarButtonDrawable(Drawable d){
-		mStar.setImageDrawable(d);
-	}
-	
-	public void setSearchPattern(String pattern){
-		mSearchPattern = pattern;
-	}
-	
-	public static String formatCreditCardNumber(String number){
-		final StringBuilder result = new StringBuilder();
-		final int lenght = number.length();
-		
-		for (int i = 0; i < lenght; i++) {
-			char charAt = number.charAt(i);
-			
-			if(i == 4 && charAt != ' '){
-				result.append(" ");
-			} else if (i % 4 == 0 && i != 0 && charAt != ' ') {
-				result.append(" ");
-			}
+    private RobotoTextView mTitleCardNumber;
+    private RobotoTextView mTitleExpirationDate;
 
-			result.append(number.charAt(i));
-		}
-		return result.toString();
-	}
+    private ImageButton mStar;
+    private ImageView mIcon;
+    private String mSearchPattern = "";
+
+    public CreditCard(Context context) {
+        super(context);
+        // TODO Auto-generated constructor stub
+    }
+
+    public CreditCard(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        // TODO Auto-generated constructor stub
+    }
+
+
+    public CreditCard(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+
+    }
+
+    public static String formatCreditCardNumber(String number) {
+        final StringBuilder result = new StringBuilder();
+        final int lenght = number.length();
+
+        for (int i = 0; i < lenght; i++) {
+            char charAt = number.charAt(i);
+
+            if (i == 4 && charAt != ' ') {
+                result.append(" ");
+            } else if (i % 4 == 0 && i != 0 && charAt != ' ') {
+                result.append(" ");
+            }
+
+            result.append(number.charAt(i));
+        }
+        return result.toString();
+    }
+
+    @Override
+    protected void onFinishInflate() {
+        super.onFinishInflate();
+        mDescription = (RobotoTextView) findViewById(R.id.credit_card_title);
+        mCardNumber = (RobotoTextView) findViewById(R.id.credit_card_number);
+        mExpirationDate = (RobotoTextView) findViewById(R.id.credit_card_expiration_date);
+        mStar = (ImageButton) findViewById(R.id.credit_card_starred_button);
+
+        mTitleCardNumber = (RobotoTextView) findViewById(R.id.credit_card_number_title);
+        mTitleExpirationDate = (RobotoTextView) findViewById(R.id.credit_card_expiration_date_title);
+
+        mIcon = (ImageView) findViewById(R.id.credit_card_icon);
+    }
+
+    public void setCardData(Password pass) {
+        if (pass == null || pass.getCreditCard() == null) {
+            return;
+        }
+
+        final CreditCardInfo card = pass.getCreditCard();
+
+        if (mSearchPattern != null && !mSearchPattern.isEmpty() && !pass.getDescription().isEmpty()) {
+            mDescription.setText(Utils.boldString(pass.getDescription(), mSearchPattern));
+        } else {
+            mDescription.setText(pass.getDescription());
+        }
+        if (mSearchPattern != null && !mSearchPattern.isEmpty() && !card.getCardNumber().isEmpty()) {
+            mCardNumber.setText(Utils.boldString(formatCreditCardNumber(card.getCardNumber()), mSearchPattern));
+        } else {
+            mCardNumber.setText(formatCreditCardNumber(card.getCardNumber()));
+        }
+
+        mExpirationDate.setText(card.getCardExpirationDate());
+    }
+
+    public void setStarbuttonOnClickListener(OnClickListener l) {
+        mStar.setOnClickListener(l);
+    }
+
+    public void setStarButtonDrawable(Drawable d) {
+        mStar.setImageDrawable(d);
+    }
+
+    public void setSearchPattern(String pattern) {
+        mSearchPattern = pattern;
+    }
 }

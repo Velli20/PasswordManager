@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ /*
   ~  * MIT License
   ~  *
@@ -26,33 +25,29 @@
   -->
 
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:robototext="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:robototext="http://schemas.android.com/apk/res-auto"
     android:id="@+id/service_web_login_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white" 
-    card_view:cardUseCompatPadding="false"
+    android:background="@color/white"
     card_view:cardCornerRadius="2dp"
-    card_view:cardElevation="5dp" >
-    
+    card_view:cardElevation="5dp"
+    card_view:cardUseCompatPadding="false">
 
-    
 
-    
     <ImageButton
-        style="@style/ActionButton"
         android:id="@+id/service_web_login_more"
+        style="@style/ActionButton"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:padding="8dp"
         android:layout_gravity="top|right|end"
         android:contentDescription="@null"
+        android:padding="8dp"
         android:src="@drawable/ic_action_more" />
-    
-    
-     
-     <com.velli.passwordmanager.widget.SnappyRecyclerView
+
+
+    <com.velli.passwordmanager.widget.SnappyRecyclerView
         android:id="@+id/service_web_login_pass_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -60,43 +55,43 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:divider="@null"
-        
+
         android:listSelector="@android:color/transparent" />
-     
-     <LinearLayout 
-         android:id="@+id/service_web_login_text_container"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_marginEnd="56dp"
-         android:layout_marginRight="56dp"
-         android:layout_marginLeft="56dp"
-         android:layout_marginStart="56dp" 
-         android:layout_gravity="center_vertical|center_horizontal"
-         android:orientation="vertical"
-         android:visibility="gone">
-         
-         <com.velli.passwordmanager.roboto.RobotoTextView
+
+    <LinearLayout
+        android:id="@+id/service_web_login_text_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginEnd="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginRight="56dp"
+        android:layout_marginStart="56dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.velli.passwordmanager.roboto.RobotoTextView
             android:id="@+id/service_web_login_text"
-            robototext:style="regular"
+            style="@style/SecondaryText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/SecondaryText"
+            android:layout_marginTop="16dp"
             android:gravity="center_horizontal"
-            android:layout_marginTop="16dp"/>
-         
-         <com.velli.passwordmanager.roboto.RobotoButton
-             android:id="@+id/service_web_login_view_all"
-             style="?android:attr/borderlessButtonStyle"
-             robototext:style="medium"
-             android:layout_width="match_parent"
-             android:layout_height="36dp"
-             android:gravity="center_horizontal"
-             android:layout_marginTop="16dp"
-             android:layout_marginBottom="16dp"
-             android:text="@string/action_show_all_passwords"
-             android:textColor="@color/color_primary_500"
-             android:textSize="14sp" />
+            robototext:style="regular" />
 
-     </LinearLayout>
+        <com.velli.passwordmanager.roboto.RobotoButton
+            android:id="@+id/service_web_login_view_all"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/action_show_all_passwords"
+            android:textColor="@color/color_primary_500"
+            android:textSize="14sp"
+            robototext:style="medium" />
+
+    </LinearLayout>
 
 </android.support.v7.widget.CardView>

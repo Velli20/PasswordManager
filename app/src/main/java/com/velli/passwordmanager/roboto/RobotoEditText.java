@@ -36,43 +36,43 @@ import android.widget.EditText;
 import com.velli.passwordmanager.R;
 
 public class RobotoEditText extends EditText {
-	private String[] mTypefacePaths = {"font/Roboto-Bold.ttf", "font/Roboto-Light.ttf", 
-    		"font/Roboto-Medium.ttf", "font/Roboto-Regular.ttf", "font/Roboto-Thin.ttf"};
-	
-	public RobotoEditText(Context context) {
-		super(context);
-		init(context, null);
-	}
-	
-	public RobotoEditText(Context context, AttributeSet attrs) {
-		super(context, attrs);
-		init(context, attrs);
-	}
-	
-	public RobotoEditText(Context context, AttributeSet attrs, int defStyle) {
-		super(context, attrs, defStyle);
-		init(context, attrs);
-	}
-	
-	private void init(Context context, AttributeSet attrs) {
-		int typeface = 3;
+    private String[] mTypefacePaths = {"font/Roboto-Bold.ttf", "font/Roboto-Light.ttf",
+            "font/Roboto-Medium.ttf", "font/Roboto-Regular.ttf", "font/Roboto-Thin.ttf"};
 
-		if (isInEditMode()) {
-			return;
-		}
-		if (attrs != null) {
-			TypedArray a = context.getTheme().obtainStyledAttributes(attrs,
-					R.styleable.RobotoText, 0, 0);
-			try {
-				typeface = a.getInt(R.styleable.RobotoText_style, 3);
-			} finally {
-				a.recycle();
-			}
-		}
+    public RobotoEditText(Context context) {
+        super(context);
+        init(context, null);
+    }
 
-		Typeface roboto = Typeface.createFromAsset(context.getAssets(), mTypefacePaths[typeface]);
-		setTypeface(roboto);
-	}
+    public RobotoEditText(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init(context, attrs);
+    }
+
+    public RobotoEditText(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+        init(context, attrs);
+    }
+
+    private void init(Context context, AttributeSet attrs) {
+        int typeface = 3;
+
+        if (isInEditMode()) {
+            return;
+        }
+        if (attrs != null) {
+            TypedArray a = context.getTheme().obtainStyledAttributes(attrs,
+                    R.styleable.RobotoText, 0, 0);
+            try {
+                typeface = a.getInt(R.styleable.RobotoText_style, 3);
+            } finally {
+                a.recycle();
+            }
+        }
+
+        Typeface roboto = Typeface.createFromAsset(context.getAssets(), mTypefacePaths[typeface]);
+        setTypeface(roboto);
+    }
 
 
 }

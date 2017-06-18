@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ /*
   ~  * MIT License
   ~  *
@@ -27,27 +26,27 @@
 
 <resources>
     <string name="app_name">Password Keeper</string>
-    
+
     <string name="accessibility_drawer_open">Open navigation drawer</string>
     <string name="accessibility_drawer_close">Close navigation drawer</string>
 
-    
+
     <string-array name="credit_card_types">
-        <item >Visa</item>
-        <item >MasterCard</item>
-        <item >American Express</item>
-        <item >Discover</item>
+        <item>Visa</item>
+        <item>MasterCard</item>
+        <item>American Express</item>
+        <item>Discover</item>
     </string-array>
-    
+
     <string-array name="wifi_security_types">
-        <item >WEP</item>
-        <item >WPA/WPA2/FT PSK</item>
-        <item >802.1x EAP</item>
+        <item>WEP</item>
+        <item>WPA/WPA2/FT PSK</item>
+        <item>802.1x EAP</item>
     </string-array>
-    
+
     <string name="password_card_url">URL</string>
     <string name="password_card_username">Username</string>
-    
+
     <string name="label_all">All</string>
     <string name="label_starred">Starred</string>
     <string name="label_social">Social</string>
@@ -68,9 +67,9 @@
     <string name="navigation_label_all">All</string>
     <string name="navigation_label_starres">Starred</string>
     <string name="navigation_label_drafts">Drafts</string>
-    
+
     <string name="group_personal">Personal</string>
-    
+
     <string name="new_entry_wifi_ssid">Network SSID</string>
     <string name="new_entry_wifi_security">Security</string>
     <string name="new_entry_description">Description</string>
@@ -154,7 +153,7 @@
     <string name="action_please_wait">Please wait&#8230;</string>
     <string name="action_login_to_web_site">Login to Password Keeper to get password for the site</string>
     <string name="action_show_all_passwords">Show all passwords</string>
-    
+
     <string name="error_new_entry_no_description">Description is required</string>
     <string name="error_new_entry_too_long_description">Description is too long</string>
     <string name="error_new_entry_no_url">URL is required</string>
@@ -177,7 +176,7 @@
     <string name="intent_share_label">Add new password</string>
     <string name="input_field_new_group">Group name</string>
     <string name="input_field_new_login_type">Name</string>
-    
+
     <string name="warning_screen_capture_disabled">Screen capture is disabled for security reason.</string>
 
     <string name="title_add">New</string>
@@ -230,20 +229,20 @@
 
     <string name="notification_log_out_title">Password Keeper logged in</string>
     <string name="notification_log_out_content">Tap to log out</string>
-    
+
     <string name="welcome_view_hello">Hello!</string>
     <string name="welcome_view_tap_to_add">Tap to add a password.</string>
     <string name="welcome_view_info">Afterwards, you will see all your passwords here.</string>
-    
+
     <string name="hint_password">Password</string>
-       
+
     <string name="dialog_message_delete_password">Are you sure that you want to delete this password?</string>
     <string name="dialog_confirm_restore">This backup file will override all local data and can not be undone. Are you sure you want to continue?</string>
 
     <string name="export_passwords_sheet_passwords">Paswords</string>
     <string name="export_passwords_sheet_credit_cards">Credit cards</string>
     <string name="export_passwords_sheet_wifi_passwords">Wifi passwords</string>
-    
+
     <string name="preference_summary_erase_data">Erase all passwords after the maximum number of retries has been exceeded</string>
     <string name="preference_summary_send_feedback">Tell what you think or report a problem</string>
     <string name="preference_summary_export_passwords">Export your passwords to a spreadsheet.</string>
@@ -257,12 +256,12 @@
     <string name="preference_summary_restore">Restore your passwords from a previously created backup</string>
     <string name="preference_summary_show_animations">Show transition animations in password details</string>
     <string name="preference_summary_login_with_fingerprint">Login using your registered fingerprints</string>
-    
+
     <string name="preference_screen_title_startup_lock">Startup Lock</string>
     <string name="preference_screen_title_general">General settings</string>
     <string name="preference_screen_title_about">About</string>
     <string name="preference_screen_title_passwords">Passwords</string>
-    
+
     <string name="preference_title_last_login">Last time logged in</string>
     <string name="preference_title_max_retry">Max retry count</string>
     <string name="preference_title_log_out_automatically">Log out automatically</string>
@@ -280,14 +279,14 @@
     <string name="preference_title_show_animations">Show animations</string>
 
     <string-array name="password_generation_options">
-        <item >Password options</item>
-        <item >Lower Case (a&#8211;z)</item>
-        <item >Upper Case (A&#8211;Z)</item>
-        <item >Numbers (0&#8211;9)</item>
-        <item >Special characters (!@#$%/)</item>
-        <item >Number of Characters</item>
+        <item>Password options</item>
+        <item>Lower Case (a&#8211;z)</item>
+        <item>Upper Case (A&#8211;Z)</item>
+        <item>Numbers (0&#8211;9)</item>
+        <item>Special characters (!@#$%/)</item>
+        <item>Number of Characters</item>
     </string-array>
-    
+
     <plurals name="password">
         <item quantity="one">%d password</item>
         <item quantity="other">%d passwords</item>

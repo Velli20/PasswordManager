@@ -35,16 +35,16 @@ public class FilePickerUtils {
         int unit = si ? 1000 : 1024;
         if (bytes < unit) return bytes + " B";
         int exp = (int) (Math.log(bytes) / Math.log(unit));
-        String pre = (si ? "kMGTPE" : "KMGTPE").charAt(exp-1) + (si ? "" : "i");
+        String pre = (si ? "kMGTPE" : "KMGTPE").charAt(exp - 1) + (si ? "" : "i");
         return String.format("%.1f %sB", bytes / Math.pow(unit, exp), pre);
     }
 
     public static int getDrawableResourceForFileExt(String fileExtension) {
-        if(fileExtension.endsWith(".xls") || fileExtension.endsWith(".xlsx")) {
+        if (fileExtension.endsWith(".xls") || fileExtension.endsWith(".xlsx")) {
             return R.mipmap.ic_filepicker_excel;
-        } else if(fileExtension.endsWith(".jpg") || fileExtension.endsWith(".png")) {
+        } else if (fileExtension.endsWith(".jpg") || fileExtension.endsWith(".png")) {
             return R.mipmap.ic_filepicker_image;
-        } else if(fileExtension.endsWith(".pdf")) {
+        } else if (fileExtension.endsWith(".pdf")) {
             return R.mipmap.ic_filepicker_pdf;
         } else {
             return R.mipmap.ic_filepicker_file;

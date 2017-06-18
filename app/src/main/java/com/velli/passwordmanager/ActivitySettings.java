@@ -33,39 +33,43 @@ import android.view.View;
 
 public class ActivitySettings extends ActivityBase {
 
-	@Override
-	public int getActivityId() { return ApplicationBase.ACTIVITY_SETTINGS; }
+    @Override
+    public int getActivityId() {
+        return ApplicationBase.ACTIVITY_SETTINGS;
+    }
 
-	@Override
-	public String getTag() { return getClass().getSimpleName(); }
+    @Override
+    public String getTag() {
+        return getClass().getSimpleName();
+    }
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_settings);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_settings);
 
-		Toolbar mToolbar = (Toolbar)findViewById(R.id.toolbar);
-		setSupportActionBar(mToolbar);
-		
-		final ActionBar bar = getSupportActionBar();
-		if(bar != null) {
-			bar.setDisplayShowHomeEnabled(true);
-			bar.setDisplayHomeAsUpEnabled(true);
-			bar.setDisplayShowTitleEnabled(true);
-			bar.setTitle(getString(R.string.title_settings));
-			bar.show();
-		}
-		
-		mToolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_action_back));
-		mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				finish();
-			}
-		});
-		
-		getFragmentManager().beginTransaction().replace(R.id.settings_content, new FragmentSettings(), FragmentSettings.TAG).commit();
-	}
-	
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+
+        final ActionBar bar = getSupportActionBar();
+        if (bar != null) {
+            bar.setDisplayShowHomeEnabled(true);
+            bar.setDisplayHomeAsUpEnabled(true);
+            bar.setDisplayShowTitleEnabled(true);
+            bar.setTitle(getString(R.string.title_settings));
+            bar.show();
+        }
+
+        mToolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_action_back));
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        getFragmentManager().beginTransaction().replace(R.id.settings_content, new FragmentSettings(), FragmentSettings.TAG).commit();
+    }
+
 
 }

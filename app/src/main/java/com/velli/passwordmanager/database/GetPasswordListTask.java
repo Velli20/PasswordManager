@@ -43,14 +43,14 @@ public class GetPasswordListTask extends AsyncTask<String, Void, ArrayList<Passw
     private SQLiteDatabase mDb;
     private OnGetPasswordsListener mCallback;
 
-    public GetPasswordListTask(SQLiteDatabase db, OnGetPasswordsListener callback){
+    public GetPasswordListTask(SQLiteDatabase db, OnGetPasswordsListener callback) {
         mDb = db;
         mCallback = callback;
     }
 
     @Override
     protected ArrayList<Password> doInBackground(String... params) {
-        if(mDb == null || !mDb.isOpen()){
+        if (mDb == null || !mDb.isOpen()) {
             return null;
         }
         final ArrayList<Password> list = new ArrayList<>();
@@ -60,25 +60,25 @@ public class GetPasswordListTask extends AsyncTask<String, Void, ArrayList<Passw
 
         try {
             cursor = mDb.rawQuery(selectQuery, null);
-        } catch(SQLiteException e){
+        } catch (SQLiteException e) {
             return list;
         }
 
-        if (cursor != null && cursor.moveToFirst()){
+        if (cursor != null && cursor.moveToFirst()) {
             do {
                 list.add(PasswordParser.parsePassword(cursor));
-            } while(cursor.moveToNext());
+            } while (cursor.moveToNext());
 
         }
-        if(cursor != null){
+        if (cursor != null) {
             cursor.close();
         }
         return list;
     }
 
     @Override
-    protected void onPostExecute(ArrayList<Password> list){
-        if(mCallback != null){
+    protected void onPostExecute(ArrayList<Password> list) {
+        if (mCallback != null) {
             mCallback.onGetPasswords(list);
             mCallback = null;
         }

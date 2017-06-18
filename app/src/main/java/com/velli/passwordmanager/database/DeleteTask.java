@@ -41,7 +41,7 @@ public class DeleteTask extends AsyncTask<Void, Void, Integer> {
     private final Integer mRowIds[];
     private SQLiteDatabase mDb;
 
-    public DeleteTask(SQLiteDatabase db, int rowId, String table){
+    public DeleteTask(SQLiteDatabase db, int rowId, String table) {
         mRowId = rowId;
         mTable = table;
         mRowIds = null;
@@ -49,7 +49,7 @@ public class DeleteTask extends AsyncTask<Void, Void, Integer> {
     }
 
 
-    public DeleteTask(SQLiteDatabase db, Integer rowids[], String table){
+    public DeleteTask(SQLiteDatabase db, Integer rowids[], String table) {
         mRowIds = rowids;
         mTable = table;
         mRowId = -1;
@@ -58,18 +58,18 @@ public class DeleteTask extends AsyncTask<Void, Void, Integer> {
 
     @Override
     protected Integer doInBackground(Void... params) {
-        if(mDb == null || !mDb.isOpen()) {
+        if (mDb == null || !mDb.isOpen()) {
             return Constants.RESULT_ERROR_DATABASE_NOT_OPEN;
         }
-        if(mRowIds != null){
+        if (mRowIds != null) {
             int length = mRowIds.length;
 
-            for(int i = 0; i < length; i++){
-                mDb.delete(mTable, KEY_ID + "=?", new String[] {String.valueOf(mRowIds[i])});
+            for (int i = 0; i < length; i++) {
+                mDb.delete(mTable, KEY_ID + "=?", new String[]{String.valueOf(mRowIds[i])});
             }
             return Constants.RESULT_DELETED;
-        } else if(mDb != null){
-            mDb.delete(mTable, KEY_ID + "=?", new String[] {String.valueOf(mRowId)});
+        } else if (mDb != null) {
+            mDb.delete(mTable, KEY_ID + "=?", new String[]{String.valueOf(mRowId)});
             return Constants.RESULT_DELETED;
         }
         return Constants.RESULT_ERROR_DATABASE_NOT_OPEN;
@@ -77,7 +77,7 @@ public class DeleteTask extends AsyncTask<Void, Void, Integer> {
     }
 
     @Override
-    protected void onPostExecute(Integer result){
+    protected void onPostExecute(Integer result) {
         PasswordDatabaseHandler.getInstance().notifyCallbacks(mTable, result);
         mDb = null;
     }

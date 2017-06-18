@@ -35,38 +35,38 @@ import android.util.AttributeSet;
 
 import com.velli.passwordmanager.roboto.TypefaceSpan;
 
-public class MediumTextToolbar extends Toolbar{
-	private Context mContext;
-	
-	public MediumTextToolbar(Context context) {
-		super(context);
-		mContext = context;
-	}
-	
-	public MediumTextToolbar(Context context, AttributeSet attrs) {
-		super(context, attrs);
-		mContext = context;
-	}
-	
-	public MediumTextToolbar(Context context, AttributeSet attrs, int defStyleAttr) {
-		super(context, attrs, defStyleAttr);
-		mContext = context;
-	}
-	
-	@Override
-	public void setTitle(CharSequence c){
-		if(c != null && Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP){
-			SpannableString s = new SpannableString(c);
-			s.setSpan(new TypefaceSpan(mContext, 2), 0, s.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-			super.setTitle(s);
-		} else {
-			super.setTitle(c);
-		}
-	}
-	
-	@Override
-	public void setTitle(int resId){
-		setTitle(getResources().getString(resId));
-	}
+public class MediumTextToolbar extends Toolbar {
+    private Context mContext;
+
+    public MediumTextToolbar(Context context) {
+        super(context);
+        mContext = context;
+    }
+
+    public MediumTextToolbar(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        mContext = context;
+    }
+
+    public MediumTextToolbar(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        mContext = context;
+    }
+
+    @Override
+    public void setTitle(CharSequence c) {
+        if (c != null && Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            SpannableString s = new SpannableString(c);
+            s.setSpan(new TypefaceSpan(mContext, 2), 0, s.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            super.setTitle(s);
+        } else {
+            super.setTitle(c);
+        }
+    }
+
+    @Override
+    public void setTitle(int resId) {
+        setTitle(getResources().getString(resId));
+    }
 
 }

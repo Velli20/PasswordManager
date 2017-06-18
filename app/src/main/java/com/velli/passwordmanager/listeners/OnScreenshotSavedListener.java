@@ -27,5 +27,5 @@
 package com.velli.passwordmanager.listeners;
 
 public interface OnScreenshotSavedListener {
-	void onScreenshotSaved(String path);
+    void onScreenshotSaved(String path);
 }

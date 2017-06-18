@@ -40,28 +40,28 @@ public class GetLastLoginDateTask extends AsyncTask<Void, Void, String> {
     private OnGetLastLoginDateListener mListenerLoginDate;
     private SQLiteDatabase mDb;
 
-    public GetLastLoginDateTask(SQLiteDatabase db, OnGetLastLoginDateListener listener){
+    public GetLastLoginDateTask(SQLiteDatabase db, OnGetLastLoginDateListener listener) {
         mListenerLoginDate = listener;
         mDb = db;
     }
 
     @Override
     protected String doInBackground(Void... params) {
-        if(mDb == null || !mDb.isOpen()){
+        if (mDb == null || !mDb.isOpen()) {
             return "ERROR database not open!";
         }
         Cursor cursor = mDb.rawQuery(SELECT_QUERY_DATE_LOGIN, null);
         String s = "-";
 
-        if(cursor != null && cursor.getCount() > 1){
+        if (cursor != null && cursor.getCount() > 1) {
             cursor.moveToPosition(1);
             s = cursor.getString(0);
             cursor.close();
-        } else if(cursor != null && cursor.getCount() == 1){
+        } else if (cursor != null && cursor.getCount() == 1) {
             cursor.moveToFirst();
             s = cursor.getString(0);
             cursor.close();
-        } else if(cursor != null){
+        } else if (cursor != null) {
             cursor.close();
         }
 
@@ -69,11 +69,12 @@ public class GetLastLoginDateTask extends AsyncTask<Void, Void, String> {
     }
 
     @Override
-    protected void onPostExecute(String date){
-        if(mListenerLoginDate != null){
-            try{
+    protected void onPostExecute(String date) {
+        if (mListenerLoginDate != null) {
+            try {
                 mListenerLoginDate.onLastLoginDate(Long.valueOf(date));
-            } catch(NumberFormatException ignored){}
+            } catch (NumberFormatException ignored) {
+            }
         }
 
         mListenerLoginDate = null;

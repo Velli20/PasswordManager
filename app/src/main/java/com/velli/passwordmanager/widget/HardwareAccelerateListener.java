@@ -33,56 +33,56 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 
 public class HardwareAccelerateListener extends AnimatorListenerAdapter implements AnimationListener {
-	private View mView;
-	private AnimatorListenerAdapter mListener;
-	
+    private View mView;
+    private AnimatorListenerAdapter mListener;
+
     public HardwareAccelerateListener(View v) {
-    	mView = v;
+        mView = v;
     }
 
-    public void addAnimatorListenerAdapter(AnimatorListenerAdapter l){
-    	mListener = l;
+    public void addAnimatorListenerAdapter(AnimatorListenerAdapter l) {
+        mListener = l;
     }
-    
+
     @Override
     public void onAnimationStart(Animator animation) {
         if (mView != null) {
-        	mView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+            mView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
         }
-        if(mListener != null){
-        	mListener.onAnimationStart(animation);
+        if (mListener != null) {
+            mListener.onAnimationStart(animation);
         }
     }
 
     @Override
-    public void onAnimationEnd(Animator animation) {         
+    public void onAnimationEnd(Animator animation) {
         if (mView != null) {
-        	mView.setLayerType(View.LAYER_TYPE_NONE, null);
+            mView.setLayerType(View.LAYER_TYPE_NONE, null);
         }
-        
-        if(mListener != null){
-        	mListener.onAnimationEnd(animation);
+
+        if (mListener != null) {
+            mListener.onAnimationEnd(animation);
         }
-        
+
         mView = null;
         mListener = null;
     }
 
-	@Override
-	public void onAnimationStart(Animation animation) {
-		onAnimationStart(((Animator)null));
-		
-	}
+    @Override
+    public void onAnimationStart(Animation animation) {
+        onAnimationStart(((Animator) null));
 
-	@Override
-	public void onAnimationEnd(Animation animation) {
-		onAnimationEnd(((Animator)null));
-		
-	}
+    }
 
-	@Override
-	public void onAnimationRepeat(Animation animation) {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public void onAnimationEnd(Animation animation) {
+        onAnimationEnd(((Animator) null));
+
+    }
+
+    @Override
+    public void onAnimationRepeat(Animation animation) {
+        // TODO Auto-generated method stub
+
+    }
 }

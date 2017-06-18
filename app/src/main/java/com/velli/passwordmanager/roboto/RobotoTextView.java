@@ -40,54 +40,53 @@ import com.velli.passwordmanager.R;
 
 
 public class RobotoTextView extends TextView {
-	public static LruCache<String, Typeface> sTypefaceCache =
+    public final static String[] mTypefacePaths = {"font/Roboto-Bold.ttf", "font/Roboto-Light.ttf",
+            "font/Roboto-Medium.ttf", "font/Roboto-Regular.ttf", "font/Roboto-Thin.ttf"};
+    public static LruCache<String, Typeface> sTypefaceCache =
             new LruCache<String, Typeface>(5);
-	
-    public final static String[] mTypefacePaths = {"font/Roboto-Bold.ttf", "font/Roboto-Light.ttf", 
-    		"font/Roboto-Medium.ttf", "font/Roboto-Regular.ttf", "font/Roboto-Thin.ttf"};
-    
-	public RobotoTextView(Context context) {
-		this(context, null, 0);
-	}
-	
-	public RobotoTextView(Context context, AttributeSet attrs) {
-		this(context, attrs, 0);
-	}
-	
-	public RobotoTextView(Context context, AttributeSet attrs, int defStyle) {
-		super(context, attrs, defStyle);
-		int typeface = 3;
-		
-		if(isInEditMode()){
-			return;
-		}
-		if(attrs != null){
-			TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.RobotoText, 0, 0);
-			
-			try{
-				typeface = a.getInt(R.styleable.RobotoText_style, 3);
-			} finally {
-				a.recycle();
-			}
-		}
-				
 
-		setTypeface(getTypeface(getResources(), typeface));
-		setPaintFlags(getPaintFlags() | Paint.SUBPIXEL_TEXT_FLAG);
-		
-	}
-	
+    public RobotoTextView(Context context) {
+        this(context, null, 0);
+    }
 
-	public static Typeface getTypeface(Resources res, int typeface){
-		Typeface roboto = sTypefaceCache.get(mTypefacePaths[typeface]);
-		
-		if(roboto == null){
-			roboto = Typeface.createFromAsset(res.getAssets(), mTypefacePaths[typeface]);
-			sTypefaceCache.put(mTypefacePaths[typeface], roboto);
-		}
-		
-		return roboto;
-	}
+    public RobotoTextView(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
+
+    public RobotoTextView(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+        int typeface = 3;
+
+        if (isInEditMode()) {
+            return;
+        }
+        if (attrs != null) {
+            TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.RobotoText, 0, 0);
+
+            try {
+                typeface = a.getInt(R.styleable.RobotoText_style, 3);
+            } finally {
+                a.recycle();
+            }
+        }
+
+
+        setTypeface(getTypeface(getResources(), typeface));
+        setPaintFlags(getPaintFlags() | Paint.SUBPIXEL_TEXT_FLAG);
+
+    }
+
+
+    public static Typeface getTypeface(Resources res, int typeface) {
+        Typeface roboto = sTypefaceCache.get(mTypefacePaths[typeface]);
+
+        if (roboto == null) {
+            roboto = Typeface.createFromAsset(res.getAssets(), mTypefacePaths[typeface]);
+            sTypefaceCache.put(mTypefacePaths[typeface], roboto);
+        }
+
+        return roboto;
+    }
 
 }
 

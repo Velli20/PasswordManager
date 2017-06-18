@@ -27,176 +27,180 @@
 package com.velli.passwordmanager;
 
 public class Password {
-	
-	private String mDescription;
-	private String mUrl;
-	private String mUsername;
-	private String mPassword;
-	private String mNote;
-	private String mNetworkSSID;
-	private String mWifiSecurity;
-	
-	private String mLoginType;
-	private String mGroup;
-	private String mAppPackageName;
-	
-	private int mLoginIcon = 0;
-	private int mGroupPos = -1;
-	private int rowId = -1;
-	
-	private boolean mStarred = false;
-	private boolean mIsWifiPassword = false;
-	private boolean mIsSelected = false;
-	
-	private CreditCardInfo mCard;
-	
-	public Password(){
-		
-	}
-	
-	public Password(CreditCardInfo card){
-		mCard = card;
-	}
-	
-	public void setInfo(String description, String url, String username, String password, String note){
-		this.mDescription = description;
-		this.mUrl = url;
-		this.mUsername = username;
-		this.mPassword = password;
-		this.mNote = note;
-	}
-	
-	public void setDescription(String description){
-		mDescription = description;
-	}
-	
-	public void setUrl(String url){
-		mUrl = url;
-	}
-	
-	public void setCreditCard(CreditCardInfo card){
-		mCard = card;
-	}
-	
-	public void setUsername(String username){
-		mUsername = username;
-	}
-	
-	public void setPassword(String pass){
-		mPassword = pass;
-	}
-	
-	public void setNote(String note){
-		mNote = note;
-	}
-	
-	public void setGroup(String group){
-		mGroup = group;
-	}
-	
-	public void setLoginType(String type, int icon){
-		mLoginType = type;
-		mLoginIcon = icon;
-	}
-	
-	public void setRowId(int id){
-		rowId = id;
-	}
-	
-	public void setStarred(boolean starred){
-		mStarred = starred;
-	}
 
-	public void setSelected(boolean selected) {
-		mIsSelected = selected;
-	}
-	
-	public void setGroupPosition(int pos){ mGroupPos = pos; }
-	
-	public void setAppPackageName(String name){
-		mAppPackageName = name;
-	}
-	
-	public void setIsWifiPassword(boolean wifiPassword){
-		mIsWifiPassword = wifiPassword;
-	}
-	
-	public void setNetworkSSID(String ssid){
-		mNetworkSSID = ssid;
-	}
-	
-	public void setWifiSecurity(String security){
-		mWifiSecurity = security;
-	}
-	
-	public String getDescription(){
-		return mDescription;
-	}
-	
-	public String getUrl(){
-		return mUrl;
-	}
-	
-	public String getUsername(){
-		return mUsername;
-	}
-	
-	public String getPassword(){
-		return mPassword;
-	}
-	
-	public String getNote(){
-		return mNote;
-	}
-	
-	public String getGroup(){
-		return mGroup;
-	}
-	
-	public String getLoginType(){
-		return mLoginType;
-	}
-	
-	public int getLoginIcon(){
-		return mLoginIcon;
-	}
-	
-	public int getRowId(){
-		return rowId;
-	}
-	
-	public boolean isStarred(){
-		return mStarred;
-	}
-	
-	public boolean isCreditCard(){
-		return mCard != null;
-	}
-	
-	public boolean isWifiPassword(){
-		return mIsWifiPassword;
-	}
+    private String mDescription;
+    private String mUrl;
+    private String mUsername;
+    private String mPassword;
+    private String mNote;
+    private String mNetworkSSID;
+    private String mWifiSecurity;
 
-	public boolean isSelected() { return mIsSelected; }
+    private String mLoginType;
+    private String mGroup;
+    private String mAppPackageName;
 
-	public int getGroupPosition(){
-		return mGroupPos;
-	}
-	
-	public String getAppPackageName(){
-		return mAppPackageName;
-	}
-	
-	public String getNetworkSSID(){
-		return mNetworkSSID;
-	}
-	
-	public String getWifiSecurity(){
-		return mWifiSecurity;
-	}
-	
-	public CreditCardInfo getCreditCard(){
-		return mCard;
-	}
+    private int mLoginIcon = 0;
+    private int mGroupPos = -1;
+    private int rowId = -1;
+
+    private boolean mStarred = false;
+    private boolean mIsWifiPassword = false;
+    private boolean mIsSelected = false;
+
+    private CreditCardInfo mCard;
+
+    public Password() {
+
+    }
+
+    public Password(CreditCardInfo card) {
+        mCard = card;
+    }
+
+    public void setInfo(String description, String url, String username, String password, String note) {
+        this.mDescription = description;
+        this.mUrl = url;
+        this.mUsername = username;
+        this.mPassword = password;
+        this.mNote = note;
+    }
+
+    public void setLoginType(String type, int icon) {
+        mLoginType = type;
+        mLoginIcon = icon;
+    }
+
+    public void setIsWifiPassword(boolean wifiPassword) {
+        mIsWifiPassword = wifiPassword;
+    }
+
+    public String getDescription() {
+        return mDescription;
+    }
+
+    public void setDescription(String description) {
+        mDescription = description;
+    }
+
+    public String getUrl() {
+        return mUrl;
+    }
+
+    public void setUrl(String url) {
+        mUrl = url;
+    }
+
+    public String getUsername() {
+        return mUsername;
+    }
+
+    public void setUsername(String username) {
+        mUsername = username;
+    }
+
+    public String getPassword() {
+        return mPassword;
+    }
+
+    public void setPassword(String pass) {
+        mPassword = pass;
+    }
+
+    public String getNote() {
+        return mNote;
+    }
+
+    public void setNote(String note) {
+        mNote = note;
+    }
+
+    public String getGroup() {
+        return mGroup;
+    }
+
+    public void setGroup(String group) {
+        mGroup = group;
+    }
+
+    public String getLoginType() {
+        return mLoginType;
+    }
+
+    public int getLoginIcon() {
+        return mLoginIcon;
+    }
+
+    public int getRowId() {
+        return rowId;
+    }
+
+    public void setRowId(int id) {
+        rowId = id;
+    }
+
+    public boolean isStarred() {
+        return mStarred;
+    }
+
+    public void setStarred(boolean starred) {
+        mStarred = starred;
+    }
+
+    public boolean isCreditCard() {
+        return mCard != null;
+    }
+
+    public boolean isWifiPassword() {
+        return mIsWifiPassword;
+    }
+
+    public boolean isSelected() {
+        return mIsSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        mIsSelected = selected;
+    }
+
+    public int getGroupPosition() {
+        return mGroupPos;
+    }
+
+    public void setGroupPosition(int pos) {
+        mGroupPos = pos;
+    }
+
+    public String getAppPackageName() {
+        return mAppPackageName;
+    }
+
+    public void setAppPackageName(String name) {
+        mAppPackageName = name;
+    }
+
+    public String getNetworkSSID() {
+        return mNetworkSSID;
+    }
+
+    public void setNetworkSSID(String ssid) {
+        mNetworkSSID = ssid;
+    }
+
+    public String getWifiSecurity() {
+        return mWifiSecurity;
+    }
+
+    public void setWifiSecurity(String security) {
+        mWifiSecurity = security;
+    }
+
+    public CreditCardInfo getCreditCard() {
+        return mCard;
+    }
+
+    public void setCreditCard(CreditCardInfo card) {
+        mCard = card;
+    }
 
 }

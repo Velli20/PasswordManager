@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ /*
   ~  * MIT License
   ~  *
@@ -29,7 +28,7 @@
 
     <string name="licences_files_title">Notices for files:</string>
     <string name="licences_sqlcipher">&#8226; commons-codec\n&#8226; sqlcipher\n&#8226; guava-r09</string>
-    
+
     <string name="licences_library_title">Notices for library projects:</string>
     <string name="sqlite_cipher_license">Copyright \u00a9 2008-2012 Zetetic LLC\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without
             modification, are permitted provided that the following conditions are met:
@@ -49,7 +48,7 @@
             ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
             (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
             SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\nhttps://github.com/sqlcipher/android-database-sqlcipher</string>
-    
+
     <string name="support_library_title">&#8226; android-support-v4\n&#8226;
         android-support-v7-appcompat\n&#8226;
         android-support-v7-cardview\n&#8226;
@@ -64,8 +63,8 @@
         WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
         See the License for the specific language governing permissions and
         limitations under the License.</string>
-    
-    
+
+
     <string name="fab_progress_title">&#8226; FABProgress Circle</string>
     <string name="fab_progress_license">Copyright 2015 Jorge Castillo Pérez\n\nLicensed
         under the Apache License, Version 2.0 (the "License");

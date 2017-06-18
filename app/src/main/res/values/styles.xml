@@ -24,7 +24,7 @@
   ~  */
   -->
 
-<resources xmlns:android="http://schemas.android.com/apk/res/android" >
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <style name="BaseThemeLight" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/color_primary_500</item>
@@ -55,15 +55,15 @@
         <item name="colorControlNormal">@color/color_accent_a100</item>
 
         <item name="searchViewStyle">@style/BaseThemeLight.SearchViewStyle</item>
-        
+
     </style>
-    
+
     <style name="LockScreenActivityStyle" parent="BaseThemeLight">
         <item name="colorAccent">@color/color_accent_a100</item>
         <item name="colorControlNormal">@color/color_accent_a100</item>
 
     </style>
-    
+
     <style name="GeneratePasswordActivityStyle" parent="BaseThemeLight">
         <item name="android:windowBackground">@color/white</item>
 
@@ -72,7 +72,7 @@
         <item name="colorControlHighlight">@color/color_accent_a500</item>
 
     </style>
-    
+
     <style name="ManageGroupsActivityStyle" parent="BaseThemeDark">
 
         <item name="colorAccent">@color/color_accent_a100_dark</item>
@@ -94,39 +94,38 @@
     </style>
 
     <style name="FilePickerTheme.PopupOverlay" parent="Theme.AppCompat.Light" />
-    
-    <style name="SettingsActivityStyle" parent="@style/ManageGroupsActivityStyle"/>
 
-    <style name="LicencesActivityStyle" parent="@style/SettingsActivityStyle"/>
+    <style name="SettingsActivityStyle" parent="@style/ManageGroupsActivityStyle" />
+
+    <style name="LicencesActivityStyle" parent="@style/SettingsActivityStyle" />
 
     <style name="AddPasswordActivityStyle" parent="BaseThemeLight">
         <item name="colorAccent">@color/color_primary_500</item>
         <item name="colorControlNormal">@color/color_primary_500</item>
-    </style> 
-   
+    </style>
+
     <style name="ToolbarStyle" parent="@style/Widget.AppCompat.Light.ActionBar">
         <item name="android:textColorPrimary">@color/white</item>
-        <item name="android:textColorSecondary">@color/white</item> 
-        
+        <item name="android:textColorSecondary">@color/white</item>
+
         <item name="popupTheme">@style/Theme.AppCompat.Light</item>
         <item name="colorAccent">@color/white</item>
         <item name="colorControlNormal">@color/white</item>
         <item name="colorPrimary">@color/white</item>
-        <item name="colorPrimaryDark">@color/white</item> 
+        <item name="colorPrimaryDark">@color/white</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
         <item name="actionModeStyle">@style/ContextualStyle</item>
-        
+
     </style>
-    
 
 
     <style name="AcitivityWebLogin" parent="Theme.AppCompat.Light.Dialog">
         <item name="colorPrimary">@color/color_primary_500</item>
-        <item name="colorPrimaryDark">@color/color_primary_dark_700</item> 
-        
+        <item name="colorPrimaryDark">@color/color_primary_dark_700</item>
+
         <item name="colorAccent">@color/color_primary_500</item>
         <item name="colorControlNormal">@color/color_primary_500</item>
-        
+
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowContentOverlay">@null</item>
@@ -134,17 +133,17 @@
         <item name="android:windowIsFloating">true</item>
         <item name="android:backgroundDimEnabled">false</item>
 
-     </style>
-    
+    </style>
+
     <style name="ContextualStyle" parent="@style/Widget.AppCompat.ActionMode">
         <item name="background">@color/color_primary_500</item>
     </style>
-    
+
     <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">true</item>
         <item name="color">@android:color/white</item>
     </style>
-    
+
 
     <style name="BaseThemeLight.SearchViewStyle" parent="Widget.AppCompat.SearchView">
 
@@ -172,7 +171,7 @@
         <item name="android:alpha">0.12</item>
         <item name="android:background">#000000</item>
     </style>
-    
+
     <style name="Subtitle">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#000000</item>
@@ -193,7 +192,7 @@
     <style name="LockScreenTextInputLayoutHint" parent="TextAppearance.Design.Hint">
         <item name="android:textSize">16sp</item>
     </style>
-    
+
     <style name="FabTitle">
         <item name="android:textColor">#91000000</item>
         <item name="android:layout_gravity">bottom|right|end</item>
@@ -204,7 +203,7 @@
         <item name="android:padding">8dp</item>
         <item name="android:alpha">0</item>
     </style>
-    
+
     <style name="PrimaryText">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">#000000</item>
@@ -212,20 +211,20 @@
         <item name="android:layout_centerVertical">true</item>
         <item name="android:gravity">center_vertical</item>
     </style>
-    
+
     <style name="SecondaryText" parent="@style/PrimaryText">
         <item name="android:textSize">14sp</item>
         <item name="android:alpha">0.54</item>
     </style>
-    
-    <style name="ActionButton"  >
+
+    <style name="ActionButton">
         <item name="android:background">@drawable/selectable_background_apptheme</item>
     </style>
 
-    <style name="RippleButton" >
+    <style name="RippleButton">
         <item name="android:background">@drawable/selectable_background_apptheme</item>
     </style>
-    
+
     <style name="NewEntryHint">
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginLeft">16dp</item>
@@ -242,8 +241,8 @@
         <item name="android:layout_marginTop">0dp</item>
         <item name="android:layout_marginBottom">0dp</item>
     </style>
-    
-    <style name="NewEntrySpinnerTextApplication" >
+
+    <style name="NewEntrySpinnerTextApplication">
         <item name="android:textSize">@dimen/new_entry_description_text_size</item>
         <item name="android:alpha">0.87</item>
         <item name="android:textColor">#000000</item>
@@ -251,9 +250,8 @@
         <item name="android:layout_marginBottom">8dp</item>
     </style>
 
-  
 
-    <style name="NewEntryInputField" >
+    <style name="NewEntryInputField">
         <item name="android:layout_marginTop">16dp</item>
         <item name="android:textSize">16sp</item>
         <item name="android:layout_marginLeft">16dp</item>
@@ -262,15 +260,15 @@
         <item name="met_errorColor">@color/new_entry_error</item>
         <item name="met_baseColor">@color/l_black</item>
     </style>
-    
-    <style name="NewEntrySpinnerField" >
+
+    <style name="NewEntrySpinnerField">
         <item name="android:layout_marginTop">2dp</item>
         <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginRight">12dp</item>
         <item name="android:layout_marginBottom">10dp</item>
     </style>
 
-    <style name="NewEntryInputField.Description" >
+    <style name="NewEntryInputField.Description">
         <item name="android:textSize">@dimen/new_entry_description_text_size</item>
         <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginRight">16dp</item>
@@ -278,8 +276,7 @@
     </style>
 
 
-
-    <style name="DetailsViewDetail" >
+    <style name="DetailsViewDetail">
         <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginRight">16dp</item>
         <item name="android:layout_marginBottom">10dp</item>
@@ -320,7 +317,7 @@
         <item name="android:layout_marginLeft">@dimen/password_card_title_margin_left</item>
         <item name="android:layout_marginRight">@dimen/password_card_title_margin_right</item>
     </style>
-    
+
     <style name="password_card_title_large">
         <item name="android:textSize">@dimen/password_card_title_size</item>
         <item name="android:textColor">@color/black</item>
@@ -341,7 +338,6 @@
         <item name="android:layout_marginLeft">@dimen/medium_text_margin</item>
         <item name="android:layout_marginRight">@dimen/medium_text_margin</item>
     </style>
-    
 
 
     <style name="medium_text_black">
@@ -351,7 +347,6 @@
         <item name="android:layout_marginLeft">@dimen/medium_text_margin</item>
         <item name="android:layout_marginRight">@dimen/medium_text_margin</item>
     </style>
-
 
 
 </resources>

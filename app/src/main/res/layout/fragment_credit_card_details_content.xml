@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ /*
   ~  * MIT License
   ~  *
@@ -30,8 +29,8 @@
     android:id="@+id/details_info_container"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
-    
+    android:orientation="vertical">
+
     <View
         android:id="@+id/details_view_login_type_separator"
         android:layout_width="match_parent"
@@ -40,84 +39,83 @@
         android:background="#000000" />
 
 
-
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_card_type_title"
         style="@style/DetailsViewSubHeader"
-        robototext:style="regular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/new_credit_card_card_type" />
+        android:text="@string/new_credit_card_card_type"
+        robototext:style="regular" />
 
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_card_type"
         style="@style/DetailsViewDetail"
-        robototext:style="regular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        robototext:scrollable="true" />
+        robototext:scrollable="true"
+        robototext:style="regular" />
 
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_card_number_title"
         style="@style/DetailsViewSubHeader"
-        robototext:style="regular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/new_credit_card_card_number" />
+        android:text="@string/new_credit_card_card_number"
+        robototext:style="regular" />
 
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_card_number"
         style="@style/DetailsViewDetail"
-        robototext:style="regular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        robototext:scrollable="true" />
+        robototext:scrollable="true"
+        robototext:style="regular" />
 
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_card_exp_date_title"
         style="@style/DetailsViewSubHeader"
-        robototext:style="regular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/new_credit_card_expiration_date" />
+        android:text="@string/new_credit_card_expiration_date"
+        robototext:style="regular" />
 
-     <com.velli.passwordmanager.roboto.RobotoTextView
+    <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_card_exp_date"
+        style="@style/DetailsViewDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/DetailsViewDetail"
-        robototext:style="regular"/>
+        robototext:style="regular" />
 
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_card_csv_title"
         style="@style/DetailsViewSubHeader"
-        robototext:style="regular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/new_credit_card_security_code" />
+        android:text="@string/new_credit_card_security_code"
+        robototext:style="regular" />
 
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_card_csv"
         style="@style/DetailsViewDetail"
-        robototext:style="regular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"  />
-    
+        android:inputType="textPassword"
+        robototext:style="regular" />
+
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_group_title"
         style="@style/DetailsViewSubHeader"
-        robototext:style="regular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/new_entry_group" />
+        android:text="@string/new_entry_group"
+        robototext:style="regular" />
 
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_group"
         style="@style/DetailsViewDetail"
-        robototext:style="regular"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        robototext:style="regular" />
 
 </LinearLayout>

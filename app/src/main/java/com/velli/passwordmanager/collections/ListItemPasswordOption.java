@@ -27,44 +27,44 @@
 package com.velli.passwordmanager.collections;
 
 public class ListItemPasswordOption {
-	
-	private int mViewType = -1;
-	private int mIntValue = -1;
-	
-	private boolean mBooleanValue;
-	
-	private String mTitle;
 
-	public int getViewType(){
-		return mViewType;
-	}
-	
-	public int getIntValue(){
-		return mIntValue;
-	}
-	
-	public boolean getBooleanValue(){
-		return mBooleanValue;
-	}
-	
-	public void setViewType(int viewtype){
-		mViewType = viewtype;
-	}
-	
-	public String getTitle(){
-		return mTitle;
-	}
-	
-	public void setTitle(String title){
-		mTitle = title;
-	}
-	
-	public void setIntValue(int value){
-		mIntValue = value;
-	}
-	
-	public void setBooleanValue(boolean b){
-		mBooleanValue = b;
-	}
-	
+    private int mViewType = -1;
+    private int mIntValue = -1;
+
+    private boolean mBooleanValue;
+
+    private String mTitle;
+
+    public int getViewType() {
+        return mViewType;
+    }
+
+    public void setViewType(int viewtype) {
+        mViewType = viewtype;
+    }
+
+    public int getIntValue() {
+        return mIntValue;
+    }
+
+    public void setIntValue(int value) {
+        mIntValue = value;
+    }
+
+    public boolean getBooleanValue() {
+        return mBooleanValue;
+    }
+
+    public void setBooleanValue(boolean b) {
+        mBooleanValue = b;
+    }
+
+    public String getTitle() {
+        return mTitle;
+    }
+
+    public void setTitle(String title) {
+        mTitle = title;
+    }
+
 }

@@ -40,102 +40,108 @@ import com.velli.passwordmanager.database.OnGetPasswordListener;
 import com.velli.passwordmanager.database.PasswordDatabaseHandler;
 
 public class ActivityAddCreditCard extends ActivityBase {
-	public static final String INTENT_EXTRA_ROW_ID = "entry to edit id";
+    public static final String INTENT_EXTRA_ROW_ID = "entry to edit id";
 
-	private NewCreditCardBase mBase;
+    private NewCreditCardBase mBase;
 
-	private int mCardRowId = -1;
-	private boolean mIsInEditMode = false;
-
-	@Override
-	public int getActivityId() { return ApplicationBase.ACTIVITY_ADD_CREDIT_CARD; }
-
-	@Override
-	public String getTag() { return getClass().getSimpleName(); }
+    private int mCardRowId = -1;
+    private boolean mIsInEditMode = false;
 
     @Override
-    public boolean implementsOnDatabaseEditedListener() { return true; }
+    public int getActivityId() {
+        return ApplicationBase.ACTIVITY_ADD_CREDIT_CARD;
+    }
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    @Override
+    public String getTag() {
+        return getClass().getSimpleName();
+    }
 
-		final Bundle args = getIntent().getExtras();
+    @Override
+    public boolean implementsOnDatabaseEditedListener() {
+        return true;
+    }
 
-		if(args != null){
-			mCardRowId = args.getInt(INTENT_EXTRA_ROW_ID, -1);
-		}
-		
-		mIsInEditMode = mCardRowId != -1;
-		
-		setContentView(R.layout.activity_add_credit_card);
-		
-		mBase = new NewCreditCardBase(this);
-		mBase.setView(findViewById(android.R.id.content));
-		
-		if(mIsInEditMode){
-			PasswordDatabaseHandler.getInstance().getPassword(mCardRowId, new OnGetPasswordListener() {
-				
-				@Override
-				public void onGetPassword(Password entry) {
-					if(entry != null){
-						mBase.setData(entry);
-					}
-					
-				}
-			});
-		}
-		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-		setSupportActionBar(toolbar);
-		initActionBar();
-	}
-	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		super.onCreateOptionsMenu(menu);
-	    getMenuInflater().inflate(R.menu.new_entry_menu, menu);
-	    
-	    return true;
-	}
-	
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch(item.getItemId()){
-		case R.id.menu_save_entry:
-			if(!mBase.checkForErrors()){
-				mBase.save();
-				
-			} else {
-				return true;
-			}
-		case android.R.id.home:
-			final InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-			inputManager.hideSoftInputFromWindow(findViewById(android.R.id.content).getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-			
-			finish();
-			return true;
-		}
-		
-		return super.onOptionsItemSelected(item);
-	}
-	
-	private void initActionBar() {
-		final ActionBar bar = getSupportActionBar();
-		if(bar != null) {
-			bar.setDisplayShowHomeEnabled(true);
-			bar.setDisplayHomeAsUpEnabled(true);
-			bar.setDisplayShowTitleEnabled(true);
-			bar.setTitle(getString(mIsInEditMode ? R.string.title_edit_credit_card : R.string.title_new_credit_card));
-		}
+        final Bundle args = getIntent().getExtras();
 
-	}
+        if (args != null) {
+            mCardRowId = args.getInt(INTENT_EXTRA_ROW_ID, -1);
+        }
 
-	@Override
-	public void onDatabaseHasBeenEdited(String tablename, long rowid) {
-		if(Constants.TABLE_GROUPS.equals(tablename) && mBase != null){
-			mBase.initGroupSpinner();
-		}
-		
-	}
+        mIsInEditMode = mCardRowId != -1;
+
+        setContentView(R.layout.activity_add_credit_card);
+
+        mBase = new NewCreditCardBase(this);
+        mBase.setView(findViewById(android.R.id.content));
+
+        if (mIsInEditMode) {
+            PasswordDatabaseHandler.getInstance().getPassword(mCardRowId, new OnGetPasswordListener() {
+
+                @Override
+                public void onGetPassword(Password entry) {
+                    if (entry != null) {
+                        mBase.setData(entry);
+                    }
+
+                }
+            });
+        }
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        initActionBar();
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.new_entry_menu, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_save_entry:
+                if (!mBase.checkForErrors()) {
+                    mBase.save();
+
+                } else {
+                    return true;
+                }
+            case android.R.id.home:
+                final InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.hideSoftInputFromWindow(findViewById(android.R.id.content).getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+
+                finish();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void initActionBar() {
+        final ActionBar bar = getSupportActionBar();
+        if (bar != null) {
+            bar.setDisplayShowHomeEnabled(true);
+            bar.setDisplayHomeAsUpEnabled(true);
+            bar.setDisplayShowTitleEnabled(true);
+            bar.setTitle(getString(mIsInEditMode ? R.string.title_edit_credit_card : R.string.title_new_credit_card));
+        }
+
+    }
+
+    @Override
+    public void onDatabaseHasBeenEdited(String tablename, long rowid) {
+        if (Constants.TABLE_GROUPS.equals(tablename) && mBase != null) {
+            mBase.initGroupSpinner();
+        }
+
+    }
 }

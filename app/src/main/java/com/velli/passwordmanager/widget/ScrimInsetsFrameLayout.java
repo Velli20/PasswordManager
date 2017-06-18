@@ -26,8 +26,6 @@
 
 package com.velli.passwordmanager.widget;
 
-import com.velli.passwordmanager.R;
-
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -36,6 +34,8 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
+
+import com.velli.passwordmanager.R;
 
 public class ScrimInsetsFrameLayout extends FrameLayout {
     private Drawable mInsetForeground;

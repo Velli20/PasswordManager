@@ -29,35 +29,33 @@ package com.velli.passwordmanager.database;
 import android.content.ContentValues;
 import android.os.AsyncTask;
 
-import net.sqlcipher.Cursor;
 import net.sqlcipher.database.SQLiteDatabase;
-import net.sqlcipher.database.SQLiteException;
 
 
 /**
  * Created by Hp on 8.12.2015.
  */
 public class AddNewGroupTask extends AsyncTask<String, Void, Integer> {
-    private SQLiteDatabase mDb;
     private final String mGroup;
+    private SQLiteDatabase mDb;
 
-    public AddNewGroupTask(SQLiteDatabase db, String group){
+    public AddNewGroupTask(SQLiteDatabase db, String group) {
         mDb = db;
         mGroup = group;
     }
 
     @Override
     protected Integer doInBackground(String... params) {
-        if(mDb == null || !mDb.isOpen()) {
+        if (mDb == null || !mDb.isOpen()) {
             return Constants.RESULT_ERROR_DATABASE_NOT_OPEN;
-        } else if(mGroup == null) {
+        } else if (mGroup == null) {
             return Constants.RESULT_ERROR_INVALID_CHARACTER;
         }
 
         // Check if there is already group with given name
         int result = PasswordDatabaseHandler.checkIfGroupExists(mGroup, mDb);
 
-        if(result == Constants.RESULT_OK){
+        if (result == Constants.RESULT_OK) {
             ContentValues values = new ContentValues();
             values.put(Constants.KEY_VALUE, mGroup);
 
@@ -70,7 +68,7 @@ public class AddNewGroupTask extends AsyncTask<String, Void, Integer> {
     }
 
     @Override
-    protected void onPostExecute(Integer rowid){
+    protected void onPostExecute(Integer rowid) {
         PasswordDatabaseHandler.getInstance().notifyCallbacks(Constants.TABLE_GROUPS, rowid);
     }
 

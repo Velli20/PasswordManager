@@ -32,13 +32,11 @@ package com.velli.passwordmanager.bottomsheet;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 
-import com.velli.passwordmanager.roboto.RobotoTextView;
 import com.velli.passwordmanager.R;
+import com.velli.passwordmanager.roboto.RobotoTextView;
 
-public class BottomSheetIconViewHolder extends RecyclerView.ViewHolder{
+public class BottomSheetIconViewHolder extends RecyclerView.ViewHolder {
     protected RobotoTextView mText;
 
     public BottomSheetIconViewHolder(View itemView) {

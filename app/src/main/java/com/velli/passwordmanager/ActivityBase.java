@@ -42,8 +42,8 @@ import com.velli.passwordmanager.database.PasswordDatabaseHandler;
  * Created by Hp on 7.12.2015.
  */
 public class ActivityBase extends AppCompatActivity implements OnDatabaseEditedListener {
-    private final String TAG = getClass().getSimpleName();
     public static final boolean DEBUG = true;
+    private final String TAG = getClass().getSimpleName();
 
     public String getTag() {
         return TAG;
@@ -57,14 +57,16 @@ public class ActivityBase extends AppCompatActivity implements OnDatabaseEditedL
         return DEBUG;
     }
 
-    public boolean implementsOnDatabaseEditedListener() { return false; }
+    public boolean implementsOnDatabaseEditedListener() {
+        return false;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ApplicationBase.setActivityStatus(getActivityId(), ApplicationBase.STATUS_VISIBLE, false);
 
-        if(isDebugging()) {
+        if (isDebugging()) {
             Log.i(getTag(), getTag() + " onCreate()");
         }
 
@@ -72,7 +74,7 @@ public class ActivityBase extends AppCompatActivity implements OnDatabaseEditedL
 
         boolean secure = prefs.getBoolean(getString(R.string.preference_key_screenshots_enabled), false);
 
-        if(!secure){
+        if (!secure) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         }
     }
@@ -85,17 +87,17 @@ public class ActivityBase extends AppCompatActivity implements OnDatabaseEditedL
         }
 
         ApplicationBase.setActivityStatus(getActivityId(), ApplicationBase.STATUS_VISIBLE, false);
-        if(getActivityId() != ApplicationBase.ACTIVITY_LOCK_SCREEN && !PasswordDatabaseHandler.getInstance().isDatabaseOpen()){
+        if (getActivityId() != ApplicationBase.ACTIVITY_LOCK_SCREEN && !PasswordDatabaseHandler.getInstance().isDatabaseOpen()) {
             logOut();
         }
 
-        if(implementsOnDatabaseEditedListener()) {
+        if (implementsOnDatabaseEditedListener()) {
             PasswordDatabaseHandler.getInstance().registerOnDatabaseEditedListener(this);
         }
     }
 
     @Override
-    public void onStart(){
+    public void onStart() {
         super.onStart();
         if (isDebugging()) {
             Log.i(getTag(), getTag() + " onStart()");
@@ -110,13 +112,13 @@ public class ActivityBase extends AppCompatActivity implements OnDatabaseEditedL
         }
         ApplicationBase.setActivityStatus(getActivityId(), ApplicationBase.STATUS_ON_PAUSE, isChangingConfigurations());
 
-        if(implementsOnDatabaseEditedListener()) {
+        if (implementsOnDatabaseEditedListener()) {
             PasswordDatabaseHandler.getInstance().unregisterOnDatabaseEditedListener(this);
         }
     }
 
     @Override
-    public void onStop(){
+    public void onStop() {
         super.onStop();
         if (isDebugging()) {
             Log.i(getTag(), getTag() + " onStop() is changing configurations? " + String.valueOf(isChangingConfigurations()));
@@ -144,7 +146,8 @@ public class ActivityBase extends AppCompatActivity implements OnDatabaseEditedL
     }
 
     @Override
-    public void onDatabaseHasBeenEdited(String tablename, long rowid) { }
+    public void onDatabaseHasBeenEdited(String tablename, long rowid) {
+    }
 
 
 }

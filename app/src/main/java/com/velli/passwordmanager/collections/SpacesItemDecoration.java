@@ -43,22 +43,22 @@ public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
         outRect.bottom = space;
         outRect.left = space;
-        
+
         int position = parent.getChildAdapterPosition(view);
         // Add top margin only for the first item to avoid double space between items
-        if(position < spancount){
+        if (position < spancount) {
             outRect.top = space;
         }
-        
-        
-        if(spancount > 1){
-        	if(((position +1) % spancount) == 0){
-        		outRect.right = space;
-        	} else {
-        		outRect.right = 0;
-        	}
+
+
+        if (spancount > 1) {
+            if (((position + 1) % spancount) == 0) {
+                outRect.right = space;
+            } else {
+                outRect.right = 0;
+            }
         } else {
-        	outRect.right = space;
+            outRect.right = space;
         }
     }
 }

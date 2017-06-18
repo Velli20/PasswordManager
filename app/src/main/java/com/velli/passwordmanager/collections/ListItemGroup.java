@@ -29,19 +29,19 @@ package com.velli.passwordmanager.collections;
 import java.util.ArrayList;
 
 public class ListItemGroup {
-	
-	public String primary = "";
-	public String secondary = "";
-	public boolean checked = false;
-	public int viewType = 0;
-	public int rowId = -1;
-	public ArrayList<String> passwordsTitles = new ArrayList<>();
-	public ArrayList<Integer> passwordsRowIds = new ArrayList<>();
-	
-	public void addPassword(String passwordTitle, int rowId){
-		passwordsTitles.add(passwordTitle);
-		passwordsRowIds.add(rowId);
-	}
-	
-	
+
+    public String primary = "";
+    public String secondary = "";
+    public boolean checked = false;
+    public int viewType = 0;
+    public int rowId = -1;
+    public ArrayList<String> passwordsTitles = new ArrayList<>();
+    public ArrayList<Integer> passwordsRowIds = new ArrayList<>();
+
+    public void addPassword(String passwordTitle, int rowId) {
+        passwordsTitles.add(passwordTitle);
+        passwordsRowIds.add(rowId);
+    }
+
+
 }

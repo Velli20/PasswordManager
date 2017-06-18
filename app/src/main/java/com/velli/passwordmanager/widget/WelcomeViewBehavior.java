@@ -34,24 +34,24 @@ import android.view.View;
 
 public class WelcomeViewBehavior extends CoordinatorLayout.Behavior<WelcomeView> {
 
-	
-	public WelcomeViewBehavior (Context context, AttributeSet attrs) {
-		super(context, attrs);
-	}
-	
-	@Override
-	public boolean layoutDependsOn(CoordinatorLayout parent, WelcomeView child, View dependency) {
-		return true;
-		
-	}
-	
-	@Override
-	public boolean onDependentViewChanged(CoordinatorLayout parent, WelcomeView child, View dependency) {
-		if (dependency instanceof SnackbarLayout) {
-			float translationY = Math.min(0, dependency.getTranslationY() - dependency.getHeight());
-			child.setTranslationY(translationY);
-			return true;
-		}
-	  return false;
-	}
+
+    public WelcomeViewBehavior(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    @Override
+    public boolean layoutDependsOn(CoordinatorLayout parent, WelcomeView child, View dependency) {
+        return true;
+
+    }
+
+    @Override
+    public boolean onDependentViewChanged(CoordinatorLayout parent, WelcomeView child, View dependency) {
+        if (dependency instanceof SnackbarLayout) {
+            float translationY = Math.min(0, dependency.getTranslationY() - dependency.getHeight());
+            child.setTranslationY(translationY);
+            return true;
+        }
+        return false;
+    }
 }

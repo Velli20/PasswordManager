@@ -29,5 +29,5 @@ package com.velli.passwordmanager.listeners;
 import android.view.View;
 
 public interface OnPasswordOptionClickListener {
-	void onPasswordOptionClick(int viewType, View v, int position);
+    void onPasswordOptionClick(int viewType, View v, int position);
 }

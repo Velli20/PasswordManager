@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ /*
   ~  * MIT License
   ~  *
@@ -28,41 +27,39 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.velli.passwordmanager"
     android:versionCode="8"
-    android:versionName="1.08" >
+    android:versionName="1.08">
 
 
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
 
     <application
-        android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:hardwareAccelerated="true"
         android:name=".ApplicationBase"
-        android:allowClearUserData="true" 
-        android:supportsRtl="false" 
-        android:isGame="false" 
-        android:testOnly="false" >
+        android:allowBackup="true"
+        android:allowClearUserData="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_launcher"
+        android:isGame="false"
+        android:label="@string/app_name"
+        android:supportsRtl="false"
+        android:testOnly="false">
         <activity
             android:name=".ActivityMain"
-            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="user"
             android:theme="@style/MainActivityStyle"
-            android:screenOrientation="user">
-        </activity>
+            android:windowSoftInputMode="adjustResize"></activity>
         <activity
             android:name=".ActivitySettings"
-            android:theme="@style/SettingsActivityStyle" 
-            android:configChanges="keyboardHidden|keyboard|orientation|screenSize">
-        </activity>
+            android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+            android:theme="@style/SettingsActivityStyle"></activity>
         <activity
             android:name=".ActivityLockScreen"
-            android:theme="@style/LockScreenActivityStyle"
             android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
-            android:windowSoftInputMode="stateHidden|adjustResize"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@style/LockScreenActivityStyle"
+            android:windowSoftInputMode="stateHidden|adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -70,55 +67,53 @@
         </activity>
         <activity
             android:name=".ActivityManageGroups"
-            android:theme="@style/ManageGroupsActivityStyle" android:configChanges="keyboardHidden|keyboard|orientation|screenSize">
-        </activity>
+            android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+            android:theme="@style/ManageGroupsActivityStyle"></activity>
         <activity
             android:name=".ActivityGeneratePassword"
-            android:theme="@style/GeneratePasswordActivityStyle" android:configChanges="keyboardHidden|keyboard|orientation|screenSize">
-        </activity>
+            android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+            android:theme="@style/GeneratePasswordActivityStyle"></activity>
         <activity
             android:name=".ActivityLicenses"
-            android:theme="@style/LicencesActivityStyle" android:configChanges="keyboardHidden|keyboard|orientation|screenSize">
-        </activity>
+            android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+            android:theme="@style/LicencesActivityStyle"></activity>
         <activity
             android:name=".ActivityAddPassword"
-            android:theme="@style/AddPasswordActivityStyle" android:configChanges="keyboardHidden|keyboard|orientation|screenSize">
+            android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+            android:theme="@style/AddPasswordActivityStyle">
             <intent-filter android:label="@string/intent_share_label">
-                <action android:name="android.intent.action.SEND"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="text/plain"/>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
         <activity
             android:name=".ActivityAddCreditCard"
-            android:theme="@style/AddPasswordActivityStyle" android:configChanges="keyboardHidden|keyboard|orientation|screenSize">
-        </activity>
+            android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+            android:theme="@style/AddPasswordActivityStyle"></activity>
         <activity
             android:name=".ActivityImportPasswords"
-            android:theme="@style/BaseThemeLight" android:configChanges="keyboardHidden|keyboard|orientation|screenSize">
-        </activity>
+            android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+            android:theme="@style/BaseThemeLight"></activity>
 
-        <activity android:name=".ActivityFilePickerExtended" android:theme="@style/BaseThemeLight" />
-        <service 
-            android:name=".ServiceFloatingPasswordCard" >
-        </service>
-        
-        <service
-            android:name=".IntentServiceLogOut">
-        </service>
-        
-        <activity 
+        <activity
+            android:name=".ActivityFilePickerExtended"
+            android:theme="@style/BaseThemeLight" />
+
+        <service android:name=".ServiceFloatingPasswordCard"></service>
+
+        <service android:name=".IntentServiceLogOut"></service>
+
+        <activity
             android:name=".ActivityWebLogin"
             android:theme="@style/AcitivityWebLogin">
-            <intent-filter android:label="@string/title_log_in" >
+            <intent-filter android:label="@string/title_log_in">
                 <action android:name="android.intent.action.SEND" />
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
-        
-        <service 
-            android:name=".ServiceWebLogin" >
-        </service>
+
+        <service android:name=".ServiceWebLogin"></service>
 
     </application>
 

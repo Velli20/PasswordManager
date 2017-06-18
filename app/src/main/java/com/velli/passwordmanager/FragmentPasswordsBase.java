@@ -34,7 +34,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -65,9 +64,9 @@ public class FragmentPasswordsBase extends Fragment implements ActivityMain.OnBa
         super.onActivityCreated(savedInstanceState);
         ActivityMain activity = (ActivityMain) getActivity();
 
-        if(activity != null) {
+        if (activity != null) {
             mNavigationDrawer = activity.getNavigationDrawer();
-            if(mNavigationDrawer != null) {
+            if (mNavigationDrawer != null) {
                 mNavigationDrawer.setNavigationItemSelectedListener(this);
             }
 
@@ -80,21 +79,21 @@ public class FragmentPasswordsBase extends Fragment implements ActivityMain.OnBa
         mSearchView.setOnSearchViewListener(listener);
         mSearchView.setSubmitOnClick(true);
 
-        if(savedInstanceState != null) {
+        if (savedInstanceState != null) {
             mSearchQuery = savedInstanceState.getString(BUNDLE_KEY_SEARCH_KEY_WORD, null);
             mIsQuerySubmitted = savedInstanceState.getBoolean(BUNDLE_KEY_SEARCH_SUBMITTED, false);
             mLastSelectedNavItemId = savedInstanceState.getInt(BUNDLE_KEY_NAV_ID, -1);
 
-            if(mIsQuerySubmitted) {
+            if (mIsQuerySubmitted) {
                 onSearchActionStarted();
                 onSearchQueryTextSubmitted(mSearchQuery);
             }
         }
 
-        MenuItem currentItem = mLastSelectedNavItemId != -1 ?getMenuItemById(mLastSelectedNavItemId) : getDefaultMenuItem();
+        MenuItem currentItem = mLastSelectedNavItemId != -1 ? getMenuItemById(mLastSelectedNavItemId) : getDefaultMenuItem();
 
 
-        if(currentItem != null && !isInSearchMode()) {
+        if (currentItem != null && !isInSearchMode()) {
             onNavigationItemSelection(currentItem);
         }
         setHasOptionsMenu(true);
@@ -105,7 +104,7 @@ public class FragmentPasswordsBase extends Fragment implements ActivityMain.OnBa
     public void onResume() {
         super.onResume();
         ((ActivityMain) getActivity()).setOnBackListener(this);
-        if(!isInSearchMode()) {
+        if (!isInSearchMode()) {
             ((ActivityMain) getActivity()).lockDrawer(false, true);
         } else {
             setToolbarInSearchMode(mSearchQuery, true);
@@ -120,7 +119,7 @@ public class FragmentPasswordsBase extends Fragment implements ActivityMain.OnBa
 
     @Override
     public boolean doBack() {
-        if(mSearchQuery != null) {
+        if (mSearchQuery != null) {
             setToolbarInSearchMode(null, false);
             return true;
         }
@@ -133,11 +132,11 @@ public class FragmentPasswordsBase extends Fragment implements ActivityMain.OnBa
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if(mNavigationDrawer != null) {
+        if (mNavigationDrawer != null) {
             mNavigationDrawer.setNavigationItemSelectedListener(null);
         }
         mNavigationDrawer = null;
-        if(mDrawerToggle != null) {
+        if (mDrawerToggle != null) {
             mDrawerToggle.setToolbarNavigationClickListener(null);
         }
         mDrawerToggle = null;
@@ -160,43 +159,6 @@ public class FragmentPasswordsBase extends Fragment implements ActivityMain.OnBa
         outState.putInt(BUNDLE_KEY_NAV_ID, mLastSelectedNavItemId);
     }
 
-
-    private class SearchListener implements MaterialSearchView.OnQueryTextListener, MaterialSearchView.SearchViewListener {
-
-
-        @Override
-        public boolean onQueryTextSubmit(String query) {
-            onSearchQueryTextSubmitted(query);
-            return false;
-        }
-
-        @Override
-        public boolean onQueryTextChange(String newText) {
-            PasswordDatabaseHandler.getInstance().getSearchSuggestions(newText, new OnGetSearchSuggestionsListener() {
-                @Override
-                public void onGetSearchSuggestions(String[] suggestions) {
-                    if(mSearchView != null && suggestions != null) {
-                        mSearchView.setSuggestions(suggestions);
-                    }
-                }
-            });
-            return false;
-        }
-
-        @Override
-        public void onSearchViewShown() {
-            onSearchActionStarted();
-        }
-
-        @Override
-        public void onSearchViewClosed() {
-            if(!mIsQuerySubmitted) {
-                mSearchQuery = null;
-                onSearchActionCancelled();
-            }
-        }
-    }
-
     public void onSearchQueryTextSubmitted(String query) {
         mSearchQuery = query;
         mIsQuerySubmitted = true;
@@ -204,11 +166,11 @@ public class FragmentPasswordsBase extends Fragment implements ActivityMain.OnBa
 
     }
 
+    public void onSearchActionCancelled() {
+    }
 
-    public void onSearchActionCancelled() {}
-
-    public void onSearchActionStarted() {}
-
+    public void onSearchActionStarted() {
+    }
 
     public boolean isInSearchMode() {
         return mSearchQuery != null;
@@ -221,7 +183,7 @@ public class FragmentPasswordsBase extends Fragment implements ActivityMain.OnBa
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         DrawerLayout drawer = (DrawerLayout) getActivity().findViewById(R.id.drawer_layout);
-        if(item.getItemId() != R.id.navigation_item_log_out && drawer != null) {
+        if (item.getItemId() != R.id.navigation_item_log_out && drawer != null) {
             drawer.closeDrawer(GravityCompat.START);
         }
         onNavigationItemSelection(item);
@@ -230,22 +192,21 @@ public class FragmentPasswordsBase extends Fragment implements ActivityMain.OnBa
 
     public void onNavigationItemSelection(MenuItem item) {
         int id = item.getItemId();
-        if(id != R.id.navigation_item_settings
+        if (id != R.id.navigation_item_settings
                 && id != R.id.navigation_item_log_out
                 && id != R.id.navigation_item_manage_groups) {
             mLastSelectedNavItemId = id;
-            final ActionBar bar = ((AppCompatActivity)getActivity()).getSupportActionBar();
+            final ActionBar bar = ((AppCompatActivity) getActivity()).getSupportActionBar();
 
-            if(bar != null) {
+            if (bar != null) {
                 bar.setTitle(item.getTitle().toString());
             }
         }
     }
 
-
     public MenuItem getMenuItemById(int id) {
-        if(mNavigationDrawer != null) {
-            if(id != -1) {
+        if (mNavigationDrawer != null) {
+            if (id != -1) {
                 return mNavigationDrawer.getMenu().findItem(id);
             }
         }
@@ -253,7 +214,7 @@ public class FragmentPasswordsBase extends Fragment implements ActivityMain.OnBa
     }
 
     public MenuItem getDefaultMenuItem() {
-        if(mNavigationDrawer != null) {
+        if (mNavigationDrawer != null) {
             return mNavigationDrawer.getMenu().getItem(0);
         }
         return null;
@@ -264,10 +225,10 @@ public class FragmentPasswordsBase extends Fragment implements ActivityMain.OnBa
     }
 
     public void setToolbarInSearchMode(String query, boolean submitted) {
-        final ActivityMain activity = (ActivityMain)getActivity();
+        final ActivityMain activity = (ActivityMain) getActivity();
         final ActionBar bar = activity.getSupportActionBar();
 
-        if(submitted && query != null) {
+        if (submitted && query != null) {
             bar.setTitle(getActivity().getString(R.string.action_search_for) + "\"" + query + "\"");
 
             activity.lockDrawer(true, true);
@@ -284,10 +245,10 @@ public class FragmentPasswordsBase extends Fragment implements ActivityMain.OnBa
             mIsQuerySubmitted = false;
             onSearchActionCancelled();
 
-            if(mLastSelectedNavItemId != -1) {
+            if (mLastSelectedNavItemId != -1) {
                 onNavigationItemSelection(getMenuItemById(mLastSelectedNavItemId));
             }
-            if(bar != null) {
+            if (bar != null) {
                 bar.setDisplayShowTitleEnabled(true);
                 bar.setHomeButtonEnabled(!activity.isSw600dpLayout());
                 bar.setDisplayHomeAsUpEnabled(!activity.isSw600dpLayout());
@@ -295,6 +256,42 @@ public class FragmentPasswordsBase extends Fragment implements ActivityMain.OnBa
                 bar.show();
             }
             activity.initDrawer();
+        }
+    }
+
+    private class SearchListener implements MaterialSearchView.OnQueryTextListener, MaterialSearchView.SearchViewListener {
+
+
+        @Override
+        public boolean onQueryTextSubmit(String query) {
+            onSearchQueryTextSubmitted(query);
+            return false;
+        }
+
+        @Override
+        public boolean onQueryTextChange(String newText) {
+            PasswordDatabaseHandler.getInstance().getSearchSuggestions(newText, new OnGetSearchSuggestionsListener() {
+                @Override
+                public void onGetSearchSuggestions(String[] suggestions) {
+                    if (mSearchView != null && suggestions != null) {
+                        mSearchView.setSuggestions(suggestions);
+                    }
+                }
+            });
+            return false;
+        }
+
+        @Override
+        public void onSearchViewShown() {
+            onSearchActionStarted();
+        }
+
+        @Override
+        public void onSearchViewClosed() {
+            if (!mIsQuerySubmitted) {
+                mSearchQuery = null;
+                onSearchActionCancelled();
+            }
         }
     }
 

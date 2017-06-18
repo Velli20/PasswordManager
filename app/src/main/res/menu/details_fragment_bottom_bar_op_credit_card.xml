@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ /*
   ~  * MIT License
   ~  *
@@ -25,14 +24,28 @@
   ~  */
   -->
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:appcompat="http://schemas.android.com/apk/res-auto" appcompat:showAsAction="ifRoom">
-    <item android:id="@+id/menu_share_password" android:title="@string/menu_action_share_password" android:icon="@drawable/ic_action_share" appcompat:showAsAction="ifRoom">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appcompat="http://schemas.android.com/apk/res-auto"
+    appcompat:showAsAction="ifRoom">
+    <item
+        android:id="@+id/menu_share_password"
+        android:icon="@drawable/ic_action_share"
+        android:title="@string/menu_action_share_password"
+        appcompat:showAsAction="ifRoom">
         <menu>
-            <item android:id="@+id/menu_share_email" android:title="@string/menu_action_share_email"/>
-            <item android:id="@+id/menu_share_screenshot" android:title="@string/menu_action_share_screenshot"/>
+            <item
+                android:id="@+id/menu_share_email"
+                android:title="@string/menu_action_share_email" />
+            <item
+                android:id="@+id/menu_share_screenshot"
+                android:title="@string/menu_action_share_screenshot" />
         </menu>
     </item>
-    <item android:id="@+id/menu_view_hide_password" android:title="@string/menu_action_view_password" android:icon="@drawable/ic_action_view" appcompat:showAsAction="ifRoom"></item>
-    
+    <item
+        android:id="@+id/menu_view_hide_password"
+        android:icon="@drawable/ic_action_view"
+        android:title="@string/menu_action_view_password"
+        appcompat:showAsAction="ifRoom"></item>
+
 
 </menu>

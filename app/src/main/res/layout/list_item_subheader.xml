@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ /*
   ~  * MIT License
   ~  *
@@ -33,16 +32,15 @@
 
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/password_generation_list_item_title"
-        robototext:style="medium"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_vertical"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
-        android:textColor="#000000"
         android:alpha="0.54"
-        android:textSize="14sp" />
-
+        android:gravity="center_vertical"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        robototext:style="medium" />
 
 
 </LinearLayout>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ /*
   ~  * MIT License
   ~  *
@@ -29,14 +28,13 @@
     xmlns:robototext="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    
-    <View 
+
+    <View
         style="@style/Divider"
-        android:layout_gravity="top"/>
-    
+        android:layout_gravity="top" />
+
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/floating_pass_view_description"
-        robototext:style="regular"
         style="@style/PrimaryText"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -45,46 +43,47 @@
         android:layout_marginRight="56dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="1dp"
-        android:textIsSelectable="true"
-        android:gravity="center_vertical"
+        android:drawableLeft="@drawable/ic_type_credit_card"
         android:drawablePadding="16dp"
-        android:drawableLeft="@drawable/ic_type_credit_card"/>
-    
+        android:gravity="center_vertical"
+        android:textIsSelectable="true"
+        robototext:style="regular" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:orientation="vertical" >
-        
+        android:layout_marginTop="56dp"
+        android:orientation="vertical">
+
         <com.velli.passwordmanager.roboto.RobotoTextView
             android:id="@+id/floating_pass_view_card_number_title"
-            robototext:style="medium"
             style="@style/Subtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="56dp"
             android:layout_marginStart="56dp"
-            android:text="@string/new_credit_card_card_number"/>
+            android:text="@string/new_credit_card_card_number"
+            robototext:style="medium" />
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="5dp"
-            android:clipChildren="false" >
+            android:clipChildren="false">
 
             <com.velli.passwordmanager.roboto.RobotoTextView
                 android:id="@+id/floating_pass_view_card_number"
                 style="@style/PrimaryText"
-                robototext:style="regular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|right|end"
                 android:layout_marginLeft="56dp"
                 android:layout_marginStart="56dp"
-                android:textIsSelectable="true" />
+                android:textIsSelectable="true"
+                robototext:style="regular" />
 
             <ImageButton
                 android:id="@+id/floating_pass_view_card_copy_number"
@@ -98,71 +97,71 @@
                 android:src="@drawable/ic_action_copy_blue" />
         </FrameLayout>
 
-        <LinearLayout 
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="56dp"
-            android:layout_marginStart="56dp" 
-            android:orientation="horizontal"
+            android:layout_marginStart="56dp"
             android:layout_marginTop="5dp"
+            android:orientation="horizontal"
             android:weightSum="1">
-            
+
             <com.velli.passwordmanager.roboto.RobotoTextView
                 android:id="@+id/floating_pass_view_card_csv_title"
                 style="@style/Subtitle"
-                robototext:style="medium"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.4"
                 android:text="@string/new_credit_card_csv"
-                android:textIsSelectable="true" />
-            
+                android:textIsSelectable="true"
+                robototext:style="medium" />
+
             <com.velli.passwordmanager.roboto.RobotoTextView
                 android:id="@+id/floating_pass_view_card_exp_title"
                 style="@style/Subtitle"
-                robototext:style="medium"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.6"
                 android:text="@string/new_credit_card_expiration_date"
-                android:textIsSelectable="true" />
-            
+                android:textIsSelectable="true"
+                robototext:style="medium" />
+
 
         </LinearLayout>
-        
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:layout_marginTop="5dp"
-            android:clipChildren="false" >
+            android:clipChildren="false">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_gravity="center_vertical|end|right"
-                android:layout_marginStart="56dp"
                 android:layout_marginLeft="56dp"
-                android:weightSum="1" >
+                android:layout_marginStart="56dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
 
                 <com.velli.passwordmanager.roboto.RobotoTextView
                     android:id="@+id/floating_pass_view_card_csv"
                     style="@style/PrimaryText"
-                    robototext:style="regular"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:textIsSelectable="true" />
+                    android:textIsSelectable="true"
+                    robototext:style="regular" />
 
                 <com.velli.passwordmanager.roboto.RobotoTextView
                     android:id="@+id/floating_pass_view_card_exp"
                     style="@style/PrimaryText"
-                    robototext:style="regular"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"
-                    android:textIsSelectable="true" />
+                    android:textIsSelectable="true"
+                    robototext:style="regular" />
             </LinearLayout>
 
             <ImageButton

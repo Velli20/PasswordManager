@@ -26,8 +26,6 @@
 
 package com.velli.passwordmanager.collections;
 
-import java.util.ArrayList;
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
@@ -39,77 +37,79 @@ import android.widget.BaseAdapter;
 import com.velli.passwordmanager.R;
 import com.velli.passwordmanager.roboto.RobotoTextView;
 
+import java.util.ArrayList;
+
 public class CustomSpinnerIconAdapter extends BaseAdapter {
-	private LayoutInflater mInflater;
-	private ArrayList<String> labels = new ArrayList<>();
-	private final Resources mRes;
-	
-	public CustomSpinnerIconAdapter(Context context) {
-		mInflater = LayoutInflater.from(context);
-		mRes = context.getResources();
-		
-		
-		final int label[] = Utils.getLoginLabelArray();
-		final int navLenght = label.length;
-		
-		for(int i = 0; i < navLenght; i++){	
-			labels.add(mRes.getString(label[i]));
-		}
-	}
+    private final Resources mRes;
+    private LayoutInflater mInflater;
+    private ArrayList<String> labels = new ArrayList<>();
 
-	@Override
-	public int getCount() {
-		return labels.size();
-	}
+    public CustomSpinnerIconAdapter(Context context) {
+        mInflater = LayoutInflater.from(context);
+        mRes = context.getResources();
 
-	@Override
-	public Drawable getItem(int position) {
-		Drawable d = mRes.getDrawable(Utils.getLoginLabelIconArray()[position]);
-		d.setBounds(0, 0, d.getIntrinsicWidth(), d.getIntrinsicHeight());
-		return d;
-	}
 
-	@Override
-	public long getItemId(int position) {
-		return position;
-	}
+        final int label[] = Utils.getLoginLabelArray();
+        final int navLenght = label.length;
 
-	@Override
-	public View getDropDownView(int position, View convertView, ViewGroup parent) {
-		ViewHolder holder;
+        for (int i = 0; i < navLenght; i++) {
+            labels.add(mRes.getString(label[i]));
+        }
+    }
 
-		if (convertView == null) {
-			holder = new ViewHolder();
-			convertView = mInflater.inflate( R.layout.navigation_spinner_item_group_dropdown, parent, false);
-			holder.v = (RobotoTextView) convertView.findViewById(R.id.spinner_item_dropdown);
-			convertView.setTag(R.layout.navigation_spinner_item_group_dropdown, holder);
-		} else {
-			holder = (ViewHolder) convertView.getTag(R.layout.navigation_spinner_item_group_dropdown);
-		}
-		holder.v.setText(labels.get(position));
-		holder.v.setCompoundDrawables(null, null, getItem(position), null);
-		return convertView;
-	}
+    @Override
+    public int getCount() {
+        return labels.size();
+    }
 
-	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
-		ViewHolder holder;
+    @Override
+    public Drawable getItem(int position) {
+        Drawable d = mRes.getDrawable(Utils.getLoginLabelIconArray()[position]);
+        d.setBounds(0, 0, d.getIntrinsicWidth(), d.getIntrinsicHeight());
+        return d;
+    }
 
-		if (convertView == null) {
-			holder = new ViewHolder();
-			convertView = mInflater.inflate(R.layout.navigation_spinner_item_group, parent, false);
-			holder.v = (RobotoTextView) convertView.findViewById(R.id.spinner_item);
-			convertView.setTag(R.layout.navigation_spinner_item_group, holder);
-		} else {
-			holder = (ViewHolder) convertView.getTag(R.layout.navigation_spinner_item_group);
-		}
-		holder.v.setText(labels.get(position));
-		holder.v.setCompoundDrawables(null, null, getItem(position), null);
-		return convertView;
-	}
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
-	static class ViewHolder {
-		RobotoTextView v;
-	}
+    @Override
+    public View getDropDownView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+
+        if (convertView == null) {
+            holder = new ViewHolder();
+            convertView = mInflater.inflate(R.layout.navigation_spinner_item_group_dropdown, parent, false);
+            holder.v = (RobotoTextView) convertView.findViewById(R.id.spinner_item_dropdown);
+            convertView.setTag(R.layout.navigation_spinner_item_group_dropdown, holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag(R.layout.navigation_spinner_item_group_dropdown);
+        }
+        holder.v.setText(labels.get(position));
+        holder.v.setCompoundDrawables(null, null, getItem(position), null);
+        return convertView;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+
+        if (convertView == null) {
+            holder = new ViewHolder();
+            convertView = mInflater.inflate(R.layout.navigation_spinner_item_group, parent, false);
+            holder.v = (RobotoTextView) convertView.findViewById(R.id.spinner_item);
+            convertView.setTag(R.layout.navigation_spinner_item_group, holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag(R.layout.navigation_spinner_item_group);
+        }
+        holder.v.setText(labels.get(position));
+        holder.v.setCompoundDrawables(null, null, getItem(position), null);
+        return convertView;
+    }
+
+    static class ViewHolder {
+        RobotoTextView v;
+    }
 
 }

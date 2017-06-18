@@ -26,15 +26,6 @@
 
 package com.velli.passwordmanager.preferences;
 
-import static android.content.Context.LAYOUT_INFLATER_SERVICE;
-import static android.text.TextUtils.isEmpty;
-import static android.view.View.GONE;
-import static android.view.View.VISIBLE;
-import static android.os.Build.VERSION_CODES.LOLLIPOP;
-
-import com.velli.passwordmanager.R;
-import com.velli.passwordmanager.roboto.RobotoTextView;
-
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -45,85 +36,93 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.velli.passwordmanager.R;
+import com.velli.passwordmanager.roboto.RobotoTextView;
+
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
+import static android.os.Build.VERSION_CODES.LOLLIPOP;
+import static android.text.TextUtils.isEmpty;
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+
 public class CustomPreference extends Preference {
-	private int mIconResId;
-	private Drawable mIcon;
-	
-	private RobotoTextView mTitle;
-	public RobotoTextView mSummary;
-	private ImageView mImage;
-	
-	public CustomPreference(Context context) {
-		super(context);
-		// TODO Auto-generated constructor stub
-	}
-	
-	public CustomPreference(Context context, AttributeSet attrs) {
-		super(context, attrs);
-		// TODO Auto-generated constructor stub
-	}
-	
-	public CustomPreference(Context context, AttributeSet attrs, int defStyleAttr) {
-		super(context, attrs, defStyleAttr);
-		// TODO Auto-generated constructor stub
-	}
-	
-	@TargetApi(LOLLIPOP)
-	public CustomPreference(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-		super(context, attrs, defStyleAttr, defStyleRes);
-		// TODO Auto-generated constructor stub
-	}
+    public RobotoTextView mSummary;
+    private int mIconResId;
+    private Drawable mIcon;
+    private RobotoTextView mTitle;
+    private ImageView mImage;
 
-	@Override
-	protected View onCreateView(ViewGroup parent) {
-		super.onCreateView(parent);
-		final LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(LAYOUT_INFLATER_SERVICE);
-		final View layout = layoutInflater.inflate(R.layout.view_preference, parent, false);
-		final ViewGroup widgetFrame = (ViewGroup) layout.findViewById(R.id.widget_frame);
-		int widgetLayoutResId = getWidgetLayoutResource();
+    public CustomPreference(Context context) {
+        super(context);
+        // TODO Auto-generated constructor stub
+    }
 
-		if (widgetLayoutResId != 0) {
-			layoutInflater.inflate(widgetLayoutResId, widgetFrame);
-		}
+    public CustomPreference(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        // TODO Auto-generated constructor stub
+    }
 
-		widgetFrame.setVisibility(widgetLayoutResId != 0 ? VISIBLE : GONE);
-		return layout;
-	}
-	
-	@Override
-	protected void onBindView(View view) {
-		super.onBindView(view);
-		final CharSequence title = getTitle();
-		final CharSequence summary = getSummary();
-		final View imageFrame = view.findViewById(R.id.icon_frame);
-		
-		mTitle = (RobotoTextView) view.findViewById(R.id.title);
-		mTitle.setText(title);
-		mTitle.setVisibility(!isEmpty(title) ? VISIBLE : GONE);
-		
-		mSummary = (RobotoTextView) view.findViewById(R.id.summary);
-		mSummary.setText(summary);
-		mSummary.setVisibility(!isEmpty(summary) ? VISIBLE : GONE);
-		if (mIcon == null && mIconResId > 0) {
-			mIcon = getContext().getResources().getDrawable(mIconResId);
-		}
-		mImage = (ImageView) view.findViewById(R.id.icon);
-		mImage.setImageDrawable(mIcon);
-		mImage.setVisibility(mIcon != null ? VISIBLE : GONE);
-		
-		imageFrame.setVisibility(mIcon != null ? VISIBLE : GONE);
-	}
-	
-	@Override
-	public void setIcon(int iconResId) {
-		super.setIcon(iconResId);
-		this.mIconResId = iconResId;
-	}
+    public CustomPreference(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        // TODO Auto-generated constructor stub
+    }
 
-	@Override
-	public void setIcon(Drawable icon) {
-		super.setIcon(icon);
-		this.mIcon = icon;
-	}
+    @TargetApi(LOLLIPOP)
+    public CustomPreference(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+        // TODO Auto-generated constructor stub
+    }
+
+    @Override
+    protected View onCreateView(ViewGroup parent) {
+        super.onCreateView(parent);
+        final LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+        final View layout = layoutInflater.inflate(R.layout.view_preference, parent, false);
+        final ViewGroup widgetFrame = (ViewGroup) layout.findViewById(R.id.widget_frame);
+        int widgetLayoutResId = getWidgetLayoutResource();
+
+        if (widgetLayoutResId != 0) {
+            layoutInflater.inflate(widgetLayoutResId, widgetFrame);
+        }
+
+        widgetFrame.setVisibility(widgetLayoutResId != 0 ? VISIBLE : GONE);
+        return layout;
+    }
+
+    @Override
+    protected void onBindView(View view) {
+        super.onBindView(view);
+        final CharSequence title = getTitle();
+        final CharSequence summary = getSummary();
+        final View imageFrame = view.findViewById(R.id.icon_frame);
+
+        mTitle = (RobotoTextView) view.findViewById(R.id.title);
+        mTitle.setText(title);
+        mTitle.setVisibility(!isEmpty(title) ? VISIBLE : GONE);
+
+        mSummary = (RobotoTextView) view.findViewById(R.id.summary);
+        mSummary.setText(summary);
+        mSummary.setVisibility(!isEmpty(summary) ? VISIBLE : GONE);
+        if (mIcon == null && mIconResId > 0) {
+            mIcon = getContext().getResources().getDrawable(mIconResId);
+        }
+        mImage = (ImageView) view.findViewById(R.id.icon);
+        mImage.setImageDrawable(mIcon);
+        mImage.setVisibility(mIcon != null ? VISIBLE : GONE);
+
+        imageFrame.setVisibility(mIcon != null ? VISIBLE : GONE);
+    }
+
+    @Override
+    public void setIcon(int iconResId) {
+        super.setIcon(iconResId);
+        this.mIconResId = iconResId;
+    }
+
+    @Override
+    public void setIcon(Drawable icon) {
+        super.setIcon(icon);
+        this.mIcon = icon;
+    }
 
 }

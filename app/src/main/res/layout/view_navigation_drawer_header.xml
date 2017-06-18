@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ /*
   ~  * MIT License
   ~  *
@@ -31,49 +30,49 @@
     android:layout_height="@dimen/navigation_drawer_header_height"
     android:background="@color/color_primary_500">
 
-    
-    <ImageView 
+
+    <ImageView
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:background="@drawable/drawer_icon_background"
-        android:src="@drawable/ic_drawer_icon"
-        android:padding="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_above="@+id/navigation_drawer_header_title"
         android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/drawer_icon_background"
         android:contentDescription="@null"
-        android:layout_above="@+id/navigation_drawer_header_title"/>
-    
+        android:padding="8dp"
+        android:src="@drawable/ic_drawer_icon" />
+
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/navigation_drawer_header_title"
-        robototext:style="medium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/navigation_drawer_header_last_login"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginRight="16dp"
         android:layout_marginEnd="16dp"
-        android:textColor="#FFFFFF"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
         android:text="@string/title_last_time_logged_in"
-        android:textSize="14sp" />
-    
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        robototext:style="medium" />
+
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/navigation_drawer_header_last_login"
-        robototext:style="regular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:paddingBottom="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginRight="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="3dp"
+        android:paddingBottom="8dp"
         android:textAllCaps="true"
         android:textColor="#FFFFFF"
-        android:textSize="14sp" />
-    
+        android:textSize="14sp"
+        robototext:style="regular" />
+
 </RelativeLayout>

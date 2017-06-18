@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ /*
   ~  * MIT License
   ~  *
@@ -25,10 +24,28 @@
   ~  */
   -->
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:appcompat="http://schemas.android.com/apk/res-auto" >
-    <item android:id="@+id/menu_starred" appcompat:showAsAction="ifRoom" android:orderInCategory="0" android:title="@string/action_add_to_favorites"></item>
-    <item android:id="@+id/menu_edit" android:icon="@drawable/ic_action_edit" appcompat:showAsAction="ifRoom" android:orderInCategory="1" android:title="@string/menu_action_edit"></item>
-     <item android:id="@+id/menu_delete" android:orderInCategory="2" appcompat:showAsAction="never" android:title="@string/menu_action_delete"/>
-     <item android:id="@+id/menu_show_as_toolbar" android:title="@string/menu_action_show_floating_pass" android:orderInCategory="3" appcompat:showAsAction="never"></item>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appcompat="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_starred"
+        android:orderInCategory="0"
+        android:title="@string/action_add_to_favorites"
+        appcompat:showAsAction="ifRoom"></item>
+    <item
+        android:id="@+id/menu_edit"
+        android:icon="@drawable/ic_action_edit"
+        android:orderInCategory="1"
+        android:title="@string/menu_action_edit"
+        appcompat:showAsAction="ifRoom"></item>
+    <item
+        android:id="@+id/menu_delete"
+        android:orderInCategory="2"
+        android:title="@string/menu_action_delete"
+        appcompat:showAsAction="never" />
+    <item
+        android:id="@+id/menu_show_as_toolbar"
+        android:orderInCategory="3"
+        android:title="@string/menu_action_show_floating_pass"
+        appcompat:showAsAction="never"></item>
 
 </menu>

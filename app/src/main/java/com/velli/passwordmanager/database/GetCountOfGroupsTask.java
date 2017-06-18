@@ -49,14 +49,14 @@ public class GetCountOfGroupsTask extends AsyncTask<Void, Void, ArrayList<ListIt
 
     private OnGetGroupsListTaskListener mListener;
 
-    public GetCountOfGroupsTask(SQLiteDatabase db, OnGetGroupsListTaskListener listener){
+    public GetCountOfGroupsTask(SQLiteDatabase db, OnGetGroupsListTaskListener listener) {
         mListener = listener;
         mDb = db;
     }
 
     @Override
     protected ArrayList<ListItemGroup> doInBackground(Void... params) {
-        if(mDb == null || !mDb.isOpen()){
+        if (mDb == null || !mDb.isOpen()) {
             return null;
         }
 
@@ -67,7 +67,7 @@ public class GetCountOfGroupsTask extends AsyncTask<Void, Void, ArrayList<ListIt
         ListItemGroup group;
 
 
-        if(cursorGroups != null && cursorGroups.moveToFirst()){
+        if (cursorGroups != null && cursorGroups.moveToFirst()) {
             do {
                 list.add(cursorGroups.getString(0));
 
@@ -75,7 +75,7 @@ public class GetCountOfGroupsTask extends AsyncTask<Void, Void, ArrayList<ListIt
                 final String query = "SELECT " + Constants.columnsSelection + " FROM " + Constants.TABLE_ENTRIES + " WHERE(" + Constants.KEY_GROUP + " = '" + s + "')";
                 final Cursor cursor = mDb.rawQuery(query, null);
 
-                if(cursor != null){
+                if (cursor != null) {
                     group = new ListItemGroup();
                     group.primary = s;
                     group.secondary = String.valueOf(cursor.getCount());
@@ -89,20 +89,18 @@ public class GetCountOfGroupsTask extends AsyncTask<Void, Void, ArrayList<ListIt
                     cursor.close();
                     groupsList.add(group);
                 }
-            } while(cursorGroups.moveToNext());
+            } while (cursorGroups.moveToNext());
         }
-        if(cursorGroups != null){
+        if (cursorGroups != null) {
             cursorGroups.close();
         }
-
-
 
 
         return groupsList;
     }
 
     @Override
-    protected void onPostExecute(ArrayList<ListItemGroup> list){
+    protected void onPostExecute(ArrayList<ListItemGroup> list) {
         if (mListener != null) {
             mListener.onGetValuesCount(list);
             mListener = null;

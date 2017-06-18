@@ -37,11 +37,10 @@ public class Constants {
     public static final int RESULT_PASSWORD_ADDED = 2;
     public static final int RESULT_OK = 3;
     public static final int RESULT_ERROR_DATABASE_NOT_OPEN = 4;
-    public static final int RESULT_GROUP_ADDED= 5;
+    public static final int RESULT_GROUP_ADDED = 5;
     public static final int RESULT_ERROR_GROUP_ALREADY_EXISTS = 6;
     public static final int RESULT_ERROR_GROUP_NOT_ADDED = 7;
     public static final int RESULT_ERROR_INVALID_CHARACTER = 8;
-
 
 
     public static final int ENTRY_TYPE_PASSWORD = 0;
@@ -54,7 +53,7 @@ public class Constants {
     public static final String TABLE_ENTRIES = "entries";
     public static final String TABLE_USAGE_HISTORY = "info";
     public static final String TABLE_GROUPS = "groups";
-    public static final String TABLE_LOGIN_TYPES= "logintypes";
+    public static final String TABLE_LOGIN_TYPES = "logintypes";
 
     public static final String KEY_ID = "rowid";
     public static final String KEY_DESCRIPTION = "description";

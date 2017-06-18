@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ /*
   ~  * MIT License
   ~  *
@@ -26,12 +25,12 @@
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:robototext="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:robototext="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/new_credit_card_description_input_field"
@@ -51,11 +50,11 @@
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/new_credit_card_card_type_title"
         style="@style/NewEntryHint"
-        robototext:style="regular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/new_credit_card_card_type" />
+        android:text="@string/new_credit_card_card_type"
+        robototext:style="regular" />
 
     <Spinner
         android:id="@+id/new_credit_card_card_type"
@@ -83,11 +82,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginRight="12dp"
-        android:layout_marginEnd="12dp"
         android:layout_marginBottom="16dp"
-        android:weightSum="1" >
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/new_credit_card_expiration_date_field"
@@ -117,10 +116,10 @@
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/new_credit_card_title_group"
         style="@style/NewEntryHint"
-        robototext:style="regular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/new_entry_group" />
+        android:text="@string/new_entry_group"
+        robototext:style="regular" />
 
     <Spinner
         android:id="@+id/new_credit_card_group_spinner"
@@ -131,7 +130,6 @@
 
     <com.velli.passwordmanager.roboto.RobotoButton
         android:id="@+id/new_credit_card_button_new_group"
-        robototext:style="regular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -150,6 +148,7 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="16sp"
+        robototext:style="regular"
         tools:ignore="RtlHardcoded" />
 
 </LinearLayout>

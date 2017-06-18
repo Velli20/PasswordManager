@@ -48,19 +48,19 @@ public class ActivityFilePickerExtended extends ActivityFilePicker {
     }
 
     @Override
-    public void onPause(){
+    public void onPause() {
         super.onPause();
         ApplicationBase.setActivityStatus(ApplicationBase.ACTIVITY_FILE_PICKER, ApplicationBase.STATUS_ON_PAUSE, isChangingConfigurations());
     }
 
     @Override
-    public void onStop(){
+    public void onStop() {
         super.onStop();
         ApplicationBase.setActivityStatus(ApplicationBase.ACTIVITY_FILE_PICKER, ApplicationBase.STATUS_ON_STOP, isChangingConfigurations());
     }
 
     @Override
-    public void onDestroy(){
+    public void onDestroy() {
         super.onDestroy();
         ApplicationBase.setActivityStatus(ApplicationBase.ACTIVITY_FILE_PICKER, ApplicationBase.STATUS_ON_DESTROY, isChangingConfigurations());
     }

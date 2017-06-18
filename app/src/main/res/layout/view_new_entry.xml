@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ /*
   ~  * MIT License
   ~  *
@@ -26,39 +25,41 @@
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:robototext="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:robototext="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/new_entry_content"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:clipChildren="false"
     android:animateLayoutChanges="true"
-    android:orientation="vertical" xmlns:tools="http://schemas.android.com/tools">
+    android:clipChildren="false"
+    android:orientation="vertical">
 
-    
+
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/new_entry_description_input_field"
+        style="@style/NewEntryInputField.Description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:ems="10"
+        android:hint="@string/new_entry_description"
         android:inputType="textCapSentences"
         android:singleLine="true"
-        android:hint="@string/new_entry_description"
-        app:met_maxCharacters="20"
-        style="@style/NewEntryInputField.Description" >
+        app:met_maxCharacters="20">
+
         <requestFocus />
     </com.rengwuxian.materialedittext.MaterialEditText>
-    
+
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/new_entry_app_title"
         style="@style/NewEntryHint"
-        android:layout_marginTop="16dp"
-        robototext:style="regular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="@string/new_entry_app"
-        android:visibility="gone" />
+        android:visibility="gone"
+        robototext:style="regular" />
 
     <Spinner
         android:id="@+id/new_entry_app_spinner"
@@ -66,37 +67,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginRight="12dp"
         android:layout_marginEnd="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
         android:visibility="gone" />
 
-     <com.velli.passwordmanager.roboto.RobotoTextView
+    <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/new_entry_label"
-        robototext:style="regular"
+        style="@style/NewEntryHint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/new_entry_label"
-        style="@style/NewEntryHint" />
+        robototext:style="regular" />
 
     <Spinner
         android:id="@+id/new_entry_login_icon"
+        style="@style/NewEntrySpinnerField"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/NewEntrySpinnerField"/>
-    
+        android:layout_height="wrap_content" />
+
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/new_entry_wifi_security_hint"
-        robototext:style="regular"
+        style="@style/NewEntryHint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/new_entry_wifi_security"
         android:visibility="gone"
-        style="@style/NewEntryHint" />
+        robototext:style="regular" />
 
     <Spinner
         android:id="@+id/new_entry_wifi_security"
@@ -104,14 +105,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone" />
-    
-      <LinearLayout
+
+    <LinearLayout
         android:id="@+id/entry_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
-          
+
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/new_entry_ssid_input_field"
             style="@style/NewEntryInputField"
@@ -120,9 +121,8 @@
             android:ems="10"
             android:hint="@string/new_entry_wifi_ssid"
             android:inputType="textNoSuggestions"
-            android:visibility="gone">
-        </com.rengwuxian.materialedittext.MaterialEditText>
-        
+            android:visibility="gone"></com.rengwuxian.materialedittext.MaterialEditText>
+
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/new_entry_url_input_field"
             style="@style/NewEntryInputField"
@@ -130,32 +130,28 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/new_entry_url"
-            android:inputType="textUri" >
-        </com.rengwuxian.materialedittext.MaterialEditText>
-
+            android:inputType="textUri"></com.rengwuxian.materialedittext.MaterialEditText>
 
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/new_entry_username_input_field"
             style="@style/NewEntryInputField"
-            robototext:style="regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/new_entry_username"
-            android:inputType="textEmailAddress">
-        </com.rengwuxian.materialedittext.MaterialEditText>
+            android:inputType="textEmailAddress"
+            robototext:style="regular"></com.rengwuxian.materialedittext.MaterialEditText>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-    
-            android:clipChildren="false" >
+
+            android:clipChildren="false">
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/new_entry_password_input_field"
                 style="@style/NewEntryInputField"
-                robototext:style="regular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -164,12 +160,12 @@
                 android:layout_toStartOf="@+id/new_entry_password_generate"
                 android:ems="10"
                 android:hint="@string/new_entry_password"
-                android:inputType="textPassword" >
-            </com.rengwuxian.materialedittext.MaterialEditText>
+                android:inputType="textPassword"
+                robototext:style="regular"></com.rengwuxian.materialedittext.MaterialEditText>
 
             <com.velli.passwordmanager.roboto.RobotoButton
                 android:id="@+id/new_entry_password_generate"
-                robototext:style="medium"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="36dp"
                 android:layout_alignBottom="@+id/new_entry_password_input_field"
@@ -179,14 +175,13 @@
                 android:layout_marginRight="16dp"
                 android:text="@string/new_entry_generate_password"
                 android:textColor="@color/color_accent_a100"
-                android:textSize="14sp" 
-                style="?android:attr/borderlessButtonStyle"/>
+                android:textSize="14sp"
+                robototext:style="medium" />
         </RelativeLayout>
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/new_entry_note_input_field"
             style="@style/NewEntryInputField"
-            robototext:style="regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
@@ -194,27 +189,26 @@
             android:hint="@string/new_entry_notes"
             android:inputType="textCapSentences"
             android:singleLine="true"
-            app:met_maxCharacters="50">
-        </com.rengwuxian.materialedittext.MaterialEditText>
+            app:met_maxCharacters="50"
+            robototext:style="regular"></com.rengwuxian.materialedittext.MaterialEditText>
 
         <com.velli.passwordmanager.roboto.RobotoTextView
             android:id="@+id/new_entry_group"
             style="@style/NewEntryHint"
-            robototext:style="regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/new_entry_group" />
+            android:text="@string/new_entry_group"
+            robototext:style="regular" />
 
         <Spinner
             android:id="@+id/new_entry_group_spinner"
+            style="@style/NewEntrySpinnerField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/NewEntrySpinnerField"
-            android:layout_marginBottom="16dp"/>
-        
+            android:layout_marginBottom="16dp" />
+
         <com.velli.passwordmanager.roboto.RobotoButton
             android:id="@+id/new_entry_button_new_group"
-            robototext:style="regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -233,8 +227,9 @@
             android:textAllCaps="false"
             android:textColor="#000000"
             android:textSize="16sp"
+            robototext:style="regular"
             tools:ignore="RtlHardcoded" />
 
     </LinearLayout>
-     
+
 </LinearLayout>

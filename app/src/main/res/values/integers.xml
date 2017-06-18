@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ /*
   ~  * MIT License
   ~  *
@@ -27,12 +26,11 @@
 
 <resources>
     <integer-array name="preference_retry_counts">
-        <item >5</item>
-        <item >10</item>
-        <item >15</item>
-        <item >20</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
     </integer-array>
 
 
-    
 </resources>

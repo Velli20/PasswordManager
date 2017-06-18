@@ -56,7 +56,7 @@ public class GetSearchSuggestionsTask extends AsyncTask<Void, Void, String[]> {
 
     @Override
     protected String[] doInBackground(Void... params) {
-        if(mDb != null && mDb.isOpen() && mQuery != null) {
+        if (mDb != null && mDb.isOpen() && mQuery != null) {
             final StringBuilder columnsSelection = new StringBuilder();
             final StringBuilder query = new StringBuilder();
             final StringBuilder keys = new StringBuilder();
@@ -66,9 +66,9 @@ public class GetSearchSuggestionsTask extends AsyncTask<Void, Void, String[]> {
             int maxSearchResultCount = 10;
 
 
-            if(mKeysToMatch != null) {
+            if (mKeysToMatch != null) {
                 String comma = "";
-                for(String key : mKeysToMatch) {
+                for (String key : mKeysToMatch) {
                     columnsSelection.append(comma);
                     comma = ", ";
                     columnsSelection.append(key);
@@ -89,14 +89,16 @@ public class GetSearchSuggestionsTask extends AsyncTask<Void, Void, String[]> {
 
             try {
                 cursor = mDb.rawQuery(query.toString(), null);
-            } catch(SQLiteException ignored){ return new String[0]; }
+            } catch (SQLiteException ignored) {
+                return new String[0];
+            }
 
 
             String s;
             while (cursor.moveToNext() && maxSearchResultCount > 0) {
-                for(int i = 0; i < keyCount; i++) {
+                for (int i = 0; i < keyCount; i++) {
                     s = cursor.getString(i);
-                    if(!results.contains(s)) {
+                    if (!results.contains(s)) {
                         results.add(cursor.getString(i));
                     }
                 }
@@ -110,8 +112,8 @@ public class GetSearchSuggestionsTask extends AsyncTask<Void, Void, String[]> {
     }
 
     @Override
-    protected void onPostExecute(String[] result){
-        if(mListener != null) {
+    protected void onPostExecute(String[] result) {
+        if (mListener != null) {
             mListener.onGetSearchSuggestions(result);
             mListener = null;
         }

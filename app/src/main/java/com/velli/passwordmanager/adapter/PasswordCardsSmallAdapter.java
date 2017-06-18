@@ -33,10 +33,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import com.velli.passwordmanager.roboto.RobotoTextView;
 import com.velli.passwordmanager.Password;
 import com.velli.passwordmanager.R;
 import com.velli.passwordmanager.collections.Utils;
+import com.velli.passwordmanager.roboto.RobotoTextView;
 import com.velli.passwordmanager.widget.CircleView;
 
 import java.util.ArrayList;
@@ -49,14 +49,10 @@ public class PasswordCardsSmallAdapter extends PasswordCardBaseAdapter {
     private OnAvatarSelectedListener mAvatarSelectionListener;
     private boolean mAvatarsAreSelectable = false;
 
-    public interface OnAvatarSelectedListener {
-        void onAvatarSelected(int position, boolean selected);
-    }
-
     public PasswordCardsSmallAdapter(Context context, ArrayList<Password> list) {
         super(context, list);
         mInflater = LayoutInflater.from(context);
-        if(list != null && !list.isEmpty()) {
+        if (list != null && !list.isEmpty()) {
             setHasStableIds(list.get(0).getRowId() != -1);
         } else {
             setHasStableIds(false);
@@ -64,7 +60,7 @@ public class PasswordCardsSmallAdapter extends PasswordCardBaseAdapter {
     }
 
     private void setText(RobotoTextView text, String textToHighlight) {
-        if(mSearchPattern != null && !mSearchPattern.isEmpty()) {
+        if (mSearchPattern != null && !mSearchPattern.isEmpty()) {
             text.setText(Utils.boldString(textToHighlight, mSearchPattern));
         } else {
             text.setText(textToHighlight);
@@ -77,16 +73,18 @@ public class PasswordCardsSmallAdapter extends PasswordCardBaseAdapter {
     }
 
     @Override
-    public long getItemId(int position){
+    public long getItemId(int position) {
         return mEntryList.get(position).getRowId();
     }
 
     public int getSelectionsCount() {
-        if(mEntryList == null) { return 0; }
+        if (mEntryList == null) {
+            return 0;
+        }
         int count = 0;
 
-        for(Password pass : mEntryList) {
-            if(pass.isSelected()) {
+        for (Password pass : mEntryList) {
+            if (pass.isSelected()) {
                 count++;
             }
         }
@@ -94,12 +92,14 @@ public class PasswordCardsSmallAdapter extends PasswordCardBaseAdapter {
     }
 
     public ArrayList<Password> getSelectedItems() {
-        if(mEntryList == null) { return null; }
+        if (mEntryList == null) {
+            return null;
+        }
 
         ArrayList<Password> selections = new ArrayList<>();
 
-        for(Password pass : mEntryList) {
-            if(pass.isSelected()) {
+        for (Password pass : mEntryList) {
+            if (pass.isSelected()) {
                 selections.add(pass);
             }
         }
@@ -108,9 +108,11 @@ public class PasswordCardsSmallAdapter extends PasswordCardBaseAdapter {
 
     public void setAllSelected(boolean selected) {
         mAvatarsAreSelectable = true;
-        if(mEntryList == null) { return; }
+        if (mEntryList == null) {
+            return;
+        }
 
-        for(Password pass : mEntryList) {
+        for (Password pass : mEntryList) {
             pass.setSelected(selected);
         }
         notifyDataSetChanged();
@@ -125,29 +127,29 @@ public class PasswordCardsSmallAdapter extends PasswordCardBaseAdapter {
         final Password entry = getItem(position);
         String avatarLetter = "";
 
-        if(entry.getDescription() != null && !entry.getDescription().isEmpty()) {
+        if (entry.getDescription() != null && !entry.getDescription().isEmpty()) {
             setText(((PasswordCardViewHolder) holder).mTitle, entry.getDescription());
             avatarLetter = entry.getDescription().substring(0, 1);
         }
-        if(entry.getUsername() != null && !entry.getUsername().isEmpty()) {
+        if (entry.getUsername() != null && !entry.getUsername().isEmpty()) {
             setText(((PasswordCardViewHolder) holder).mUsername, entry.getUsername());
             avatarLetter = entry.getUsername().substring(0, 1);
         }
-        if(entry.getUrl() != null && !entry.getUrl().isEmpty()) {
+        if (entry.getUrl() != null && !entry.getUrl().isEmpty()) {
             setText(((PasswordCardViewHolder) holder).mUrl, entry.getUrl());
             avatarLetter = entry.getUrl().substring(0, 1);
         }
-        if(entry.getLoginIcon() != -1) {
-            ((PasswordCardViewHolder)holder).mAvatar.setCircleDrawable(mRes.getDrawable(Utils.getLoginLabelIconArray()[entry.getLoginIcon()]));
+        if (entry.getLoginIcon() != -1) {
+            ((PasswordCardViewHolder) holder).mAvatar.setCircleDrawable(mRes.getDrawable(Utils.getLoginLabelIconArray()[entry.getLoginIcon()]));
         } else {
-            ((PasswordCardViewHolder)holder).mAvatar.setCircleDrawable(null);
-            ((PasswordCardViewHolder)holder).mAvatar.setCircleText(avatarLetter);
+            ((PasswordCardViewHolder) holder).mAvatar.setCircleDrawable(null);
+            ((PasswordCardViewHolder) holder).mAvatar.setCircleText(avatarLetter);
         }
-        ((PasswordCardViewHolder)holder).mAvatar.setSelected(entry.isSelected());
-        ((PasswordCardViewHolder)holder).mAvatar.setOnCircleSelectedListener(new AvatarClickListener(position));
-        ((PasswordCardViewHolder)holder).mStar.setImageDrawable(entry.isStarred() ? mStarEnabled : mStarDisabled);
-        ((PasswordCardViewHolder)holder).mStar.setOnClickListener(new StarButtonListener(position));
-        ((PasswordCardViewHolder)holder).itemView.setOnClickListener(new CardClickListener(position, holder.itemView));
+        ((PasswordCardViewHolder) holder).mAvatar.setSelected(entry.isSelected());
+        ((PasswordCardViewHolder) holder).mAvatar.setOnCircleSelectedListener(new AvatarClickListener(position));
+        ((PasswordCardViewHolder) holder).mStar.setImageDrawable(entry.isStarred() ? mStarEnabled : mStarDisabled);
+        ((PasswordCardViewHolder) holder).mStar.setOnClickListener(new StarButtonListener(position));
+        ((PasswordCardViewHolder) holder).itemView.setOnClickListener(new CardClickListener(position, holder.itemView));
     }
 
     @Override
@@ -155,9 +157,11 @@ public class PasswordCardsSmallAdapter extends PasswordCardBaseAdapter {
         return new PasswordCardViewHolder(mInflater.inflate(R.layout.list_item_password_small, viewGroup, false));
     }
 
+    public interface OnAvatarSelectedListener {
+        void onAvatarSelected(int position, boolean selected);
+    }
 
-
-    public class PasswordCardViewHolder extends RecyclerView.ViewHolder{
+    public class PasswordCardViewHolder extends RecyclerView.ViewHolder {
         protected RobotoTextView mTitle;
         protected RobotoTextView mUsername;
         protected RobotoTextView mUrl;
@@ -174,7 +178,7 @@ public class PasswordCardsSmallAdapter extends PasswordCardBaseAdapter {
             mAvatar.setSelectable(true);
 
             mStar = (ImageButton) itemView.findViewById(R.id.password_card_starred_button);
-            if(!hasStableIds()) {
+            if (!hasStableIds()) {
                 mStar.setVisibility(View.GONE);
             }
         }
@@ -191,10 +195,10 @@ public class PasswordCardsSmallAdapter extends PasswordCardBaseAdapter {
 
         @Override
         public void onCircleSelected(CircleView v, boolean selected) {
-            if(mAvatarSelectionListener != null) {
+            if (mAvatarSelectionListener != null) {
                 Password password = getItem(mPosition);
 
-                if(password != null) {
+                if (password != null) {
                     getItem(mPosition).setSelected(!password.isSelected());
                     mAvatarSelectionListener.onAvatarSelected(mPosition, password.isSelected());
                 }

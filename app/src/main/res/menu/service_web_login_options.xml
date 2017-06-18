@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ /*
   ~  * MIT License
   ~  *
@@ -25,10 +24,16 @@
   ~  */
   -->
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:id="@+id/service_web_login_new_pass" android:title="Add password"></item>
-    <item android:id="@+id/service_web_login_new_credit_card" android:title="Add credit card"></item>
-    <item android:id="@+id/service_web_login_close" android:title="Close"></item>
-    
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/service_web_login_new_pass"
+        android:title="Add password"></item>
+    <item
+        android:id="@+id/service_web_login_new_credit_card"
+        android:title="Add credit card"></item>
+    <item
+        android:id="@+id/service_web_login_close"
+        android:title="Close"></item>
+
 
 </menu>

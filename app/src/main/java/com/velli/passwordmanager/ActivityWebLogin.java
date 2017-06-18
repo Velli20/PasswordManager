@@ -26,13 +26,6 @@
 
 package com.velli.passwordmanager;
 
-import com.afollestad.materialdialogs.DialogAction;
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.velli.passwordmanager.database.OnDatabaseUnlockedListener;
-import com.velli.passwordmanager.database.PasswordDatabaseHandler;
-import com.velli.passwordmanager.widget.ConfirmPasswordView;
-import com.velli.passwordmanager.widget.DialogTheme;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -41,40 +34,47 @@ import android.text.SpannableStringBuilder;
 import android.text.style.StyleSpan;
 import android.view.View;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.velli.passwordmanager.database.OnDatabaseUnlockedListener;
+import com.velli.passwordmanager.database.PasswordDatabaseHandler;
+import com.velli.passwordmanager.widget.ConfirmPasswordView;
+import com.velli.passwordmanager.widget.DialogTheme;
+
 public class ActivityWebLogin extends Activity implements OnDatabaseUnlockedListener {
-	private MaterialDialog mShowingDialog;
-	private SpannableStringBuilder mLoginTo;
-	
-	private String mHost;
-	
-	@Override
-	public void onCreate(Bundle savedInstanceState){
-		super.onCreate(savedInstanceState);
-		Intent intent = getIntent();
-		
-		if(intent.getExtras() != null && intent.getExtras().getString(Intent.EXTRA_TEXT) != null){
-			
-			mHost = intent.getExtras().getString(Intent.EXTRA_TEXT);
-			String to = getResources().getString(R.string.action_login_to_web_site);
-			String domain = NewPasswordBase.getDomainName(mHost);
-			
-			final SpannableStringBuilder sb = new SpannableStringBuilder(to + " \"" + domain + "\"");
-			final StyleSpan bss = new StyleSpan(android.graphics.Typeface.BOLD);
-			sb.setSpan(bss, to.length(), sb.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-			
-			mLoginTo = sb;
-			
-			if(!PasswordDatabaseHandler.getInstance().isDatabaseOpen()){
-				showLoginDialog(false);
-			} else {
-				onDatabaseUnlocked(true);
-			}
-			
-		} else {
-			finish();
-		}
-				
-	}
+    private MaterialDialog mShowingDialog;
+    private SpannableStringBuilder mLoginTo;
+
+    private String mHost;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Intent intent = getIntent();
+
+        if (intent.getExtras() != null && intent.getExtras().getString(Intent.EXTRA_TEXT) != null) {
+
+            mHost = intent.getExtras().getString(Intent.EXTRA_TEXT);
+            String to = getResources().getString(R.string.action_login_to_web_site);
+            String domain = NewPasswordBase.getDomainName(mHost);
+
+            final SpannableStringBuilder sb = new SpannableStringBuilder(to + " \"" + domain + "\"");
+            final StyleSpan bss = new StyleSpan(android.graphics.Typeface.BOLD);
+            sb.setSpan(bss, to.length(), sb.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+
+            mLoginTo = sb;
+
+            if (!PasswordDatabaseHandler.getInstance().isDatabaseOpen()) {
+                showLoginDialog(false);
+            } else {
+                onDatabaseUnlocked(true);
+            }
+
+        } else {
+            finish();
+        }
+
+    }
 
 
     public void showLoginDialog(boolean showError) {
@@ -118,31 +118,30 @@ public class ActivityWebLogin extends Activity implements OnDatabaseUnlockedList
     }
 
 
-	
-	public void showProgressDialog(){
-		mShowingDialog = new MaterialDialog.Builder(this)
-	    .title(R.string.title_log_in)
-	    .content(R.string.action_please_wait)
-	    .progress(true, 0)
-	    .cancelable(false)
-	    .show();
-	}
+    public void showProgressDialog() {
+        mShowingDialog = new MaterialDialog.Builder(this)
+                .title(R.string.title_log_in)
+                .content(R.string.action_please_wait)
+                .progress(true, 0)
+                .cancelable(false)
+                .show();
+    }
 
-	@Override
-	public void onDatabaseUnlocked(boolean result) {
-		if(mShowingDialog != null){
-			mShowingDialog.dismiss();
-		}
-		
-		if(!result){
-			showLoginDialog(true);
-		} else {
-			final Intent i = new Intent(this, ServiceWebLogin.class);
-			i.putExtra(Intent.EXTRA_TEXT, mHost);
-			
-			startService(i);
-			finish();
-		}
-		
-	}
+    @Override
+    public void onDatabaseUnlocked(boolean result) {
+        if (mShowingDialog != null) {
+            mShowingDialog.dismiss();
+        }
+
+        if (!result) {
+            showLoginDialog(true);
+        } else {
+            final Intent i = new Intent(this, ServiceWebLogin.class);
+            i.putExtra(Intent.EXTRA_TEXT, mHost);
+
+            startService(i);
+            finish();
+        }
+
+    }
 }

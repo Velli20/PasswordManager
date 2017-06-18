@@ -57,7 +57,7 @@ public class ExcelImportPasswordsTask {
             int size = labels.length;
             mLabels = new String[size];
 
-            for(int i = 0; i < size; i++) {
+            for (int i = 0; i < size; i++) {
                 mLabels[i] = ApplicationBase.getAppContext().getString(labels[i]);
             }
         }
@@ -73,7 +73,7 @@ public class ExcelImportPasswordsTask {
                 Sheet sheet = w.getSheet(0);
 
                 Password password;
-                for(int j = 0; j < sheet.getRows(); j++) {
+                for (int j = 0; j < sheet.getRows(); j++) {
                     password = new Password();
 
                     String label = sheet.getCell(1, j).getContents();
@@ -86,17 +86,18 @@ public class ExcelImportPasswordsTask {
                     password.setGroup(sheet.getCell(6, j).getContents());
                     passwords.add(password);
                 }
-            } catch(Exception ignore) {}
+            } catch (Exception ignore) {
+            }
             return passwords;
         }
 
         private int getIconPosition(String label) {
-            if(label == null) {
+            if (label == null) {
                 return -1;
             }
             int lenght = mLabels.length;
             for (int i = 0; i < lenght; i++) {
-                if(label.equals(mLabels[i])) {
+                if (label.equals(mLabels[i])) {
                     return i;
                 }
             }
@@ -105,7 +106,7 @@ public class ExcelImportPasswordsTask {
 
         @Override
         protected void onPostExecute(ArrayList<Password> list) {
-            if(mListener != null) {
+            if (mListener != null) {
                 mListener.onGetPasswords(list);
                 mListener = null;
             }

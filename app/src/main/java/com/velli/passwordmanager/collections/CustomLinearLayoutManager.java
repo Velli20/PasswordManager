@@ -26,8 +26,6 @@
 
 package com.velli.passwordmanager.collections;
 
-import com.velli.passwordmanager.widget.SnappyRecyclerView.ISnappyLayoutManager;
-
 import android.content.Context;
 import android.graphics.PointF;
 import android.hardware.SensorManager;
@@ -39,8 +37,10 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 
-public class CustomLinearLayoutManager extends LinearLayoutManager implements ISnappyLayoutManager{
-	private static final float INFLEXION = 0.35f; // Tension lines cross at (INFLEXION, 1)
+import com.velli.passwordmanager.widget.SnappyRecyclerView.ISnappyLayoutManager;
+
+public class CustomLinearLayoutManager extends LinearLayoutManager implements ISnappyLayoutManager {
+    private static final float INFLEXION = 0.35f; // Tension lines cross at (INFLEXION, 1)
     private static float DECELERATION_RATE = (float) (Math.log(0.78) / Math.log(0.9));
     private static double FRICTION = 0.84;
 
@@ -51,7 +51,7 @@ public class CustomLinearLayoutManager extends LinearLayoutManager implements IS
         super(context);
         calculateDeceleration(context);
     }
-    
+
     public CustomLinearLayoutManager(Context context, int orientation, boolean reverseLayout) {
         super(context, orientation, reverseLayout);
         calculateDeceleration(context);
@@ -64,7 +64,7 @@ public class CustomLinearLayoutManager extends LinearLayoutManager implements IS
                 // screen
                 * context.getResources().getDisplayMetrics().density * 160.0f * FRICTION;
     }
-    
+
     @Override
     public int getPositionForVelocity(int velocityX, int velocityY) {
         if (getChildCount() == 0) {
@@ -136,7 +136,7 @@ public class CustomLinearLayoutManager extends LinearLayoutManager implements IS
     }
 
     /**
-     * This implementation obviously doesn't take into account the direction of the 
+     * This implementation obviously doesn't take into account the direction of the
      * that preceded it, but there is no easy way to get that information without more
      * hacking than I was willing to put into it.
      */
@@ -149,14 +149,14 @@ public class CustomLinearLayoutManager extends LinearLayoutManager implements IS
         final View child = getChildAt(0);
         final int childPos = getPosition(child);
 
-    	if (getOrientation() == HORIZONTAL && Math.abs((+child.getLeft())) > child.getMeasuredWidth() / 2) {
-    		boolean toRight = child.getLeft() < child.getMeasuredWidth() / 2;
+        if (getOrientation() == HORIZONTAL && Math.abs((+child.getLeft())) > child.getMeasuredWidth() / 2) {
+            boolean toRight = child.getLeft() < child.getMeasuredWidth() / 2;
             // Scrolled first view more than halfway offscreen
-    		if(toRight){
-    			return childPos + 1;
-        	} else {
-        		return childPos -1;
-        	}
+            if (toRight) {
+                return childPos + 1;
+            } else {
+                return childPos - 1;
+            }
         } else if (getOrientation() == VERTICAL
                 && Math.abs(child.getTop()) > child.getMeasuredWidth() / 2) {
             // Scrolled first view more than halfway offscreen
@@ -165,17 +165,15 @@ public class CustomLinearLayoutManager extends LinearLayoutManager implements IS
         return childPos;
     }
 
-    
 
     @Override
     public RecyclerView.LayoutParams generateDefaultLayoutParams() {
         return new RecyclerView.LayoutParams(
-            RecyclerView.LayoutParams.MATCH_PARENT,
-            RecyclerView.LayoutParams.WRAP_CONTENT);
+                RecyclerView.LayoutParams.MATCH_PARENT,
+                RecyclerView.LayoutParams.WRAP_CONTENT);
     }
-    
-    
-    
+
+
     @Override
     public void onMeasure(RecyclerView.Recycler recycler, RecyclerView.State state, int widthSpec, int heightSpec) {
         final int widthMode = View.MeasureSpec.getMode(widthSpec);
@@ -215,15 +213,15 @@ public class CustomLinearLayoutManager extends LinearLayoutManager implements IS
             case View.MeasureSpec.AT_MOST:
             case View.MeasureSpec.UNSPECIFIED:
         }
-        
+
         setMeasuredDimension(width, height);
     }
 
     private void measureScrapChild(RecyclerView.Recycler recycler, int position, int widthSpec,
                                    int heightSpec, int[] measuredDimension) {
-    	if(getItemCount() == 0){
-    		return;
-    	}
+        if (getItemCount() == 0) {
+            return;
+        }
         View view = recycler.getViewForPosition(position);
         if (view != null) {
             RecyclerView.LayoutParams p = (RecyclerView.LayoutParams) view.getLayoutParams();

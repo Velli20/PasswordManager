@@ -26,11 +26,6 @@
 
 package com.velli.passwordmanager.widget;
 
-import com.velli.passwordmanager.roboto.RobotoTextView;
-import com.velli.passwordmanager.Password;
-import com.velli.passwordmanager.R;
-import com.velli.passwordmanager.collections.Utils;
-
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.CardView;
@@ -38,76 +33,81 @@ import android.util.AttributeSet;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-public class WifiPasswordCard extends CardView {
-	private RobotoTextView mDescription;
-	private RobotoTextView mSecurity;
-	private RobotoTextView mSSID;
-	
-	private RobotoTextView mTitleSecurity;
-	private RobotoTextView mTitleSSID;
+import com.velli.passwordmanager.Password;
+import com.velli.passwordmanager.R;
+import com.velli.passwordmanager.collections.Utils;
+import com.velli.passwordmanager.roboto.RobotoTextView;
 
-	private ImageButton mStar;
-	private ImageView mIcon;
-	private String mSearchPattern = "";
-	
-	public WifiPasswordCard(Context context) {
-		super(context);
-		// TODO Auto-generated constructor stub
-	}
-	
-	public WifiPasswordCard(Context context, AttributeSet attrs) {
-		super(context, attrs);
-		// TODO Auto-generated constructor stub
-	}
-	
-	public WifiPasswordCard(Context context, AttributeSet attrs, int defStyleAttr) {
-		super(context, attrs, defStyleAttr);
-		// TODO Auto-generated constructor stub
-	}
-	
-	@Override
-	protected void onFinishInflate(){
-		super.onFinishInflate();
-		mDescription = (RobotoTextView)findViewById(R.id.password_card_title);
-		mSecurity = (RobotoTextView)findViewById(R.id.wifi_card_security);
-		mSSID = (RobotoTextView)findViewById(R.id.wifi_card_ssid);
-	    mStar = (ImageButton)findViewById(R.id.wifi_card_starred_button);
-	    
-	    mTitleSecurity = (RobotoTextView)findViewById(R.id.wifi_card_security_title);
-	    mTitleSSID = (RobotoTextView)findViewById(R.id.wifi_card_ssid_title);
-		
-		mIcon = (ImageView) findViewById(R.id.password_card_icon);
-	}
-	
-	public void setCardData(Password pass){
-		if(pass == null){
-			return;
-		}
-				
-		if(mSearchPattern != null && !mSearchPattern.isEmpty() && !pass.getDescription().isEmpty()){
-			mDescription.setText(Utils.boldString(pass.getDescription(), mSearchPattern));
-		} else {
-			mDescription.setText(pass.getDescription());
-		}
-		if(mSearchPattern != null && mSearchPattern != null && !mSearchPattern.isEmpty() && !pass.getNetworkSSID().isEmpty()){
-			mSSID.setText(Utils.boldString(pass.getNetworkSSID(), mSearchPattern));
-		} else {
-			mSSID.setText(pass.getNetworkSSID());
-		}
-		mSecurity.setText(pass.getWifiSecurity());
-		mSSID.setText(Utils.boldString(pass.getNetworkSSID(), mSearchPattern));
-	}
-	
-	public void setStarbuttonOnClickListener(OnClickListener l){
-		mStar.setOnClickListener(l);
-	}
-	
-	public void setStarButtonDrawable(Drawable d){
-		mStar.setImageDrawable(d);
-	}
-	
-	public void setSearchPattern(String pattern){
-		mSearchPattern = pattern;
-	}
+public class WifiPasswordCard extends CardView {
+    private RobotoTextView mDescription;
+    private RobotoTextView mSecurity;
+    private RobotoTextView mSSID;
+
+    private RobotoTextView mTitleSecurity;
+    private RobotoTextView mTitleSSID;
+
+    private ImageButton mStar;
+    private ImageView mIcon;
+    private String mSearchPattern = "";
+
+    public WifiPasswordCard(Context context) {
+        super(context);
+        // TODO Auto-generated constructor stub
+    }
+
+    public WifiPasswordCard(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        // TODO Auto-generated constructor stub
+    }
+
+    public WifiPasswordCard(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        // TODO Auto-generated constructor stub
+    }
+
+    @Override
+    protected void onFinishInflate() {
+        super.onFinishInflate();
+        mDescription = (RobotoTextView) findViewById(R.id.password_card_title);
+        mSecurity = (RobotoTextView) findViewById(R.id.wifi_card_security);
+        mSSID = (RobotoTextView) findViewById(R.id.wifi_card_ssid);
+        mStar = (ImageButton) findViewById(R.id.wifi_card_starred_button);
+
+        mTitleSecurity = (RobotoTextView) findViewById(R.id.wifi_card_security_title);
+        mTitleSSID = (RobotoTextView) findViewById(R.id.wifi_card_ssid_title);
+
+        mIcon = (ImageView) findViewById(R.id.password_card_icon);
+    }
+
+    public void setCardData(Password pass) {
+        if (pass == null) {
+            return;
+        }
+
+        if (mSearchPattern != null && !mSearchPattern.isEmpty() && !pass.getDescription().isEmpty()) {
+            mDescription.setText(Utils.boldString(pass.getDescription(), mSearchPattern));
+        } else {
+            mDescription.setText(pass.getDescription());
+        }
+        if (mSearchPattern != null && mSearchPattern != null && !mSearchPattern.isEmpty() && !pass.getNetworkSSID().isEmpty()) {
+            mSSID.setText(Utils.boldString(pass.getNetworkSSID(), mSearchPattern));
+        } else {
+            mSSID.setText(pass.getNetworkSSID());
+        }
+        mSecurity.setText(pass.getWifiSecurity());
+        mSSID.setText(Utils.boldString(pass.getNetworkSSID(), mSearchPattern));
+    }
+
+    public void setStarbuttonOnClickListener(OnClickListener l) {
+        mStar.setOnClickListener(l);
+    }
+
+    public void setStarButtonDrawable(Drawable d) {
+        mStar.setImageDrawable(d);
+    }
+
+    public void setSearchPattern(String pattern) {
+        mSearchPattern = pattern;
+    }
 
 }

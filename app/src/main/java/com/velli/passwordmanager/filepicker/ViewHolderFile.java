@@ -34,7 +34,7 @@ import com.velli.passwordmanager.R;
 import com.velli.passwordmanager.roboto.RobotoTextView;
 
 
-public class ViewHolderFile extends RecyclerView.ViewHolder  {
+public class ViewHolderFile extends RecyclerView.ViewHolder {
     protected ImageView mIcon;
     protected RobotoTextView mTitle;
     protected RobotoTextView mSubtitle;

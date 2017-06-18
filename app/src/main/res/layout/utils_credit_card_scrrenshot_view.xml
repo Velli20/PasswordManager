@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ /*
   ~  * MIT License
   ~  *
@@ -29,12 +28,11 @@
     xmlns:robototext="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:background="@color/white">
-    
+    android:background="@color/white"
+    android:orientation="vertical">
+
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_description"
-        robototext:style="thin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -44,107 +42,108 @@
         android:layout_marginTop="16dp"
         android:drawablePadding="16dp"
         android:textColor="@color/color_primary_500"
-        android:textSize="@dimen/password_card_title_size" />
+        android:textSize="@dimen/password_card_title_size"
+        robototext:style="thin" />
 
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_login_type"
-        robototext:style="thin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:alpha="0.60"
         android:textAllCaps="true"
         android:textColor="#000000"
-        android:textSize="20sp" />
-    
+        android:textSize="20sp"
+        robototext:style="thin" />
+
     <View
         android:id="@+id/details_view_login_type_separator"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:alpha="0.12"
         android:background="#000000" />
-    
+
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_card_title"
         style="@style/DetailsViewSubHeader"
-        robototext:style="medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/new_credit_card_card_type" />
+        android:text="@string/new_credit_card_card_type"
+        robototext:style="medium" />
 
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_card"
         style="@style/DetailsViewDetail"
-        robototext:style="regular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        robototext:scrollable="true"/>
+        robototext:scrollable="true"
+        robototext:style="regular" />
 
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_card_number_title"
         style="@style/DetailsViewSubHeader"
-        robototext:style="medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/new_credit_card_card_number" />
+        android:text="@string/new_credit_card_card_number"
+        robototext:style="medium" />
 
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_card_number"
         style="@style/DetailsViewDetail"
-        robototext:style="regular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        robototext:scrollable="true" />
+        robototext:scrollable="true"
+        robototext:style="regular" />
 
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_card_exp_date_title"
         style="@style/DetailsViewSubHeader"
-        robototext:style="medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/new_credit_card_expiration_date" />
+        android:text="@string/new_credit_card_expiration_date"
+        robototext:style="medium" />
 
-     <com.velli.passwordmanager.roboto.RobotoTextView
+    <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_card_exp_date"
+        style="@style/DetailsViewDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/DetailsViewDetail"
         robototext:style="regular" />
 
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_card_csv_title"
         style="@style/DetailsViewSubHeader"
-        robototext:style="medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/new_credit_card_csv" />
+        android:text="@string/new_credit_card_csv"
+        robototext:style="medium" />
 
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_card_csv"
         style="@style/DetailsViewDetail"
-        robototext:style="regular"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    
+        android:layout_height="wrap_content"
+        robototext:style="regular" />
+
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_group_title"
         style="@style/DetailsViewSubHeader"
-        robototext:style="medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/new_entry_group" />
+        android:text="@string/new_entry_group"
+        robototext:style="medium" />
 
     <com.velli.passwordmanager.roboto.RobotoTextView
         android:id="@+id/details_view_group"
         style="@style/DetailsViewDetail"
-        robototext:style="regular"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        robototext:style="regular" />
 
 </LinearLayout>

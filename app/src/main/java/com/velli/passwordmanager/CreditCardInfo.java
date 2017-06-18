@@ -27,55 +27,55 @@
 package com.velli.passwordmanager;
 
 public class CreditCardInfo {
-	private String mCardType;
-	private String mCardNumber;
-	private String mCardExpirationDate;
-	private String mCardSecurityNumber;
-	private String mCardGroup;
+    private String mCardType;
+    private String mCardNumber;
+    private String mCardExpirationDate;
+    private String mCardSecurityNumber;
+    private String mCardGroup;
 
-	public CreditCardInfo(){
-		
-	}
+    public CreditCardInfo() {
 
-	public void setCardType(String name){
-		mCardType = name;
-	}
-	
-	public void setCardNumber(String number){
-		mCardNumber = number;
-	}
-	
-	public void setCardExpirationDate(String date){
-		mCardExpirationDate = date;
-	}
-	
-	public void setCardCSV(String csv){
-		mCardSecurityNumber = csv;
-	}
-	
-	public void setGroup(String group){
-		mCardGroup = group;
-	}
+    }
 
-	public String getCardType(){
-		return mCardType;
-	}
-	
-	public String getCardNumber(){
-		return mCardNumber;
-	}
-	
-	public String getCardExpirationDate(){
-		return mCardExpirationDate;
-	}
-	
-	public String getCardCSV(){
-		return mCardSecurityNumber;
-	}
-	
-	public String getGroup(){
-		return mCardGroup;
-	}
+    public String getCardType() {
+        return mCardType;
+    }
+
+    public void setCardType(String name) {
+        mCardType = name;
+    }
+
+    public String getCardNumber() {
+        return mCardNumber;
+    }
+
+    public void setCardNumber(String number) {
+        mCardNumber = number;
+    }
+
+    public String getCardExpirationDate() {
+        return mCardExpirationDate;
+    }
+
+    public void setCardExpirationDate(String date) {
+        mCardExpirationDate = date;
+    }
+
+    public String getCardCSV() {
+        return mCardSecurityNumber;
+    }
+
+    public void setCardCSV(String csv) {
+        mCardSecurityNumber = csv;
+    }
+
+    public String getGroup() {
+        return mCardGroup;
+    }
+
+    public void setGroup(String group) {
+        mCardGroup = group;
+    }
 
 
 }

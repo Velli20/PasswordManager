@@ -28,7 +28,6 @@ package com.velli.passwordmanager;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,50 +35,54 @@ import android.view.View;
 
 public class ActivityLicenses extends ActivityBase {
 
-	@Override
-	public int getActivityId() { return ApplicationBase.ACTIVITY_LICENCES; }
+    @Override
+    public int getActivityId() {
+        return ApplicationBase.ACTIVITY_LICENCES;
+    }
 
-	@Override
-	public String getTag() { return getClass().getSimpleName(); }
-	
-	@Override
-	public void onCreate(Bundle savedInstanceState){
-		super.onCreate(savedInstanceState);
+    @Override
+    public String getTag() {
+        return getClass().getSimpleName();
+    }
 
-		setContentView(R.layout.activity_licenses);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		final Toolbar t = (Toolbar)findViewById(R.id.toolbar);
-		setSupportActionBar(t);
-		final ActionBar bar = getSupportActionBar();
+        setContentView(R.layout.activity_licenses);
 
-		if(bar != null) {
+        final Toolbar t = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(t);
+        final ActionBar bar = getSupportActionBar();
 
-			bar.setDisplayShowHomeEnabled(true);
-			bar.setDisplayHomeAsUpEnabled(true);
-			bar.setDisplayShowTitleEnabled(true);
-			bar.setTitle(getString(R.string.title_licenses));
-		}
-		t.setNavigationIcon(getResources().getDrawable(R.drawable.ic_action_back));
-		t.setNavigationOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				finish();
-			}
-		});
-		
-	}
+        if (bar != null) {
 
-	
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch(item.getItemId()){
-		
-		case android.R.id.home:
-			finish();
-			return true;
-		}
-		return false;
-	}
+            bar.setDisplayShowHomeEnabled(true);
+            bar.setDisplayHomeAsUpEnabled(true);
+            bar.setDisplayShowTitleEnabled(true);
+            bar.setTitle(getString(R.string.title_licenses));
+        }
+        t.setNavigationIcon(getResources().getDrawable(R.drawable.ic_action_back));
+        t.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return false;
+    }
 
 
 }

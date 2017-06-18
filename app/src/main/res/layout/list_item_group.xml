@@ -29,16 +29,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="72dp"
-    tools:context=".ActivityMain" >
+    tools:context=".ActivityMain">
 
     <CheckBox
         android:id="@+id/list_item_group_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:focusable="false"
         android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp" />
+        android:layout_marginStart="16dp"
+        android:focusable="false" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -46,29 +46,29 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="72dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginRight="16dp"
         android:layout_marginEnd="16dp"
-        android:orientation="vertical" >
+        android:layout_marginLeft="72dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="72dp"
+        android:orientation="vertical">
 
         <com.velli.passwordmanager.roboto.RobotoTextView
             android:id="@+id/list_item_group_primary_text"
-            robototext:style="regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:alpha="1"
             android:textColor="#FFFFFF"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            robototext:style="regular" />
 
         <com.velli.passwordmanager.roboto.RobotoTextView
             android:id="@+id/list_item_group_secondary_text"
-            robototext:style="regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:alpha="0.70"
             android:textColor="#FFFFFF"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            robototext:style="regular" />
     </LinearLayout>
 
 </RelativeLayout>

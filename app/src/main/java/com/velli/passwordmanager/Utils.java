@@ -41,7 +41,7 @@ import java.util.Locale;
 public class Utils {
 
 
-    public static String getDateTimeString (long millis) {
+    public static String getDateTimeString(long millis) {
         final GregorianCalendar c = new GregorianCalendar();
         final String[] months = new DateFormatSymbols().getShortMonths();
         final String[] weekDays = new DateFormatSymbols().getWeekdays();
@@ -58,7 +58,7 @@ public class Utils {
                 .toString();
     }
 
-    public static Point getScreenSize(Context c){
+    public static Point getScreenSize(Context c) {
         final Point point = new Point();
         final WindowManager wm = (WindowManager) c.getSystemService(Context.WINDOW_SERVICE);
         final Display display = wm.getDefaultDisplay();

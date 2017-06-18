@@ -38,116 +38,111 @@ import com.velli.passwordmanager.roboto.RobotoTextView;
 
 public class CustomSpinnerAdapter extends BaseAdapter {
 
-	
-	private LayoutInflater mInflater;
-    private String[] itemsList;
 
-    private int mCurrentNavigationItem = 0;
-    
     private final int mLayout;
     private final int mLayoutDrop;
-    
+    private LayoutInflater mInflater;
+    private String[] itemsList;
+    private int mCurrentNavigationItem = 0;
     private Drawable mIcon;
     private boolean mHasAddItem = false;
     private String mAddText = "";
     private Context mContext;
-    
-	public CustomSpinnerAdapter (Context context, String[] list, int spinnerItem, int spinnerDrop){
-		mContext = context;
-		mInflater = LayoutInflater.from(context);
-		itemsList = list;
-		
-		mLayout = spinnerItem;
-		mLayoutDrop = spinnerDrop;
-	}
-	
 
-	
-    public void setAddINewGroupItem(){
-    	mIcon = mContext.getResources().getDrawable(R.drawable.ic_action_new_group);
-    	mIcon.setBounds(0, 0, mIcon.getIntrinsicWidth(), mIcon.getIntrinsicHeight());
-    	
-    	mAddText = mContext.getResources().getString(R.string.action_create_new_group);
-    	mHasAddItem = true;
-    	notifyDataSetChanged();
+    public CustomSpinnerAdapter(Context context, String[] list, int spinnerItem, int spinnerDrop) {
+        mContext = context;
+        mInflater = LayoutInflater.from(context);
+        itemsList = list;
+
+        mLayout = spinnerItem;
+        mLayoutDrop = spinnerDrop;
     }
-	
-	public void setSelectedItem(int position){
-		mCurrentNavigationItem = position;
-	}
-	
 
-	@Override
-	public int getCount() {
-		return mHasAddItem ? (itemsList.length + 1) : itemsList.length;
-	}
 
-	@Override
-	public String getItem(int position) {
+    public void setAddINewGroupItem() {
+        mIcon = mContext.getResources().getDrawable(R.drawable.ic_action_new_group);
+        mIcon.setBounds(0, 0, mIcon.getIntrinsicWidth(), mIcon.getIntrinsicHeight());
 
-		if(mHasAddItem && position == getCount() - 1){
-			return mAddText;
-		} else {
-			return itemsList[position];
-		}
-	}
+        mAddText = mContext.getResources().getString(R.string.action_create_new_group);
+        mHasAddItem = true;
+        notifyDataSetChanged();
+    }
 
-	@Override
-	public long getItemId(int position) {
-		return position;
-	}
-	
-	@Override
-	public View getDropDownView(int position, View convertView, ViewGroup parent) {
-		ViewHolderText holder;
-		
-		if(convertView == null){
-			holder = new ViewHolderText();
-			convertView = mInflater.inflate(mLayoutDrop, parent, false);
-			holder.v = (RobotoTextView)convertView.findViewById(R.id.spinner_item_dropdown);
-			convertView.setTag(holder);
-		} else {
-			holder = (ViewHolderText)convertView.getTag();
-		}
-		
-		if(position == getCount() -1 && mHasAddItem){
-			holder.v.setCompoundDrawables(null, null, mIcon, null);
-		} else {
-			holder.v.setCompoundDrawables(null, null, null, null);
-		}
+    public void setSelectedItem(int position) {
+        mCurrentNavigationItem = position;
+    }
 
-		holder.v.setTag(position);
-		holder.v.setText(getItem(position));
-		return convertView;
-	}
 
-	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
-		ViewHolderText holder;
-		
-		if(convertView == null){
-			holder = new ViewHolderText();
-			convertView = mInflater.inflate(mLayout, parent, false);
-			holder.v = (RobotoTextView)convertView.findViewById(R.id.spinner_item);
-			convertView.setTag(holder);
-		} else {
-			holder = (ViewHolderText)convertView.getTag();
-		}
-		
-		if(mHasAddItem && position == getCount() -1){
-			final int newPos = mCurrentNavigationItem;
+    @Override
+    public int getCount() {
+        return mHasAddItem ? (itemsList.length + 1) : itemsList.length;
+    }
 
-			holder.v.setText(getItem(newPos < 0 ? 0 : newPos));
-		} else {
-			holder.v.setText(getItem(position));
-		}
-		return convertView;
-	}
+    @Override
+    public String getItem(int position) {
 
-	static class ViewHolderText {
-		RobotoTextView v;
-	}
+        if (mHasAddItem && position == getCount() - 1) {
+            return mAddText;
+        } else {
+            return itemsList[position];
+        }
+    }
 
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public View getDropDownView(int position, View convertView, ViewGroup parent) {
+        ViewHolderText holder;
+
+        if (convertView == null) {
+            holder = new ViewHolderText();
+            convertView = mInflater.inflate(mLayoutDrop, parent, false);
+            holder.v = (RobotoTextView) convertView.findViewById(R.id.spinner_item_dropdown);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolderText) convertView.getTag();
+        }
+
+        if (position == getCount() - 1 && mHasAddItem) {
+            holder.v.setCompoundDrawables(null, null, mIcon, null);
+        } else {
+            holder.v.setCompoundDrawables(null, null, null, null);
+        }
+
+        holder.v.setTag(position);
+        holder.v.setText(getItem(position));
+        return convertView;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolderText holder;
+
+        if (convertView == null) {
+            holder = new ViewHolderText();
+            convertView = mInflater.inflate(mLayout, parent, false);
+            holder.v = (RobotoTextView) convertView.findViewById(R.id.spinner_item);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolderText) convertView.getTag();
+        }
+
+        if (mHasAddItem && position == getCount() - 1) {
+            final int newPos = mCurrentNavigationItem;
+
+            holder.v.setText(getItem(newPos < 0 ? 0 : newPos));
+        } else {
+            holder.v.setText(getItem(position));
+        }
+        return convertView;
+    }
+
+    static class ViewHolderText {
+        RobotoTextView v;
+    }
 
 
 }

@@ -26,17 +26,20 @@
   ~  */
   -->
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:appcompat="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/menu_search"
-        android:title="@string/menu_action_search"
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appcompat="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_search"
         android:icon='@drawable/ic_action_search'
         android:orderInCategory="1"
-        appcompat:showAsAction="always"/>
+        android:title="@string/menu_action_search"
+        appcompat:showAsAction="always" />
 
-    <item android:id="@+id/menu_view_as"
-        android:title="@string/menu_action_view_as_list"
+    <item
+        android:id="@+id/menu_view_as"
         android:icon="@drawable/ic_action_view_grid"
         android:orderInCategory="0"
-        appcompat:showAsAction="ifRoom"/>
+        android:title="@string/menu_action_view_as_list"
+        appcompat:showAsAction="ifRoom" />
 
 </menu>

@@ -43,7 +43,7 @@ public class AddNewPasswordTask extends AsyncTask<Password, Void, Integer> {
     private SQLiteDatabase mDb;
     private Password entry;
 
-    public AddNewPasswordTask(Password password, SQLiteDatabase db, boolean update){
+    public AddNewPasswordTask(Password password, SQLiteDatabase db, boolean update) {
         mUpdate = update;
         mDb = db;
         entry = password;
@@ -53,10 +53,10 @@ public class AddNewPasswordTask extends AsyncTask<Password, Void, Integer> {
     protected Integer doInBackground(Password... params) {
         int rowId = -1;
 
-        if(mDb == null || !mDb.isOpen()) {
+        if (mDb == null || !mDb.isOpen()) {
             return Constants.RESULT_ERROR_DATABASE_NOT_OPEN;
         }
-        if(entry != null){
+        if (entry != null) {
             ContentValues values = new ContentValues();
 
             values.put(Constants.KEY_DESCRIPTION, entry.getDescription());
@@ -65,7 +65,7 @@ public class AddNewPasswordTask extends AsyncTask<Password, Void, Integer> {
             values.put(Constants.KEY_ICON, entry.getLoginIcon());
             values.put(Constants.KEY_LOGIN_TYPE, entry.getLoginType());
 
-            if(entry.isCreditCard()){
+            if (entry.isCreditCard()) {
                 final CreditCardInfo card = entry.getCreditCard();
                 values.put(Constants.KEY_CARD_NUMBER, card.getCardNumber());
                 values.put(Constants.KEY_CARD_EXPIRATION_DATE, card.getCardExpirationDate());
@@ -73,7 +73,7 @@ public class AddNewPasswordTask extends AsyncTask<Password, Void, Integer> {
                 values.put(Constants.KEY_ENTRY_TYPE, Constants.ENTRY_TYPE_CREDIT_CARD);
                 values.put(Constants.KEY_CARD_TYPE, card.getCardType());
             } else {
-                if(entry.getLoginIcon() == NavigationDrawerConstants.LABEL_WIFI) {
+                if (entry.getLoginIcon() == NavigationDrawerConstants.LABEL_WIFI) {
                     values.put(Constants.KEY_WIFI_SSID, entry.getNetworkSSID());
                     values.put(Constants.KEY_WIFI_SECURITY, entry.getWifiSecurity());
                     values.put(Constants.KEY_ENTRY_TYPE, Constants.ENTRY_TYPE_WIFI_PASSWORD);
@@ -88,8 +88,8 @@ public class AddNewPasswordTask extends AsyncTask<Password, Void, Integer> {
 
             }
 
-            if(mUpdate){
-                rowId = mDb.update(Constants.TABLE_ENTRIES, values, Constants.KEY_ID + "=?", new String[] {String.valueOf(entry.getRowId())});
+            if (mUpdate) {
+                rowId = mDb.update(Constants.TABLE_ENTRIES, values, Constants.KEY_ID + "=?", new String[]{String.valueOf(entry.getRowId())});
             } else {
                 if (entry.getRowId() != -1) {
                     values.put(Constants.KEY_ID, entry.getRowId());
@@ -103,7 +103,7 @@ public class AddNewPasswordTask extends AsyncTask<Password, Void, Integer> {
     }
 
     @Override
-    protected void onPostExecute(Integer result){
+    protected void onPostExecute(Integer result) {
         PasswordDatabaseHandler.getInstance().notifyCallbacks(Constants.TABLE_ENTRIES, result);
         mDb = null;
     }
